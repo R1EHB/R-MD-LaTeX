@@ -30,7 +30,7 @@
 * Pandoc?
 * Editor?
 * USGS dataRetrieval, etc?
-
+* TinyTex
 
 # Data Examples and Datasets #
 * dslabs
