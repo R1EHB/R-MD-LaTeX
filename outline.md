@@ -97,6 +97,55 @@ You can also use an on-line ready-to-use option like [ShareLaTeX](https://www.sh
 
 # Markdown and LaTeX #
 
+A side-by-side comparison of Markdown and LaTeX using the exact same analysis.
+
+LaTeX:
+```
+\documentclass{article}
+\begin{document}
+\title{Speed and Stopping Distance}
+\author{Yihui Xie, creator of knitr}
+
+\maketitle
+
+We examine the relationship between speed and stopping distance using a linear regression model:
+$Y = \beta_0 + \beta_1 x + \epsilon$.
+
+<<model, fig.width=4, fig.height=3, fig.align='center'>>=
+par(mar = c(4, 4, 1, 1), mgp = c(2, 1, 0), cex = 0.8)
+plot(cars, pch = 20, col = 'darkgray')
+fit <- lm(dist ~ speed, data = cars)
+abline(fit, lwd = 2)
+@
+
+The slope of a simple linear regression is \Sexpr{coef(fit)[2]}.
+
+\end{document}
+```
+When embedding R code in LaTeX, start a code chunk with `<<>>=` and terminate it with `@`.
+
+Markdown:
+```
+---
+title: Speed and Stopping Distance
+---
+
+We examine the relationship between speed and stopping distance using a linear regression model:
+$Y = \beta_0 + \beta_1 x + \epsilon$.
+
+```{r fig.width=4, fig.height=3, fig.align='center'}
+par(mar = c(4, 4, 1, 1), mgp = c(2, 1, 0), cex = 0.8)
+plot(cars, pch = 20, col = 'darkgray')
+fit <- lm(dist ~ speed, data = cars)
+abline(fit, lwd = 2)
+
+The slope of a simple linear regression is `r coef(fit)[2]`.
+```
+Quickly insert chunks with the keyboard shortcut Ctrl + Alt + I (OS X: Cmd + Option + I).
+
+By comparison, Markdown has simpler commands.
+
+
 # Reproducible Research #
 > An article ... in a scientific publication is not the scholarship itself, it is merely advertising of the scholarship. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures. --- *D. Donoho, professor of statistics at Stanford University*
 
