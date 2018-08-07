@@ -43,6 +43,9 @@
 # LaTeX #
 
 ## What is LaTeX? ##
+LaTeX is a tool for high-quality typesetting based on the idea that it is better to leave document design to document designers, and to let authors get on with writing documents.
+
+Here is a minimal example of a full document written in LaTeX.
 
 ```
 \documentclass{article}
@@ -52,17 +55,17 @@
 \begin{document}
 \maketitle
 
-To compile this into a PDF document on your computer, your computer needs one of these installed:
-\begin{itemize}
-  \item \textbf{MiKTeX} for Windows
-  \item \textbf{TeX Live} for Linux and other UNIX-like systems
-  \item \textbf{MacTeX} redistribution of TeX Live for Mac OS X
-\end{itemize}
-
-You can also use an on-line ready-to-use option like ShareLaTeX.
+Hello world!
 
 \end{document}
 ```
+
+To compile this into a PDF document, your computer needs one of these TeX distributions installed:
+* **MiKTeX** for Windows
+* **TeX Live** for Linux and other UNIX-like systems
+* **MacTeX** redistribution of TeX Live for Mac OS X
+
+You can also use an on-line ready-to-use option like [ShareLaTeX](https://www.sharelatex.com/).
 
 # Markdown #
 
@@ -74,17 +77,17 @@ You can also use an on-line ready-to-use option like ShareLaTeX.
 
 # Markdown and LaTeX #
 
-
 # Reproducible Research #
-> An article ... in a scientific publication is not the scholarship itself, it is merely advertising of the scholarship. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures. --- D. Donoho, professor of statistics at Stanford University
+> An article ... in a scientific publication is not the scholarship itself, it is merely advertising of the scholarship. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures. --- *D. Donoho, professor of statistics at Stanford University*
 
 ## Reproducible Research; What is it? ##
-
 Results from scientific research have to be reproducible to be trustworthy.
+
+Though Donoho was referring to computational science, journals in other data-driven fields such as biostatistics have been moving in the direction of reproducible research as well.
 
 This chunk of R code produces a figure that illustrates a simulation of Brownian motion for 100 steps.
 
-```{r Brownian motion}
+```
 set.seed(1213) # for reproducibility of random numbers
 x <- cumsum(rnorm(100))
 plot(x, type = "l", ylab = "$x_{i+1}=x_i+\\epsilon_{i+1}$",
