@@ -82,6 +82,8 @@ You can also use an on-line ready-to-use option like [ShareLaTeX](https://www.sh
 # Markdown #
 
 ## What is Markdown? ##
+An R Markdown file (.Rmd) is a record of your research. It contains the code that a scientist needs to reproduce your work along with the narration that a reader needs to understand your work.
+
 * Daring Fireball/ John Gruber/daringfireball.net
 * Dialects(original, R, github, etc)
 
