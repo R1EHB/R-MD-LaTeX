@@ -1,0 +1,5 @@
+https://yihui.name/tinytex/
+TinyTex can be installed without enhanced permissions. From the R console:
+
+    install.packages(c('tinytex', 'rmarkdown'))
+    tinytex::install_tinytex()
