@@ -84,10 +84,20 @@ You can also use an on-line ready-to-use option like [ShareLaTeX](https://www.sh
 ## What is Markdown? ##
 An R Markdown file (.Rmd) is a record of your research. It contains the code that a scientist needs to reproduce your work along with the narration that a reader needs to understand your work.
 
+You can rereun the code in a Markdown file with one click, and reproduce your work and export the results as a finished report in a variety of formats, including HTML, PDF, MS Word, RTF documents, slides, Notebooks, and more.
+
 * Daring Fireball/ John Gruber/daringfireball.net
 * Dialects(original, R, github, etc)
 
 ## Using Markdown ##
+
+Workflow in Markdown:
+1. Open a new .Rmd file in RStudio (pre-populates with a template)
+1. Write document 
+1. Knit document to create report
+1. Preview output
+1. (Optional) Publish to web server
+1. Use output file that saves alongside the .Rmd
 
 * Brainless plinking
 
