@@ -34,15 +34,18 @@ and research with R.
 
 # Prerequisites #
 
+It is expected that you have some familiarity with R and RStudio, can install packages from CRAN, and understand basic R syntax.
+
+We will be using R and RStudio for this workshop. This must be installed prior to September 11. Simply email EZTech and request that R and RStudio be installed on your machine. They will push that out usually in a day or so.
+
 * R and RStudio
-* MikTeX required for knitr
+* MikTeX (required for knitr)
 * R packages:
-* knitr
-* ggplot2 (or all of tidyverse)
-* Pandoc (stand alone or in knitr?)
+  + knitr
+  + ggplot2 (or all of tidyverse)
+  + Pandoc (stand alone or in knitr?)
 * Editor?
 * USGS dataRetrieval, etc?
-* TinyTex
 
 # Data Examples and Datasets #
 * dslabs
@@ -50,7 +53,6 @@ and research with R.
 * USGS Data
 * Sunspot and solar flux data
 * Other EPA data (AIRS)
-
 
 # LaTeX #
 
