@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 
-\title{Installation instructions for R/LaTeX/Markdown workshop pre-requisites}
+\title{R/LaTeX/Markdown workshop pre-requisites and EPA installation instructions}
 \author{}
 \date{}
 
@@ -10,35 +10,37 @@
 \maketitle
 \tableofcontents
 
-\section{Basic information about the workshop}
+\section{Basic info about the workshop}
 \begin{center}
     \begin{tabular}{c c c}
     Day & Time & Room \\
-    Tues, Sept 11 & 8:30-11am & C111C
+    \textbf{Tues, Sept 11} & \textbf{8:30-11:30am} & \textbf{C111C}
 \end{tabular}
 \end{center}
 
 This 1/2-day workshop will provide attendees with hands-on experience using the basics of LaTeX, Markdown, and the R package knitr. After attending this workshop, you will be able to use these tools to facilitate reproducible reports and research with R.
 
-Draft agenda below.
+The draft agenda:
 
 \begin{tabular}{c|l}
-    Time & Topic \\
-    8:30-8:45 & LaTeX in a standalone environment \\
-    8:45-9:00 & Markdown in a standalone environment \\
-    9:00-9:15 & How Markdown and LaTeX can work together \\
-    9:15-9:45 & R and reproducible research tools (knitr, sweave) \\
+    \textbf{Time} & \textbf{Topic} \\
+    8:30-8:45 & Discussion of reproducible research \\
+    8:45-9:00 & LaTeX in a standalone environment \\
+    9:00-9:15 & Markdown in a standalone environment \\
+    9:15-9:45 & How Markdown and LaTeX can work together \\
     9:45-10:00 & BREAK \\
-    10:00-11:00 & How Markdown and LaTeX can work with R
+    10:00-10:30 & R and reproducible research tools (knitr, sweave) \\
+    10:30-11:30 & Use Markdown and LaTeX with R
 \end{tabular}
 
-\section{List of pre-requisites}
+\section{You will need}
 It is expected that you have some familiarity with R and RStudio, can install packages from CRAN, and understand basic R syntax.
 
 We will be using R, RStudio, and MiKTeX during this workshop. These must be installed prior to September 11.
 \begin{itemize}
     \item R, RStudio
     \item MiKTeX
+    \item Your preferred TeX editor (TeXStudio, TeXWorks, ShareLaTeX, etc.)
     \item R packages:
     \begin{itemize}
         \item knitr
@@ -47,11 +49,10 @@ We will be using R, RStudio, and MiKTeX during this workshop. These must be inst
     \end{itemize}
 \end{itemize}
 
-\section{R and RStudio}
-
+\subsection{R and RStudio}
 Simply email EZTech, now ``EISD", at \href{mailto:EISD@epa.gov}{EISD@epa.gov}) and request that R and RStudio be installed on your machine. They will usually push that out within a day or so.
 
-\section{MiKTeX}
+\subsection{MiKTeX}
 \begin{enumerate}
     \item Go to \url{https://usepa.sharepoint.com/sites/EZForms/SitePages/Home.aspx}
     \item Under Create a Request, click on ``Freeware/Shareware"
@@ -60,5 +61,8 @@ Simply email EZTech, now ``EISD", at \href{mailto:EISD@epa.gov}{EISD@epa.gov}) a
     \item For “Software Title”, say: MiKTeX
     \item Enter supervisor name
 \end{enumerate}
+
+\subsection{TeX Editor}
+
 
 \end{document}
