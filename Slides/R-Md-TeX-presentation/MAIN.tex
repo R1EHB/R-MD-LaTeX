@@ -29,7 +29,7 @@
     \begin{frame}
         \maketitle
     \end{frame}
-
+    
     \begin{frame}
         \frametitle{Table of Contents}
         \tableofcontents
@@ -64,7 +64,7 @@ We will try to use our three hours as effectively as possible.
     8:30 & System checks \\
     8:45 & LaTeX \\
     9:00 & Markdown \\
-    9:15 & Using Markdown and LaTeX together \\
+    9:15 & Markdown and LaTeX together \\
     9:30 & Reproducible Research \\
     9:45 & \emph{BREAK} \\
     10:00 & Dynamic documents with sweave and knitr \\
@@ -75,20 +75,25 @@ We will try to use our three hours as effectively as possible.
 
 \section{LaTeX}
 \begin{frame}{LaTeX}
+LaTeX is a tool for high-quality typesetting based on the idea that it is better to leave document design to document designers, and to let authors get on with writing documents.
+\vfill
+\begin{block}{How do you pronounce ``LaTeX''?}
     \begin{quote}
-        TeX is usually pronounced tech, making \emph{lah}-teck, lah-\emph{teck}, and \emph{lay}-teck the logical choices; but language is not always logical, so \emph{lay}-\emph{tecks} is also possible.
+        TeX is usually pronounced tech, making \emph{'lah}-teck, lah-\emph{'teck}, and \emph{'lay}-teck the logical choices; but language is not always logical, so \emph{'lay}-\emph{'tecks} is also possible.
     \end{quote}
     --- Leslie B. Lamport, original developer of \LaTeX{}
+\end{block}
 \end{frame}
 
 \begin{frame}{LaTeX}
-LaTeX is a tool for typesetting based on the idea that it is better to leave document design to document designers, and to let authors get on with writing documents. It is widely used in academia for the publication of scientific documents in many fields, including mathematics, statistics, computer science, engineering, chemistry, physics, economics, and political science.
+LaTeX is widely used in academia for the publication of scientific documents in many fields, including mathematics, statistics, computer science, engineering, chemistry, physics, economics, and political science.
 
 \begin{enumerate}
     \item \textbf{TeX engines have excellent quality output.} This especially holds for complex documents such as those with mathematics, with many tables, or many cross-references or hyperlinks, or just with many pages.
     \item \textbf{TeX is fast.}
     \item \textbf{TeX is stable.} It will never eat your document. \emph{Ever.}
 \end{enumerate}
+\vfill
 --- \url{https://www.ctan.org/tex/}
 \end{frame}
 
@@ -108,34 +113,38 @@ Hello world!
 \end{document}
 \end{lstlisting}
 \end{exampleblock}
+% We will revisit this code later to make sure everyone compiled it.
 \end{frame}
 
 \begin{frame}{Levels of LaTeX: A disambiguation}
-\begin{alertblock}{There are too many words with ``TeX'' in them}
+\begin{alertblock}{Help! There are too many words with ``TeX'' in them!}
 If you are wondering, \alert{\emph{``Should I use LaTeX or MiKTeX?''}}, allow us to clear that up. These two slides will cover four types of TeX-related terms: distributions, editors, engines, and formats.
 \end{alertblock}
 \begin{enumerate}
     \item \textbf{Distributions:} \textit{MiKTeX, TeX Live, etc.} This is TeX-related software to be downloaded and installed. When someone says, ``I need to install TeX on my machine,'' they're usually looking for a distribution.
     \item \textbf{Editors:} \textit{Emacs, TeXworks, TeXShop, TeXStudio, etc.} These editors are what you use to create a document file. Some (e.g., TeXShop) are devoted specifically to TeX, while others (e.g., Emacs) can be used to edit any sort of file.
 \end{enumerate}
+\vfill
 --- \url{http://www.tug.org/levels.html}
 \end{frame}
 \begin{frame}{Levels of LaTeX: A disambiguation}
+\begin{exampleblock}{A quick note on editors}
+You can also use Notepad to edit plaintext, including LaTeX code.
+\end{exampleblock}
 \begin{enumerate}
 \setcounter{enumi}{2}
     \item \textbf{Engines:} \textit{TeX, pdfTeX, XeTeX, LuaTeX, etc.} These are the executable binaries which implement different TeX variants. When someone says, ``TeX can't find my fonts,'' they usually mean an engine.
     \item \textbf{Formats:} \textit{LaTeX, plain TeX, etc.} These are the TeX-based languages in which one actually writes documents. When someone says, ``TeX is giving me a mysterious error,'' they usually mean a format. (Incidentally, ``LaTeX'' has meant ``LaTeX2e'' for many years now.)
 \end{enumerate}
+\vfill
 --- \url{http://www.tug.org/levels.html}
 \end{frame}
 
 \begin{frame}{LaTeX Distributions}
 To compile LaTeX, your computer needs one of these TeX distributions installed:
-\vspace{0.5cm}
-
+\begin{block}{TeX Distributions}
 \begin{center}
     \begin{tabular}{c l}
-    \hline
     Distribution & Operating System \\
     \hline
     MiKTeX & Windows OS \\
@@ -143,8 +152,7 @@ To compile LaTeX, your computer needs one of these TeX distributions installed:
     MacTeX & Mac OS X
 \end{tabular}
 \end{center}
-
-\vspace{0.25cm}
+\end{block}
 You can also use an on-line, ready-to-use option like \href{https://www.sharelatex.com/}{ShareLaTeX} or \href{https://www.overleaf.com/}{Overleaf}.
 \end{frame}
 
@@ -171,13 +179,16 @@ Hello world!
 
 \section{Reproducible Research}
 \begin{frame}{Reproducible Research}
+\begin{alertblock}{Results must be reproducible to be trustworthy.}
         \begin{quote}
-        An article about computational science in a scientific publication is not the scholarship itself, it is merely the advertising of the scholarship. The actual scholarship is the complete software development environment and the \textbf{complete set of instructions which generated the figures}.
+        An article about computational science in a scientific publication is not the scholarship itself, it is merely the advertising of the scholarship. The actual scholarship is the complete software development environment \textbf{and the complete set of instructions which generated the figures}.
     \end{quote}
     --- 1995, David L. Donoho, professor of statistics at Stanford University
-    %Though Donoho was referring to computational science, journals in other data-driven fields such as biostatistics have been moving in the direction of reproducible research as well. Results from scientific research have to be reproducible to be trustworthy.
+    % Though Donoho was referring to computational science, journals in other data-driven fields such as biostatistics have been moving in the direction of reproducible research as well. Results from scientific research have to be reproducible to be trustworthy.
+    % This would be a good time to quickly discuss attendees' difficulties with reproducing research.
+\end{alertblock}
 \end{frame}
-
+    
 \begin{frame}[fragile]{Reproducible Research}
 This chunk of R code produces a figure that illustrates a simulation of Brownian motion for 100 steps.
         \begin{exampleblock}{Try running this in RStudio}
@@ -194,40 +205,44 @@ plot(x, type = ''l'',
 \begin{frame}[fragile]{Reproducible Research}
         \begin{exampleblock}{}
 \begin{lstlisting}
-set.seed(1213) # for reproducibility
+set.seed(1213)
 x <- cumsum(rnorm(100))
 plot(x, type = ''l'',
     ylab = ''$x_{i+1}=x_i+\\epsilon_{i+1}$'',
     xlab = ''step'')
 \end{lstlisting}
         \end{exampleblock}
-To put this in a document by hand, we would have to open RStudio, paste the code into the R console to draw the plot, save it as a PDF or image file, then insert it into a document with \verb|\includegraphics{}| in LaTeX or 'Insert Image' in Word. This is both tedious and difficult for the author to maintain. If we want to change the figure, we have to update both the source code and the typesetting file.
+To put this into a document by hand, we would have to open RStudio, compile the code to draw the plot, save it as an image, then insert it into a document with \verb|\includegraphics{}| in LaTeX or 'Insert Image' in Word.
+\vfill
+Then what if we want to change the random seed in \verb|set.seed()|, or the y-axis label?
+% This is both tedious and difficult for the author to maintain. If we want to change the figure, we have to update both the source code and the typesetting file.
 \end{frame}
 
+\section{Dynamic documents with sweave and knitr}
+\section{How Markdown and LaTeX can work with R}
 %    \begin{frame}[plain]{Plain frame}
 %        This is a frame with plain style and it is numbered.
 %    \end{frame}
-
+    
 %    \begin{frame}[t]
 %        This frame has an empty title and is aligned to top.
 %    \end{frame}
-
+    
 %    \begin{frame}[noframenumbering]{No frame numbering}
 %        This frame is not numbered and is citing reference \cite{knuth74}.
 %    \end{frame}
+    
+%    \begin{frame}{Typesetting and Math}
+%        The packages \texttt{inputenc} and \texttt{FiraSans}\footnote{\url{https://fonts.google.com/specimen/Fira+Sans}}\textsuperscript{,}\footnote{\url{http://mozilla.github.io/Fira/}} are used to properly set the main fonts.
+%        \vfill
+%        This theme provides styling commands to typeset \emph{emphasized}, \alert{alerted}, \textbf{bold}, \textcolor{example}{example text}, \dots
+%        \vfill
+%        \texttt{FiraSans} also provides support for mathematical symbols:
+%        \begin{equation*}
+%            e^{i\pi} + 1 = 0.
+%        \end{equation*}
+%    \end{frame}
 
-    \begin{frame}{Typesetting and Math}
-        The packages \texttt{inputenc} and \texttt{FiraSans}\footnote{\url{https://fonts.google.com/specimen/Fira+Sans}}\textsuperscript{,}\footnote{\url{http://mozilla.github.io/Fira/}} are used to properly set the main fonts.
-        \vfill
-        This theme provides styling commands to typeset \emph{emphasized}, \alert{alerted}, \textbf{bold}, \textcolor{example}{example text}, \dots
-        \vfill
-        \texttt{FiraSans} also provides support for mathematical symbols:
-        \begin{equation*}
-            e^{i\pi} + 1 = 0.
-        \end{equation*}
-    \end{frame}
-
-    \section{Section 2}
     \begin{frame}{Blocks}
         \begin{block}{Block}
             Text.
@@ -241,7 +256,7 @@ To put this in a document by hand, we would have to open RStudio, paste the code
             Example \textcolor{example}{text}.
         \end{exampleblock}
     \end{frame}
-
+    
     \begin{frame}{Lists}
         \begin{columns}[t, onlytextwidth]
             \column{0.33\textwidth}
@@ -255,7 +270,7 @@ To put this in a document by hand, we would have to open RStudio, paste the code
                     \item Item 2
                     \item Item 3
                 \end{itemize}
-
+            
             \column{0.33\textwidth}
                 Enumerations:
                 \begin{enumerate}
@@ -267,7 +282,7 @@ To put this in a document by hand, we would have to open RStudio, paste the code
                     \end{enumerate}
                     \item Third
                 \end{enumerate}
-
+            
             \column{0.33\textwidth}
                 Descriptions:
                 \begin{description}
@@ -277,17 +292,37 @@ To put this in a document by hand, we would have to open RStudio, paste the code
         \end{columns}
     \end{frame}
 
-    \begin{frame}[focus]
-        Thanks for using \textbf{Focus}!
-    \end{frame}
+\section{Additional Resources}
+\begin{frame}{Resources}
+        \begin{columns}[t, onlytextwidth] \column{.5\textwidth}
+        \begin{center}
+            Erik Beck \\ \href{mailto:beck.erik@epa.gov}{beck.erik@epa.gov}
+        \end{center}
+        \column{.5\textwidth}
+        \begin{center}
+            Emily Y. Li \\ \href{mailto:li.emily@epa.gov}{li.emily@epa.gov}
+        \end{center}
+        \end{columns}
+\vfill
+\begin{itemize}
+    \item \url{https://www.rstudio.com/resources/cheatsheets/} --- includes an official R Markdown Cheat Sheet
+    \item \url{https://support.rstudio.com/hc/en-us/articles/200552056-Using-Sweave-and-knitr}
+    \item knitr examples from the creator of knitr himself: \url{https://yihui.name/knitr/demos/}
+    \item To create in Markdown or LaTeX, that is the question: \url{https://yihui.name/en/2013/10/markdown-or-latex/}
+\end{itemize}
+\end{frame}
 
+    \begin{frame}[focus]
+        Thanks for coming!
+    \end{frame}
+    
 %    \appendix
 %    \begin{frame}{References}
 %        \nocite{*}
 %        \bibliography{demo_bibliography}
 %        \bibliographystyle{plain}
 %    \end{frame}
-
+    
     \begin{frame}{Backup frame}
         \usebeamercolor[fg]{normal text}
         This is a backup frame, useful to include additional material for questions from the audience.
