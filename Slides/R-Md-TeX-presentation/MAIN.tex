@@ -1,0 +1,156 @@
+% Full instructions available at:
+% https://github.com/elauksap/focus-beamertheme
+
+\documentclass{beamer}
+\usetheme{focus}
+
+\usepackage{csquotes}
+\usepackage{listings}
+\usepackage{verbatim}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\title{Using LaTeX and Markdown for Reproducible Research}
+\subtitle{}
+\author{Erik Beck \\ Emily Y. Li}
+\titlegraphic{\includegraphics[width = 4.75cm]{Rmarkdownlogos.png}}
+\institute{2018 US EPA \\ R User Group Workshop}
+\date{11 Sept 2018}
+
+\begin{document}
+    \begin{frame}
+        \maketitle
+    \end{frame}
+    
+    \begin{frame}
+        \frametitle{Table of Contents}
+        \tableofcontents
+    \end{frame}
+    
+    \section{Reproducible Research}
+    \begin{frame}{Reproducible Research}
+            \begin{quote}
+            An article about computational science in a scientific publication is not the scholarship itself, it is merely the advertising of the scholarship. The actual scholarship is the complete software development environment and the \textbf{complete set of instructions which generated the figures}.
+        \end{quote}
+        --- 1995, David L. Donoho, professor of statistics at Stanford University
+        %Though Donoho was referring to computational science, journals in other data-driven fields such as biostatistics have been moving in the direction of reproducible research as well. Results from scientific research have to be reproducible to be trustworthy.
+    \end{frame}
+    
+\begin{frame}[fragile]{Reproducible Research}
+This chunk of R code produces a figure that illustrates a simulation of Brownian motion for 100 steps.
+\begin{lstlisting}
+set.seed(1213) # for reproducibility 
+x <- cumsum(rnorm(100))
+plot(x, type = "l",
+    ylab = "$x_{i+1}=x_i+\\epsilon_{i+1}$",
+    xlab = "step")
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Reproducible Research}
+\begin{lstlisting}
+set.seed(1213) # for reproducibility of random numbers
+x <- cumsum(rnorm(100))
+plot(x, type = "l", ylab = "$x_{i+1}=x_i+\\epsilon_{i+1}$",
+    xlab = "step")
+\end{lstlisting}
+To put this in a document by hand, we would have to open RStudio, paste the code into the R console to draw the plot, save it as a PDF or image file, then insert it into a document with \verb|\includegraphics{}| in LaTeX or 'Insert Image' in Word. This is both tedious and difficult for the author to maintain. If we want to change the figure, we have to update both the source code and the typesetting file.
+\end{frame}
+
+%    \begin{frame}[plain]{Plain frame}
+%        This is a frame with plain style and it is numbered.
+%    \end{frame}
+    
+%    \begin{frame}[t]
+%        This frame has an empty title and is aligned to top.
+%    \end{frame}
+    
+%    \begin{frame}[noframenumbering]{No frame numbering}
+%        This frame is not numbered and is citing reference \cite{knuth74}.
+%    \end{frame}
+    
+    \begin{frame}{Typesetting and Math}
+        The packages \texttt{inputenc} and \texttt{FiraSans}\footnote{\url{https://fonts.google.com/specimen/Fira+Sans}}\textsuperscript{,}\footnote{\url{http://mozilla.github.io/Fira/}} are used to properly set the main fonts.
+        \vfill
+        This theme provides styling commands to typeset \emph{emphasized}, \alert{alerted}, \textbf{bold}, \textcolor{example}{example text}, \dots
+        \vfill
+        \texttt{FiraSans} also provides support for mathematical symbols:
+        \begin{equation*}
+            e^{i\pi} + 1 = 0.
+        \end{equation*}
+    \end{frame}
+
+    \section{Section 2}
+    \begin{frame}{Blocks}
+        \begin{block}{Block}
+            Text.
+        \end{block}
+        \pause
+        \begin{alertblock}{Alert block}
+            Alert \alert{text}.
+        \end{alertblock}
+        \pause
+        \begin{exampleblock}{Example block}
+            Example \textcolor{example}{text}.
+        \end{exampleblock}
+    \end{frame}
+    
+    \begin{frame}{Lists}
+        \begin{columns}[t, onlytextwidth]
+            \column{0.33\textwidth}
+                Items:
+                \begin{itemize}
+                    \item Item 1
+                    \begin{itemize}
+                        \item Subitem 1.1
+                        \item Subitem 1.2
+                    \end{itemize}
+                    \item Item 2
+                    \item Item 3
+                \end{itemize}
+            
+            \column{0.33\textwidth}
+                Enumerations:
+                \begin{enumerate}
+                    \item First
+                    \item Second
+                    \begin{enumerate}
+                        \item Sub-first
+                        \item Sub-second
+                    \end{enumerate}
+                    \item Third
+                \end{enumerate}
+            
+            \column{0.33\textwidth}
+                Descriptions:
+                \begin{description}
+                    \item[First] Yes.
+                    \item[Second] No.
+                \end{description}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}[focus]
+        Thanks for using \textbf{Focus}!
+    \end{frame}
+    
+%    \appendix
+%    \begin{frame}{References}
+%        \nocite{*}
+%        \bibliography{demo_bibliography}
+%        \bibliographystyle{plain}
+%    \end{frame}
+    
+    \begin{frame}{Backup frame}
+        \usebeamercolor[fg]{normal text}
+        This is a backup frame, useful to include additional material for questions from the audience.
+        \vfill
+        The package \texttt{appendixnumberbeamer} is used not to number appendix frames.
+    \end{frame}
+\end{document}
