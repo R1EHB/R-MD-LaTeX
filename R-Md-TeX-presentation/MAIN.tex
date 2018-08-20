@@ -62,19 +62,36 @@ facilitate reproducible reports and research with R.
 We will try to use our three hours as effectively as possible.
 
 \begin{exampleblock}{Rough Agenda}
-\begin{tabular}{r|l}
-    8:30 & System checks \\
-    8:45 & Introduction to LaTeX \\
-    9:00 & Markdown \\
-    9:15 & Markdown and LaTeX together \\
-    9:30 & Reproducible Research \\
+%\begin{description}
+%\item[8:30] System checks
+%\item[8:45] Intro to LaTeX
+%\item[9:00] Intro to Markdown
+%\item[9:15] Markdown \& LaTeX
+%\item[9:40] Reproducible Research
+%\hline
+%\item[9:50] \emph{BREAK}
+%\hline
+%\item[10:00] Dynamic documents with Sweave and knitr
+%\item[10:30] Markdown \& LaTeX with R
+%\end{description}
+\begin{center}
+\begin{tabular}{r|r|l}
+    \textbf{\#} & \textbf{Time} & \textbf{Topic} \\
+    1 & 8:30 & System checks \& agenda \\
+    2 & 8:45 & Intro to LaTeX \\
+    3 & 9:00 & Intro to Markdown \\
+    4 & 9:15 & Markdown \& LaTeX \\
+    5 & 9:40 & Reproducible Research \\
     \hline
-    9:45 & \emph{BREAK} \\
+     & 9:50 & \emph{BREAK} \\
     \hline
-    10:00 & Dynamic documents with sweave and knitr \\
-    10:30 & How Markdown and LaTeX can work with R
-    \end{tabular}
+    6 & 10:00 & Dynamic documents with Sweave and knitr \\
+    7 & 10:30 & Markdown \& LaTeX with R \\
+    8 & 11:20 & Wrap-up \& additional resources
+\end{tabular}
+\end{center}
 \end{exampleblock}
+% We definitely want to go over these times before the workshop!
 \end{frame}
 
 \section{Introduction to LaTeX}
@@ -179,12 +196,33 @@ Hello world!
 
 \section{Introduction to Markdown}
 \begin{frame}{Intro to Markdown}
+\begin{columns}[t, onlytextwidth]
+
+\column{0.5\textwidth}
+\vfill
+\includegraphics[width=\textwidth]{markdown-examples.png}
+\vfill
+{\footnotesize \url{https://rmarkdown.rstudio.com/}}
+
+\column{0.5\textwidth}
+    \begin{itemize}
+        \item An \textbf{.Rmd file} is an R Markdown file
+        \item Contains the code that a scientist needs to reproduce your work, along with the narration that a reader needs to understand your work.
+        \item Choose to export the finished report in a variety of formats, including HTML, PDF, or MS Word.
+    \end{itemize}
+
+\end{columns}
+\end{frame}
+
+\begin{frame}{Intro to Markdown}
 \begin{itemize}
     \item Markdown allows us to write using an easy-to-read, easy-to-write plain text format.
-    \item As long as one knows how to write emails, one can learn it in a few minutes: \url{https://en.wikipedia.org/wiki/Markdown}
+    \item As long as you know how to write emails, you can learn it in a few minutes.
+    \item \url{https://en.wikipedia.org/wiki/Markdown#Example}
 \end{itemize}
+\vfill
 \begin{alertblock}{Limitations of Markdown}
-Markdown was primarily designed to be simple. For more complicated typesetting, LaTeX may be preferred.
+Markdown was primarily designed to be simple. \\ For more complicated typesetting, LaTeX may be preferred.
 \end{alertblock}
 \end{frame}
 
@@ -208,25 +246,6 @@ You can write an ordered list:
 \end{exampleblock}
 \end{frame}
 
-\begin{frame}{Intro to Markdown}
-\begin{columns}[t, onlytextwidth]
-
-\column{0.5\textwidth}
-\vfill
-\includegraphics[width=\textwidth]{markdown-examples.png}
-\vfill
-{\footnotesize \url{https://rmarkdown.rstudio.com/}}
-
-\column{0.5\textwidth}
-    \begin{itemize}
-        \item An \textbf{.Rmd file} is an R Markdown file
-        \item Contains the code that a scientist needs to reproduce your work, along with the narration that a reader needs to understand your work.
-        \item Choose to export the finished report in a variety of formats, including HTML, PDF, or MS Word.
-    \end{itemize}
-
-\end{columns}
-\end{frame}
-
 \begin{frame}{Workflow in Markdown}
 Using RStudio:
 \begin{description}
@@ -238,19 +257,11 @@ Using RStudio:
 \item[Use] output file that is saved alongside .Rmd
 \end{description}
 \vfill
-Helpful link: \\
-\url{https://rmarkdown.rstudio.com/lesson-2.html}
-\end{frame}
-
-\begin{frame}[fragile]{Markdown}
-    \begin{itemize}
-        \item Write code chunks between \verb|```{r}| and \verb|```|
-        \item Inline R code is written in \verb|` `|
-        \item Chunk options are written before closing brace in the chunk header.
-    \end{itemize}
+Helpful link: \\ \url{https://rmarkdown.rstudio.com/lesson-2.html}
 \end{frame}
 
 \section{Markdown \& LaTeX}
+
 
 \section{Reproducible Research}
 \begin{frame}[noframenumbering]{Reproducible Research}
@@ -324,10 +335,78 @@ Dynamic report generation by integrating code with narratives is not only easier
 
 \end{frame}
 
-\section{How Markdown and LaTeX can work with R}
+\section{Markdown \& LaTeX with R}
 
+\begin{frame}{Markdown \& LaTeX side-by-side}
+    \begin{alertblock}{Apples \& Oranges?}
+    The next few slides will show a side-by-side comparison of Markdown and LaTeX using the exact same analysis.
+    \end{alertblock}
+\end{frame}
 
+\begin{frame}[fragile]{Example LaTeX with analysis}
+\begin{lstlisting}
+\documentclass{article}
+\begin{document}
+\title{Speed and Stopping Distance}
+\author{Yihui Xie, creator of knitr}
 
+\maketitle
+
+We examine the relationship between speed and stopping distance using a linear regression model:
+$Y = \beta_0 + \beta_1 x + \epsilon$.
+
+<<model, fig.width=4, fig.height=3, fig.align='center'>>=
+par(mar = c(4, 4, 1, 1), mgp = c(2, 1, 0), cex = 0.8)
+plot(cars, pch = 20, col = 'darkgray')
+fit <- lm(dist ~ speed, data = cars)
+abline(fit, lwd = 2)
+@
+
+The slope of a simple linear regression is \Sexpr{coef(fit)[2]}.
+
+\end{document}
+\end{lstlisting}
+% This LaTeX code does not seem to work in ShareLaTeX.
+\end{frame}
+
+\begin{frame}{R in LaTeX}
+    When embedding R code in LaTeX, start a code chunk with <<>>= and terminate it with @.
+\end{frame}
+
+\begin{frame}[fragile]{Example Markdown with analysis}
+\begin{lstlisting}
+---
+title: Speed and Stopping Distance
+---
+
+We examine the relationship between speed and stopping distance using a linear regression model:
+$Y = \beta_0 + \beta_1 x + \epsilon$.
+
+```{r fig.width=4, fig.height=3, fig.align='center'}
+par(mar = c(4, 4, 1, 1), mgp = c(2, 1, 0), cex = 0.8)
+plot(cars, pch = 20, col = 'darkgray')
+fit <- lm(dist ~ speed, data = cars)
+abline(fit, lwd = 2)
+
+The slope of a simple linear regression is `r coef(fit)[2]`.
+\end{lstlisting}
+% This Markdown code seems to work in RStudio.
+\end{frame}
+
+\begin{frame}{R in Markdown}
+\begin{itemize}
+    \item Quickly insert chunks with the keyboard shortcut Ctrl + Alt + I (OS X: Cmd + Option + I).
+    \item By comparison, Markdown has simpler commands.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Markdown}
+    \begin{itemize}
+        \item Write code chunks between \verb|```{r}| and \verb|```|
+        \item Inline R code is written in \verb|` `|
+        \item Chunk options are written before closing brace in the chunk header.
+    \end{itemize}
+\end{frame}
 
 %\begin{frame}{Markdown and LaTeX syntax summary}
 %    \begin{block}{A syntax summary of R LaTeX and R Markdown document formats.}
@@ -363,40 +442,40 @@ Dynamic report generation by integrating code with narratives is not only easier
 %        \end{equation*}
 %    \end{frame}
 
-    \begin{frame}{Lists}
-        \begin{columns}[t, onlytextwidth]
-            \column{0.33\textwidth}
-                Items:
-                \begin{itemize}
-                    \item Item 1
-                    \begin{itemize}
-                        \item Subitem 1.1
-                        \item Subitem 1.2
-                    \end{itemize}
-                    \item Item 2
-                    \item Item 3
-                \end{itemize}
-
-            \column{0.33\textwidth}
-                Enumerations:
-                \begin{enumerate}
-                    \item First
-                    \item Second
-                    \begin{enumerate}
-                        \item Sub-first
-                        \item Sub-second
-                    \end{enumerate}
-                    \item Third
-                \end{enumerate}
-
-            \column{0.33\textwidth}
-                Descriptions:
-                \begin{description}
-                    \item[First] Yes.
-                    \item[Second] No.
-                \end{description}
-        \end{columns}
-    \end{frame}
+%    \begin{frame}{Lists}
+%        \begin{columns}[t, onlytextwidth]
+%            \column{0.33\textwidth}
+%                Items:
+%                \begin{itemize}
+%                    \item Item 1
+%                    \begin{itemize}
+%                        \item Subitem 1.1
+%                        \item Subitem 1.2
+%                    \end{itemize}
+%                    \item Item 2
+%                    \item Item 3
+%                \end{itemize}
+%
+%            \column{0.33\textwidth}
+%                Enumerations:
+%                \begin{enumerate}
+%                    \item First
+%                    \item Second
+%                    \begin{enumerate}
+%                        \item Sub-first
+%                        \item Sub-second
+%                    \end{enumerate}
+%                    \item Third
+%                \end{enumerate}
+%
+%            \column{0.33\textwidth}
+%                Descriptions:
+%                \begin{description}
+%                    \item[First] Yes.
+%                    \item[Second] No.
+%                \end{description}
+%        \end{columns}
+%    \end{frame}
 
 \section{Additional Resources}
 \begin{frame}{Resources}
@@ -413,14 +492,14 @@ Dynamic report generation by integrating code with narratives is not only easier
 \begin{itemize}
     \item \url{https://www.rstudio.com/resources/cheatsheets/}
     \item \url{https://support.rstudio.com/hc/en-us/articles/200552056-Using-Sweave-and-knitr}
-    \item knitr examples from the creator of knitr himself: \url{https://yihui.name/knitr/demos/}
-    \item To create in Markdown or LaTeX, that is the question: \url{https://yihui.name/en/2013/10/markdown-or-latex/}
+    \item knitr document source + output examples: \url{https://yihui.name/knitr/demos/}
+    \item To Markdown or LaTeX, that is the question: \url{https://yihui.name/en/2013/10/markdown-or-latex/}
 \end{itemize}
 \end{frame}
 
-    \begin{frame}[focus]
-        Thanks for coming!
-    \end{frame}
+\begin{frame}[focus]
+    Thanks for coming!
+\end{frame}
 
 %    \appendix
 %    \begin{frame}{References}
@@ -429,10 +508,11 @@ Dynamic report generation by integrating code with narratives is not only easier
 %        \bibliographystyle{plain}
 %    \end{frame}
 
-    \begin{frame}{Backup frame}
-        \usebeamercolor[fg]{normal text}
-        This is a backup frame, useful to include additional material for questions from the audience.
-        \vfill
-        The package \texttt{appendixnumberbeamer} is used not to number appendix frames.
-    \end{frame}
+%    \begin{frame}{Backup frame}
+%        \usebeamercolor[fg]{normal text}
+%        This is a backup frame, useful to include additional material for questions from the audience.
+%        \vfill
+%        The package \texttt{appendixnumberbeamer} is used not to number appendix frames.
+%    \end{frame}
+
 \end{document}
