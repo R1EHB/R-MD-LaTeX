@@ -9,6 +9,8 @@
 \usepackage{listings}
 \usepackage{verbatim}
 \usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{xparse}
 
 \AtBeginSection[]
 {
@@ -29,7 +31,7 @@
     \begin{frame}
         \maketitle
     \end{frame}
-    
+
     \begin{frame}
         \frametitle{Table of Contents}
         \tableofcontents
@@ -62,19 +64,21 @@ We will try to use our three hours as effectively as possible.
 \begin{exampleblock}{Rough Agenda}
 \begin{tabular}{r|l}
     8:30 & System checks \\
-    8:45 & LaTeX \\
+    8:45 & Introduction to LaTeX \\
     9:00 & Markdown \\
     9:15 & Markdown and LaTeX together \\
     9:30 & Reproducible Research \\
+    \hline
     9:45 & \emph{BREAK} \\
+    \hline
     10:00 & Dynamic documents with sweave and knitr \\
     10:30 & How Markdown and LaTeX can work with R
     \end{tabular}
 \end{exampleblock}
 \end{frame}
 
-\section{LaTeX}
-\begin{frame}{LaTeX}
+\section{Introduction to LaTeX}
+\begin{frame}{Intro to LaTeX}
 LaTeX is a tool for high-quality typesetting based on the idea that it is better to leave document design to document designers, and to let authors get on with writing documents.
 \vfill
 \begin{block}{How do you pronounce ``LaTeX''?}
@@ -85,7 +89,7 @@ LaTeX is a tool for high-quality typesetting based on the idea that it is better
 \end{block}
 \end{frame}
 
-\begin{frame}{LaTeX}
+\begin{frame}{Intro to LaTeX}
 LaTeX is widely used in academia for the publication of scientific documents in many fields, including mathematics, statistics, computer science, engineering, chemistry, physics, economics, and political science.
 
 \begin{enumerate}
@@ -173,22 +177,112 @@ Hello world!
 \end{exampleblock}
 \end{frame}
 
-\section{Markdown}
+\section{Introduction to Markdown}
+\begin{frame}{Intro to Markdown}
+\begin{itemize}
+    \item Markdown allows us to write using an easy-to-read, easy-to-write plain text format.
+    \item As long as one knows how to write emails, one can learn it in a few minutes: \url{https://en.wikipedia.org/wiki/Markdown}
+\end{itemize}
+\begin{alertblock}{Limitations of Markdown}
+Markdown was primarily designed to be simple. For more complicated typesetting, LaTeX may be preferred.
+\end{alertblock}
+\end{frame}
+
+\begin{frame}[fragile]{Intro to Markdown}
+\begin{exampleblock}{A short example of Markdown}
+\begin{lstlisting}
+# First level header
+
+Hello world!
+
+## Second level header
+
+This is **bold**, and _italic_.
+- list item
+- list item
+
+You can write an ordered list:
+1. item 1
+1. item 2 # this line will render as "2."
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Intro to Markdown}
+\begin{columns}[t, onlytextwidth]
+
+\column{0.5\textwidth}
+\vfill
+\includegraphics[width=\textwidth]{markdown-examples.png}
+\vfill
+{\footnotesize \url{https://rmarkdown.rstudio.com/}}
+
+\column{0.5\textwidth}
+    \begin{itemize}
+        \item An \textbf{.Rmd file} is an R Markdown file
+        \item Contains the code that a scientist needs to reproduce your work, along with the narration that a reader needs to understand your work.
+        \item Choose to export the finished report in a variety of formats, including HTML, PDF, or MS Word.
+    \end{itemize}
+
+\end{columns}
+\end{frame}
+
+\begin{frame}{Workflow in Markdown}
+Using RStudio:
+\begin{description}
+\item[Open] a new .Rmd file, which pre-populates with a template
+\item[Write] a document by editing the template
+\item[Knit] the document to create a report; use the knitr button or render() to knit
+\item[Preview] output in IDE window
+\item[Publish] to web server (optional)
+\item[Use] output file that is saved alongside .Rmd
+\end{description}
+\vfill
+Helpful link: \\
+\url{https://rmarkdown.rstudio.com/lesson-2.html}
+\end{frame}
+
+\begin{frame}[fragile]{Markdown}
+    \begin{itemize}
+        \item Write code chunks between \verb|```{r}| and \verb|```|
+        \item Inline R code is written in \verb|` `|
+        \item Chunk options are written before closing brace in the chunk header.
+    \end{itemize}
+\end{frame}
 
 \section{Markdown \& LaTeX}
 
 \section{Reproducible Research}
+\begin{frame}[noframenumbering]{Reproducible Research}
+\begin{center}
+\includegraphics[width=.82\textwidth]{nature-reproducibility-graphic.jpeg}
+\end{center}
+\vspace{-0.5cm}
+{\footnotesize \href{https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970}{\textit{Nature} \textbf{533}, 452-454 (26 May 2016) | doi:10.1038/533452a}}
+\vfill
+\end{frame}
+
+\begin{frame}[noframenumbering]{Reproducible Research}
+    \begin{center}
+        \includegraphics[trim=0 550 0 15, clip, width=.71\textwidth]{nature-reproducibility-breakdown.jpg}
+    \end{center}
+\vspace{-0.5cm}
+{\footnotesize \href{https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970}{\textit{Nature} \textbf{533}, 452-454 (26 May 2016) | doi:10.1038/533452a}}
+\vfill
+\end{frame}
+
 \begin{frame}{Reproducible Research}
 \begin{alertblock}{Results must be reproducible to be trustworthy.}
-        \begin{quote}
-        An article about computational science in a scientific publication is not the scholarship itself, it is merely the advertising of the scholarship. The actual scholarship is the complete software development environment \textbf{and the complete set of instructions which generated the figures}.
-    \end{quote}
-    --- 1995, David L. Donoho, professor of statistics at Stanford University
-    % Though Donoho was referring to computational science, journals in other data-driven fields such as biostatistics have been moving in the direction of reproducible research as well. Results from scientific research have to be reproducible to be trustworthy.
-    % This would be a good time to quickly discuss attendees' difficulties with reproducing research.
+\begin{quote}
+    An article about computational science in a scientific publication is not the scholarship itself, it is merely the advertising of the scholarship. The actual scholarship is the complete software development environment \textbf{and the complete set of instructions which generated the figures}.
+\end{quote}
 \end{alertblock}
+--- 1995, David L. Donoho, professor of statistics at Stanford University
+\vfill
+    % Though Donoho was referring to computational science, journals in other data-driven fields such as biostatistics have been moving in the direction of reproducible research as well.
+    % This would be a good time to quickly discuss attendees' difficulties with reproducing research.
 \end{frame}
-    
+
 \begin{frame}[fragile]{Reproducible Research}
 This chunk of R code produces a figure that illustrates a simulation of Brownian motion for 100 steps.
         \begin{exampleblock}{Try running this in RStudio}
@@ -218,20 +312,46 @@ Then what if we want to change the random seed in \verb|set.seed()|, or the y-ax
 % This is both tedious and difficult for the author to maintain. If we want to change the figure, we have to update both the source code and the typesetting file.
 \end{frame}
 
+\begin{frame}{Dynamic report generation}
+Dynamic report generation by integrating code with narratives is not only easier but closely related to reproducible research. Dynamic report generation is an important step toward RR. (It does not guarantee RR.)
+
+\end{frame}
+
 \section{Dynamic documents with sweave and knitr}
+
+
+\begin{frame}{knitr}
+
+\end{frame}
+
 \section{How Markdown and LaTeX can work with R}
+
+
+
+
+%\begin{frame}{Markdown and LaTeX syntax summary}
+%    \begin{block}{A syntax summary of R LaTeX and R Markdown document formats.}
+%    \begin{tabular}{l|l|l|l}
+%        Format & Start chunk & End chunk & Inline code \\
+%        \hline
+%        Rnw & <<*>>= & @ & \begin{lstlisting}\Sexpr{x}\end{lstlisting} \\
+%        Rmd & ```{r *} & ``` & `r x`
+%    \end{tabular}
+%    \end{block}
+%\end{frame}
+
 %    \begin{frame}[plain]{Plain frame}
 %        This is a frame with plain style and it is numbered.
 %    \end{frame}
-    
+
 %    \begin{frame}[t]
 %        This frame has an empty title and is aligned to top.
 %    \end{frame}
-    
+
 %    \begin{frame}[noframenumbering]{No frame numbering}
 %        This frame is not numbered and is citing reference \cite{knuth74}.
 %    \end{frame}
-    
+
 %    \begin{frame}{Typesetting and Math}
 %        The packages \texttt{inputenc} and \texttt{FiraSans}\footnote{\url{https://fonts.google.com/specimen/Fira+Sans}}\textsuperscript{,}\footnote{\url{http://mozilla.github.io/Fira/}} are used to properly set the main fonts.
 %        \vfill
@@ -243,20 +363,6 @@ Then what if we want to change the random seed in \verb|set.seed()|, or the y-ax
 %        \end{equation*}
 %    \end{frame}
 
-    \begin{frame}{Blocks}
-        \begin{block}{Block}
-            Text.
-        \end{block}
-        \pause
-        \begin{alertblock}{Alert block}
-            Alert \alert{text}.
-        \end{alertblock}
-        \pause
-        \begin{exampleblock}{Example block}
-            Example \textcolor{example}{text}.
-        \end{exampleblock}
-    \end{frame}
-    
     \begin{frame}{Lists}
         \begin{columns}[t, onlytextwidth]
             \column{0.33\textwidth}
@@ -270,7 +376,7 @@ Then what if we want to change the random seed in \verb|set.seed()|, or the y-ax
                     \item Item 2
                     \item Item 3
                 \end{itemize}
-            
+
             \column{0.33\textwidth}
                 Enumerations:
                 \begin{enumerate}
@@ -282,7 +388,7 @@ Then what if we want to change the random seed in \verb|set.seed()|, or the y-ax
                     \end{enumerate}
                     \item Third
                 \end{enumerate}
-            
+
             \column{0.33\textwidth}
                 Descriptions:
                 \begin{description}
@@ -305,7 +411,7 @@ Then what if we want to change the random seed in \verb|set.seed()|, or the y-ax
         \end{columns}
 \vfill
 \begin{itemize}
-    \item \url{https://www.rstudio.com/resources/cheatsheets/} --- includes an official R Markdown Cheat Sheet
+    \item \url{https://www.rstudio.com/resources/cheatsheets/}
     \item \url{https://support.rstudio.com/hc/en-us/articles/200552056-Using-Sweave-and-knitr}
     \item knitr examples from the creator of knitr himself: \url{https://yihui.name/knitr/demos/}
     \item To create in Markdown or LaTeX, that is the question: \url{https://yihui.name/en/2013/10/markdown-or-latex/}
@@ -315,14 +421,14 @@ Then what if we want to change the random seed in \verb|set.seed()|, or the y-ax
     \begin{frame}[focus]
         Thanks for coming!
     \end{frame}
-    
+
 %    \appendix
 %    \begin{frame}{References}
 %        \nocite{*}
 %        \bibliography{demo_bibliography}
 %        \bibliographystyle{plain}
 %    \end{frame}
-    
+
     \begin{frame}{Backup frame}
         \usebeamercolor[fg]{normal text}
         This is a backup frame, useful to include additional material for questions from the audience.
