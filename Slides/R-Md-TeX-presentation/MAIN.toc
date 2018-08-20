@@ -1,0 +1,8 @@
+\beamer@sectionintoc {1}{Agenda}{3}{0}{1}
+\beamer@sectionintoc {2}{LaTeX}{6}{0}{2}
+\beamer@sectionintoc {3}{Markdown}{14}{0}{3}
+\beamer@sectionintoc {4}{Markdown \& LaTeX}{15}{0}{4}
+\beamer@sectionintoc {5}{Reproducible Research}{16}{0}{5}
+\beamer@sectionintoc {6}{Dynamic documents with sweave and knitr}{20}{0}{6}
+\beamer@sectionintoc {7}{How Markdown and LaTeX can work with R}{21}{0}{7}
+\beamer@sectionintoc {8}{Additional Resources}{26}{0}{8}

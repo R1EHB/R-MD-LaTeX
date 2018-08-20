@@ -1,0 +1,14 @@
+\frametitle{Reproducible Research}
+\begin{exampleblock}{}
+\begin{lstlisting}
+set.seed(1213)
+x <- cumsum(rnorm(100))
+plot(x, type = ''l'',
+    ylab = ''$x_{i+1}=x_i+\\epsilon_{i+1}$'',
+    xlab = ''step'')
+\end{lstlisting}
+        \end{exampleblock}
+To put this into a document by hand, we would have to open RStudio, compile the code to draw the plot, save it as an image, then insert it into a document with \verb|\includegraphics{}| in LaTeX or 'Insert Image' in Word.
+\vfill
+Then what if we want to change the random seed in \verb|set.seed()|, or the y-axis label?
+% This is both tedious and difficult for the author to maintain. If we want to change the figure, we have to update both the source code and the typesetting file.
