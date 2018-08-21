@@ -31,7 +31,7 @@
     \begin{frame}
         \maketitle
     \end{frame}
-    
+
     \begin{frame}
         \frametitle{Table of Contents}
         \tableofcontents
@@ -59,8 +59,8 @@ facilitate reproducible reports and research with R.
 \end{frame}
 
 \begin{frame}{Steps/Agenda}
+\vfill
 We will try to use our three hours as effectively as possible.
-
 \begin{exampleblock}{Rough Agenda}
 %\begin{description}
 %\item[8:30] System checks
@@ -80,7 +80,7 @@ We will try to use our three hours as effectively as possible.
     1 & 8:30 & System checks \& agenda \\
     2 & 8:45 & Intro to LaTeX \\
     3 & 9:00 & Intro to Markdown \\
-    4 & 9:15 & Markdown \& LaTeX \\
+    4 & 9:15 & Markdown \& LaTeX examples \\
     5 & 9:40 & Reproducible Research \\
     \hline
      & 9:50 & \emph{BREAK} \\
@@ -96,6 +96,7 @@ We will try to use our three hours as effectively as possible.
 
 \section{Introduction to LaTeX}
 \begin{frame}{Intro to LaTeX}
+\vfill
 LaTeX is a tool for high-quality typesetting based on the idea that it is better to leave document design to document designers, and to let authors get on with writing documents.
 \vfill
 \begin{block}{How do you pronounce ``LaTeX''?}
@@ -129,7 +130,7 @@ Here is a minimal example of a full document written in LaTeX.
 \begin{document}
 \maketitle
 
-Hello world!
+Yer a wizard, Harry.
 
 \end{document}
 \end{lstlisting}
@@ -137,7 +138,7 @@ Hello world!
 % We will revisit this code later to make sure everyone compiled it.
 \end{frame}
 
-\begin{frame}{Levels of LaTeX: A disambiguation}
+\begin{frame}{Levels of TeX: A disambiguation}
 \begin{alertblock}{Help! There are too many words with ``TeX'' in them!}
 If you are wondering, \alert{\emph{``Should I use LaTeX or MiKTeX?''}}, allow us to clear that up. These two slides will cover four types of TeX-related terms: distributions, editors, engines, and formats.
 \end{alertblock}
@@ -148,7 +149,7 @@ If you are wondering, \alert{\emph{``Should I use LaTeX or MiKTeX?''}}, allow us
 \vfill
 --- \url{http://www.tug.org/levels.html}
 \end{frame}
-\begin{frame}{Levels of LaTeX: A disambiguation}
+\begin{frame}{Levels of TeX: A disambiguation}
 \begin{exampleblock}{A quick note on editors}
 You can also use Notepad to edit plaintext, including LaTeX code.
 \end{exampleblock}
@@ -161,7 +162,7 @@ You can also use Notepad to edit plaintext, including LaTeX code.
 --- \url{http://www.tug.org/levels.html}
 \end{frame}
 
-\begin{frame}{LaTeX Distributions}
+\begin{frame}{TeX Distributions}
 To compile LaTeX, your computer needs one of these TeX distributions installed:
 \begin{block}{TeX Distributions}
 \begin{center}
@@ -174,7 +175,7 @@ To compile LaTeX, your computer needs one of these TeX distributions installed:
 \end{tabular}
 \end{center}
 \end{block}
-You can also use an on-line, ready-to-use option like \href{https://www.sharelatex.com/}{ShareLaTeX} or \href{https://www.overleaf.com/}{Overleaf}.
+You can also use an online ready-to-use option like \href{https://www.sharelatex.com/}{ShareLaTeX} or \href{https://www.overleaf.com/}{Overleaf}.
 \end{frame}
 
 \begin{frame}[fragile]{LaTeX: Revisiting the minimal example}
@@ -187,7 +188,7 @@ You can also use an on-line, ready-to-use option like \href{https://www.sharelat
 \begin{document}
 \maketitle
 
-Hello world!
+Yer a wizard, Harry.
 
 \end{document}
 \end{lstlisting}
@@ -207,7 +208,7 @@ Hello world!
 \column{0.5\textwidth}
     \begin{itemize}
         \item An \textbf{.Rmd file} is an R Markdown file
-        \item Contains the code that a scientist needs to reproduce your work, along with the narration that a reader needs to understand your work.
+        \item Contains the code that a scientist needs to reproduce your work, along with the narration that a reader needs to understand it.
         \item Choose to export the finished report in a variety of formats, including HTML, PDF, or MS Word.
     \end{itemize}
 
@@ -224,6 +225,7 @@ Hello world!
 \begin{alertblock}{Limitations of Markdown}
 Markdown was primarily designed to be simple. \\ For more complicated typesetting, LaTeX may be preferred.
 \end{alertblock}
+\vfill
 \end{frame}
 
 \begin{frame}[fragile]{Intro to Markdown}
@@ -231,7 +233,7 @@ Markdown was primarily designed to be simple. \\ For more complicated typesettin
 \begin{lstlisting}
 # First level header
 
-Hello world!
+Sup universe!
 
 ## Second level header
 
@@ -260,7 +262,7 @@ Using RStudio:
 Helpful link: \\ \url{https://rmarkdown.rstudio.com/lesson-2.html}
 \end{frame}
 
-\section{Markdown \& LaTeX}
+\section{Markdown \& LaTeX examples}
 
 
 \section{Reproducible Research}
@@ -293,7 +295,7 @@ Helpful link: \\ \url{https://rmarkdown.rstudio.com/lesson-2.html}
     % Though Donoho was referring to computational science, journals in other data-driven fields such as biostatistics have been moving in the direction of reproducible research as well.
     % This would be a good time to quickly discuss attendees' difficulties with reproducing research.
 \end{frame}
-    
+
 \begin{frame}[fragile]{Reproducible Research}
 This chunk of R code produces a figure that illustrates a simulation of Brownian motion for 100 steps.
         \begin{exampleblock}{Try running this in RStudio}
@@ -321,22 +323,25 @@ To put this into a document by hand, we would have to open RStudio, compile the 
 \vfill
 Then what if we want to change the random seed in \verb|set.seed()|, or the y-axis label?
 % This is both tedious and difficult for the author to maintain. If we want to change the figure, we have to update both the source code and the typesetting file.
+\vfill
 \end{frame}
 
-
 \begin{frame}{Dynamic report generation}
-% This slide is too wordy and long.
 \begin{itemize}
-    \item Instead of separating results from computing, we can put everything in one document, including the computational steps and narratives.
-    \item When we compile this document, the computer code will be executed, giving us the results directly.
-    \item Dynamic report generation by integrating code with narratives is not only easier, but also closely related to reproducible research.
-    \item It does not guarantee RR, but RR is one possible by-product of dynamic documents.
+    \item Instead of separating the results from the computation, we can put everything in one document.
+    \item When we compile this document, the computation will be executed, giving us the results directly.
+    \item Integrating code with narratives is not only easier, but also provides details needed for reproducibility. % It does not guarantee RR, but it is an important step towards RR. RR is one possible by-product of dynamic documents.
+    \vfill
+    \begin{exampleblock}{Dynamic documents are easier than cut-and-paste}
+    It is fairly common to see student homework and exercises among the countless user contributions on \href{https://rpubs.com/}{RPubs}. Once students are trained, we may expect more reproducible scientific research in the future. % Easy tools promote RR very quickly.
+    \end{exampleblock}
+    \vfill
 \end{itemize}
 \end{frame}
 
 \begin{frame}[focus]
     Break for 10 minutes
-    
+
     \vfill
     \includegraphics[trim=100 0 100 0, clip, width=\textwidth]{stretching-work.png}
     \vspace{-0.5cm}
@@ -350,10 +355,11 @@ Then what if we want to change the random seed in \verb|set.seed()|, or the y-ax
 \section{Dynamic documents with Sweave and knitr}
 
 \begin{frame}[fragile]{Sweave}
-    Sweave has been a longstanding tool for dynamic documents since 2002.
+    \vfill
+    Sweave has been a prominent longstanding tool for dynamic documents since 2002.
     \begin{itemize}
-        \item Deals with Rnw documents, combining the power of R with the production value of LaTeX to enable reproducible research
-        \item Part of base R---in the \textbf{utils} package as the \verb|Sweave()| function
+        \item Deals with Rnw documents, combining the power of R with the production value of LaTeX to enable reproducible research.
+        \item Part of base R (in the \textbf{utils} package as the \verb|Sweave()| function)
         \item Two ways to run Sweave:
         \begin{itemize}
             \item From your R session: \verb|Sweave("your_file.Rnw")|
@@ -364,9 +370,10 @@ Then what if we want to change the random seed in \verb|set.seed()|, or the y-ax
     However...
     \begin{itemize}
         \item Development has plateaued in recent years
-        \item Extensions based on core code are no longer sycnhronized with Sweave development, have become incompatible.
-        \item LaTeX (to produce Rnw documents) is more complicated than RMarkdown (Rmd), and documents rarely need to be produced as PDFs unless submitting a manuscript to journals.
+        \item Extensions may become incompatible. Some packages are no longer synchronized.
+        %\item LaTeX (to produce Rnw documents) is more complicated than RMarkdown (Rmd), and documents rarely need to be produced as PDFs unless submitting a manuscript to journals.
     \end{itemize}
+    \vfill
 \end{frame}
 
 \begin{frame}{knitr}
@@ -377,7 +384,7 @@ Sweave is great for producing PDF, but that’s one of the biggest drawbacks of 
 
 \begin{frame}{Why knitr beats Sweave}
     \begin{itemize}
-        \item 
+        \item LaTeX (to produce Rnw documents) is more complicated than RMarkdown (Rmd), and documents rarely need to be produced as PDFs unless submitting a manuscript to journals.
     \end{itemize}
 \end{frame}
 
@@ -385,7 +392,7 @@ Sweave is great for producing PDF, but that’s one of the biggest drawbacks of 
 
 \begin{frame}{Markdown \& LaTeX side-by-side}
     \begin{alertblock}{Apples \& Oranges?}
-    The next few slides will show a side-by-side comparison of Markdown and LaTeX using the exact same analysis.
+    The next few slides show a side-by-side comparison of Markdown and LaTeX using the exact same analysis.
     \end{alertblock}
 \end{frame}
 
@@ -446,7 +453,7 @@ The slope of a simple linear regression is `r coef(fit)[2]`.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Markdown}
+\begin{frame}[fragile]{R in Markdown}
     \begin{itemize}
         \item Write code chunks between \verb|```{r}| and \verb|```|
         \item Inline R code is written in \verb|` `|
@@ -455,8 +462,8 @@ The slope of a simple linear regression is `r coef(fit)[2]`.
 \end{frame}
 
 \begin{frame}[fragile]{Quick reporting in Markdown}
-    It is also possible to generate a quick report from R script using knitr's \verb|stitch()| function.
-    \begin{exampleblock}{Usage of \verb|stitch()| for quick reports}
+    It is also possible to generate a quick report from R script using \textbf{knitr}'s \verb|stitch()| function.
+    \begin{exampleblock}{Stitching quick reports}
     \begin{lstlisting}
     library(knitr)
     stitch("your-script.R")
@@ -482,15 +489,15 @@ The slope of a simple linear regression is `r coef(fit)[2]`.
 %    \begin{frame}[plain]{Plain frame}
 %        This is a frame with plain style and it is numbered.
 %    \end{frame}
-    
+
 %    \begin{frame}[t]
 %        This frame has an empty title and is aligned to top.
 %    \end{frame}
-    
+
 %    \begin{frame}[noframenumbering]{No frame numbering}
 %        This frame is not numbered and is citing reference \cite{knuth74}.
 %    \end{frame}
-    
+
 %    \begin{frame}{Typesetting and Math}
 %        The packages \texttt{inputenc} and \texttt{FiraSans}\footnote{\url{https://fonts.google.com/specimen/Fira+Sans}}\textsuperscript{,}\footnote{\url{http://mozilla.github.io/Fira/}} are used to properly set the main fonts.
 %        \vfill
@@ -515,7 +522,7 @@ The slope of a simple linear regression is `r coef(fit)[2]`.
 %                    \item Item 2
 %                    \item Item 3
 %                \end{itemize}
-%            
+%
 %            \column{0.33\textwidth}
 %                Enumerations:
 %                \begin{enumerate}
@@ -527,7 +534,7 @@ The slope of a simple linear regression is `r coef(fit)[2]`.
 %                    \end{enumerate}
 %                    \item Third
 %                \end{enumerate}
-%            
+%
 %            \column{0.33\textwidth}
 %                Descriptions:
 %                \begin{description}
@@ -567,7 +574,7 @@ The slope of a simple linear regression is `r coef(fit)[2]`.
 %        \bibliography{demo_bibliography}
 %        \bibliographystyle{plain}
 %    \end{frame}
-    
+
 %    \begin{frame}{Backup frame}
 %        \usebeamercolor[fg]{normal text}
 %        This is a backup frame, useful to include additional material for questions from the audience.
