@@ -41,14 +41,8 @@ MysticalBuoy15$LocalDateTime <- parse_date_time (ComboDate15, tz="America/New_Yo
 MysticalBuoy16$LocalDateTime <- parse_date_time (ComboDate16, tz="America/New_York",orders="mdy hms")
 MysticalBuoy17$LocalDateTime <- parse_date_time (ComboDate17, tz="America/New_York",orders="mdy hms")
 
-# Check Columns
-
-colnames(MysticalBuoy15)
-colnames(MysticalBuoy16)
-colnames(MysticalBuoy17)
 
 # Append data sets
-
 
 MysticalBuoy <- rbind (MysticalBuoy15, MysticalBuoy16, MysticalBuoy17)
 
