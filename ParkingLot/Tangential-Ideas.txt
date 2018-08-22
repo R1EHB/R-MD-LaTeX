@@ -1,0 +1,5 @@
+# Off topic ideas #
+
+* Legal Discovery
+* Data cleaning
+* Data for websites
