@@ -339,6 +339,57 @@ Then what if we want to change the random seed in \verb|set.seed()|, or the y-ax
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Dynamic documents---a short example}
+This table shows a subset of the $mtcars$ dataset.
+
+\begin{center}
+\begin{tabular}{lrrrrrr}
+      & mpg & cyl & disp & hp & drat & wt \\
+    Mazda RX4 & 21.0 & 6 & 160 & 110 & 3.90 & 2.620 \\
+    Mazda RX4 Wag & 21.0 & 6 & 160 & 110 & 3.90 & 2.875 \\
+    Datsun 710 & 22.8 & 4 & 108 & 93 & 3.85 & 2.320 \\
+    Hornet 4 Drive & 21.4 & 6 & 258 & 110 & 3.08 & 3.215 \\
+    Hornet Sportabout & 18.7 & 8 & 360 & 175 & 3.15 & 3.440 \\
+    Valiant & 18.1 & 6 & 225 & 105 & 2.76 & 3.460 \\
+\end{tabular}
+\end{center}
+
+Have you ever included a table in your LaTeX document? \\ In LaTeX, it would look like this...
+\end{frame}
+
+\begin{frame}[fragile]{Dynamic documents---a short example}
+    \begin{exampleblock}{Manual table in LaTeX}
+    \begin{lstlisting}
+\begin{tabular}{lrrrrrr}
+      & mpg & cyl & disp & hp & drat & wt \\
+    Mazda RX4 & 21.0 & 6 & 160 & 110 & 3.90 & 2.620 \\
+    Mazda RX4 Wag & 21.0 & 6 & 160 & 110 & 3.90 & 2.875 \\
+    Datsun 710 & 22.8 & 4 & 108 & 93 & 3.85 & 2.320 \\
+    Hornet 4 Drive & 21.4 & 6 & 258 & 110 & 3.08 & 3.215 \\
+    Hornet Sportabout & 18.7 & 8 & 360 & 175 & 3.15 & 3.440 \\
+    Valiant & 18.1 & 6 & 225 & 105 & 2.76 & 3.460 \\
+\end{tabular}
+    \end{lstlisting}
+    \end{exampleblock}
+Even if you maintain this table in Excel, there are manual steps and human intervention required to update your document.
+\end{frame}
+
+\begin{frame}[fragile]{Dynamic documents---a short example}
+%\vfill
+If you wanted to include this same table in your dynamic document, you would only need this code.
+    \begin{exampleblock}{Table generated in R code}
+    \begin{lstlisting}
+library(knitr)
+kable(head(mtcars[, 1:6]))
+    \end{lstlisting}
+    \end{exampleblock}
+%\vfill
+%\begin{quote}
+%    ``The source code is real.'' --- Data analysis philosophy
+%\end{quote}
+%\vfill
+\end{frame}
+
 \begin{frame}[focus]
     Break for 10 minutes
 
@@ -388,77 +439,112 @@ Sweave is great for producing PDF, but that’s one of the biggest drawbacks of 
     \end{itemize}
 \end{frame}
 
+\begin{frame}{Setting up knitr}
+    \url{https://www.rdocumentation.org/packages/knitr}
+
+    Install knitr.
+
+    If you are going to write Rnw documents (documents written in LaTeX with R code embedded in them), go to the menu $Tools~>~Options~>~Sweave$ and switch the default option for weaving (compiling) to knitr.
+\end{frame}
+
 \section{Markdown \& LaTeX with R}
 
 \begin{frame}{Markdown \& LaTeX side-by-side}
+
     \begin{alertblock}{Apples \& Oranges?}
-    The next few slides show a side-by-side comparison of Markdown and LaTeX using the exact same analysis.
+    We'll look at a side-by-side comparison of Markdown and LaTeX using the exact same analysis.
+
+    \vspace{.5cm}
+
+    We will be using RStudio to edit and compile the source code.
+    % You could also use Emacs or LyX, or other editors you have configured yourself.
+    % Using dedicated editors just makes it easier to input code chunks and call knitr.
     \end{alertblock}
 \end{frame}
 
-\begin{frame}[fragile]{Example LaTeX with analysis}
-\begin{lstlisting}
-\documentclass{article}
-\begin{document}
-\title{Speed and Stopping Distance}
-\author{Yihui Xie, creator of knitr}
-
-\maketitle
-
-We examine the relationship between speed and stopping distance using a linear regression model:
-$Y = \beta_0 + \beta_1 x + \epsilon$.
-
-<<model, fig.width=4, fig.height=3, fig.align='center'>>=
-par(mar = c(4, 4, 1, 1), mgp = c(2, 1, 0), cex = 0.8)
-plot(cars, pch = 20, col = 'darkgray')
-fit <- lm(dist ~ speed, data = cars)
-abline(fit, lwd = 2)
-@
-
-The slope of a simple linear regression is \Sexpr{coef(fit)[2]}.
-
-\end{document}
-\end{lstlisting}
-% This LaTeX code does not seem to work in ShareLaTeX.
-\end{frame}
+%\begin{frame}[fragile]{Example LaTeX with analysis}
+%\begin{lstlisting}
+%\documentclass{article}
+%\begin{document}
+%\title{Speed and Stopping Distance}
+%\author{Yihui Xie, creator of knitr}
+%\maketitle
+%
+%We examine the relationship between speed and stopping distance using a linear regression model:
+%$Y = \beta_0 + \beta_1 x + \epsilon$.
+%
+%<<model, fig.width=4, fig.height=3, fig.align='center'>>=
+%par(mar = c(4, 4, 1, 1), mgp = c(2, 1, 0), cex = 0.8)
+%plot(cars, pch = 20, col = 'darkgray')
+%fit <- lm(dist ~ speed, data = cars)
+%abline(fit, lwd = 2)
+%@
+%
+%The slope of a simple linear regression is \Sexpr{coef(fit)[2]}.
+%
+%\end{document}
+%\end{lstlisting}
+%\end{frame}
 
 \begin{frame}{R in LaTeX}
-    When embedding R code in LaTeX, start a code chunk with <<>>= and terminate it with @.
+\vfill
+    \begin{itemize}
+        \item Files that mix R code and LaTeX have file extension \textbf{.Rnw}
+        \item When embedding R code in an Rnw document, start a code chunk with $<<>>=$ and terminate it with $@$.
+        \item Write chunk options in between $<<$ and $>>=$
+    \end{itemize}
+\vfill
+\begin{exampleblock}{Oh, so now the file isn't ``.TeX'' anymore?}
+``Rnw'' stands for ``R no web''. \href{https://www.cs.tufts.edu/~nr/noweb/}{NoWeb} is an old, still active simple system for mixing code and narratives.
+\end{exampleblock}
 \end{frame}
 
-\begin{frame}[fragile]{Example Markdown with analysis}
-\begin{lstlisting}
----
-title: Speed and Stopping Distance
----
-
-We examine the relationship between speed and stopping distance using a linear regression model:
-$Y = \beta_0 + \beta_1 x + \epsilon$.
-
-```{r fig.width=4, fig.height=3, fig.align='center'}
-par(mar = c(4, 4, 1, 1), mgp = c(2, 1, 0), cex = 0.8)
-plot(cars, pch = 20, col = 'darkgray')
-fit <- lm(dist ~ speed, data = cars)
-abline(fit, lwd = 2)
-
-The slope of a simple linear regression is `r coef(fit)[2]`.
-\end{lstlisting}
-% This Markdown code seems to work in RStudio.
+\begin{frame}[focus]
+    Demo $Rnw-input.Rnw$
+    % The chunk options in this example specify the plot size to be 4 by 3 inches, and plots should be aligned in the center.
 \end{frame}
+
+%\begin{frame}[fragile]{Example Markdown with analysis}
+%\begin{lstlisting}
+%---
+%title: Speed and Stopping Distance
+%---
+%
+%We examine the relationship between speed and stopping distance using a linear regression model:
+%$Y = \beta_0 + \beta_1 x + \epsilon$.
+%
+%```{r fig.width=4, fig.height=3, fig.align='center'}
+%par(mar = c(4, 4, 1, 1), mgp = c(2, 1, 0), cex = 0.8)
+%plot(cars, pch = 20, col = 'darkgray')
+%fit <- lm(dist ~ speed, data = cars)
+%abline(fit, lwd = 2)
+%```
+%
+%The slope of a simple linear regression is `r coef(fit)[2]`.
+%\end{lstlisting}
+%\end{frame}
 
 \begin{frame}{R in Markdown}
+\vfill
 \begin{itemize}
-    \item Quickly insert chunks with the keyboard shortcut Ctrl + Alt + I (OS X: Cmd + Option + I).
+    \item $```\{r\}$ opens a code chunk and $```$ terminates a code chunk
+    \item Inline R code is written in backticks $`~`$
     \item By comparison, Markdown has simpler commands.
+    \item Chunk options are written before the closing brace $\}$ in the chunk header
 \end{itemize}
+\vfill
+\begin{exampleblock}{Everybody gets a shortcut!}
+In Rstudio, quickly insert chunks with the keyboard shortcut $Ctrl + Alt + I$. This works for both $.Rnw$ and $.Rmd$ code.
+
+\\
+
+(OS X: $Cmd + Option + I$)
+\end{exampleblock}
+\vfill
 \end{frame}
 
-\begin{frame}[fragile]{R in Markdown}
-    \begin{itemize}
-        \item Write code chunks between \verb|```{r}| and \verb|```|
-        \item Inline R code is written in \verb|` `|
-        \item Chunk options are written before closing brace in the chunk header.
-    \end{itemize}
+\begin{frame}[focus]
+    Demo $Rmd-input.Rmd$
 \end{frame}
 
 \begin{frame}[fragile]{Quick reporting in Markdown}
@@ -471,8 +557,9 @@ The slope of a simple linear regression is `r coef(fit)[2]`.
     \end{exampleblock}
     \begin{itemize}
         \item \verb|stitch()| provides a template so the user only feeds the template with one R script and knitr will compile the template to a report.
-        \item Currently it has built-in templates for LaTeX, HTML, and Markdown.
+        \item Currently it has built-in templates for LaTeX (default), HTML, and Markdown.
     \end{itemize}
+    See \verb|?stitch| for details.
 \end{frame}
 
 %\begin{frame}{Markdown and LaTeX syntax summary}
@@ -545,7 +632,7 @@ The slope of a simple linear regression is `r coef(fit)[2]`.
 %    \end{frame}
 
 \section{Additional Resources}
-\begin{frame}{Resources}
+\begin{frame}{Additional Resources}
         \begin{columns}[t, onlytextwidth] \column{.5\textwidth}
         \begin{center}
             Erik Beck \\ \href{mailto:beck.erik@epa.gov}{beck.erik@epa.gov}
@@ -559,9 +646,10 @@ The slope of a simple linear regression is `r coef(fit)[2]`.
 \begin{itemize}
     \item \url{https://www.rstudio.com/resources/cheatsheets/}
     \item \url{https://support.rstudio.com/hc/en-us/articles/200552056-Using-Sweave-and-knitr}
-    \item knitr document source + output examples: \url{https://yihui.name/knitr/demos/}
-    \item To Markdown or LaTeX, that is the question: \url{https://yihui.name/en/2013/10/markdown-or-latex/}
+    \item knitr documents source + output examples \url{https://yihui.name/knitr/demos/}
+    \item To Markdown, or LaTeX: that is the question... \url{https://yihui.name/en/2013/10/markdown-or-latex/}
 \end{itemize}
+%Also go back and check out all the links in these slides.
 \end{frame}
 
 \begin{frame}[focus]
