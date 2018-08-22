@@ -52,6 +52,10 @@ MysticalBuoy$sysbattery_volts[MysticalBuoy$sysbattery_volts < 0] <-NA
 
 plot (MysticalBuoy$LocalDateTime, MysticalBuoy$sysbattery_volts)
 
+# For later: Buoy URL
+# https://www.epa.gov/sites/production/files/buckeye_symlinks/region1-buoys/mystic/mrbuoy.csv?0.772567037222714
+
+
 
 
 
