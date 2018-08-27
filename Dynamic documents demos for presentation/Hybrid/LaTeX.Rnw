@@ -1,0 +1,7 @@
+\documentclass{book}
+<<calltopandoc, echo=F,include=F, engine='sh'>>=
+pandoc Chapter1.Rmd --chapters -f markdown -t latex -o Chapter1.tex
+@
+\begin{document}
+\include{Chapter1}
+\end{document}
