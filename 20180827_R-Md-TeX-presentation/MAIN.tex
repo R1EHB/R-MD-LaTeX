@@ -31,7 +31,7 @@
     \begin{frame}
         \maketitle
     \end{frame}
-    
+
     \begin{frame}
         \frametitle{Table of Contents}
         \tableofcontents
@@ -176,7 +176,8 @@ To compile LaTeX, your computer needs one of these TeX distributions installed:
 \end{tabular}
 \end{center}
 \end{block}
-You can also use an online ready-to-use option like \href{https://www.sharelatex.com/}{ShareLaTeX} or \href{https://www.overleaf.com/}{Overleaf}.
+You can also use an online ready-to-use option like \href{https://v2.overleaf.com/}{Overleaf.com}.
+% In July 2017, Overleaf and ShareLaTeX joined forces and Overleaf v2 will launch to everyone Sept. 4th, 2018. You can try out the beta version of Overleaf v2 at v2.overleaf.com.
 \end{frame}
 
 \begin{frame}[fragile]{LaTeX: Revisiting the minimal example}
@@ -217,16 +218,17 @@ Yer a wizard, Harry.
 \end{frame}
 
 \begin{frame}{Intro to Markdown}
+%\vfill
 \begin{itemize}
     \item Markdown allows us to write using an easy-to-read, easy-to-write plain text format.
     \item As long as you know how to write emails, you can learn it in a few minutes.
     \item \url{https://en.wikipedia.org/wiki/Markdown\#Example}
 \end{itemize}
-\vfill
+%\vfill
 \begin{alertblock}{Limitations of Markdown}
 Markdown was primarily designed to be simple. \\ For more complicated typesetting, LaTeX may be preferred.
 \end{alertblock}
-\vfill
+%\vfill
 \end{frame}
 
 \begin{frame}[fragile]{Intro to Markdown}
@@ -265,6 +267,9 @@ Helpful link: \\ \url{https://rmarkdown.rstudio.com/lesson-2.html}
 
 \section{Markdown \& LaTeX examples}
 
+\begin{frame}[focus]
+    examples \& demos
+\end{frame}
 
 \section{Reproducible Research}
 \begin{frame}[noframenumbering]{Reproducible Research}
@@ -296,7 +301,7 @@ Helpful link: \\ \url{https://rmarkdown.rstudio.com/lesson-2.html}
     % Though Donoho was referring to computational science, journals in other data-driven fields such as biostatistics have been moving in the direction of reproducible research as well.
     % This would be a good time to quickly discuss attendees' difficulties with reproducing research.
 \end{frame}
-    
+
 \begin{frame}[fragile]{Reproducible Research}
 This chunk of R code produces a figure that illustrates a simulation of Brownian motion for 100 steps.
         \begin{exampleblock}{Try running this in RStudio}
@@ -322,7 +327,7 @@ plot(x, type = "l",
 %\end{lstlisting}
 %        \end{exampleblock}
 \begin{center}
-    \includegraphics[width=\textwidth]{Brownian-motion.png}
+    \includegraphics[width=.95\textwidth]{Brownian-motion.png}
 \end{center}
 To put this into a document by hand, we would have to open RStudio, compile the code to draw the plot, save it as an image, then insert it into a document with \verb|\includegraphics{}|.
 \vfill
@@ -343,7 +348,7 @@ Then what if we want to change the random seed in \verb|set.seed()|, or the y-ax
     \end{exampleblock}
     \vfill
 \end{itemize}
-% We should not expect all reports in the world to be publicly available, but it is better to share even mediocre or flawed code or problematic datasets than to not share anything at all. 
+% We should not expect all reports in the world to be publicly available, but it is better to share even mediocre or flawed code or problematic datasets than to not share anything at all.
 \end{frame}
 
 \begin{frame}{Dynamic documents---a short example}
@@ -400,7 +405,7 @@ If you ever update the \verb|mtcars| dataframe, the table will update in the doc
 
 \begin{frame}[focus]
     Break for 10 minutes
-    
+
     \vfill
     \includegraphics[trim=100 0 100 0, clip, width=\textwidth]{stretching-work.png}
     \vspace{-0.7cm}
@@ -409,6 +414,9 @@ If you ever update the \verb|mtcars| dataframe, the table will update in the doc
 
 \begin{frame}[focus]
     Welcome back!
+
+    \vfill
+    \includegraphics[width=.33\textwidth]{Rlogo}
 \end{frame}
 
 \section{Dynamic documents with Sweave and knitr}
@@ -467,7 +475,7 @@ If you ever update the \verb|mtcars| dataframe, the table will update in the doc
 
 %First of all, knitr uses Rmarkdown, a set of intuitive human-readable code to do the formatting. While LaTeX is by no means as complicated as its reputation seems to suggest, Rmarkdown is actually easy. By human-readable I mean that anyone who has never even heard of Rmarkdown can understand what is happening to some extent.
 %Sweave is great for producing PDF, but that’s one of the biggest drawbacks of LaTeX in the social sciences: while the PDF may look good, they are not the format we need when collaborating with Word-only colleagues, and with rare exceptions when submitting a manuscript to journals. Knitr works very well with Pandoc, so creating a Word document or an ODF is just as easy as creating a PDF. The other day I had to submit a supplementary file as a *.doc file, even though it’ll end up as a PDF on Dataverse or so. With knitr this didn’t take long.
-%knitr supports R, Python, Ruby, Haskell, awk/gawk, sed, shell scripts, Perl, SAS, TikZ, Graphviz, C++, and more. 
+%knitr supports R, Python, Ruby, Haskell, awk/gawk, sed, shell scripts, Perl, SAS, TikZ, Graphviz, C++, and more.
 \end{frame}
 
 \begin{frame}[fragile]{Setting up knitr}
@@ -478,7 +486,7 @@ install.packages('knitr', dependencies = TRUE)
     \end{lstlisting}
     \end{exampleblock}
 
-Go to the menu $Tools~>~Options~>~Sweave$ and switch the default option for weaving (compiling) to \textbf{knitr}. 
+Go to the menu $Tools~>~Options~>~Sweave$ and switch the default option for weaving (compiling) to \textbf{knitr}.
 \vfill
 {\small Visit \url{https://yihui.name/knitr/faq/} for frequently asked questions.}
 \end{frame}
@@ -488,13 +496,13 @@ Go to the menu $Tools~>~Options~>~Sweave$ and switch the default option for weav
 \begin{frame}{Markdown \& LaTeX side-by-side}
     \begin{center}
         \includegraphics[width=0.4\textwidth]{comparison.png}
-    
+
     We'll look at a side-by-side comparison of \\ Markdown and LaTeX using the exact same analysis.
-    
+
     \vfill
-    
+
     We will be using RStudio to edit and \\ compile the source code.
-    
+
     \vfill
     \end{center}
         % You could also use Emacs or LyX, or other editors you have configured yourself.
@@ -612,7 +620,7 @@ In RStudio, for either $.Rnw$ or $.Rmd$, quickly insert code chunks with the key
     Each serves a different purpose. If you're writing a journal article, thesis, textbook, or r\'esum\'e, you may want the extra precision.
     %\vfill
     %Also, \textbf{you can use them both at the same time}. Theoretically. I haven't tried this. Might be an advanced technique.
-    
+
     % This would be a good slide to leave up while working through demos.
     \vfill
 \end{frame}
@@ -635,15 +643,15 @@ In RStudio, for either $.Rnw$ or $.Rmd$, quickly insert code chunks with the key
 %    \begin{frame}[plain]{Plain frame}
 %        This is a frame with plain style and it is numbered.
 %    \end{frame}
-    
+
 %    \begin{frame}[t]
 %        This frame has an empty title and is aligned to top.
 %    \end{frame}
-    
+
 %    \begin{frame}[noframenumbering]{No frame numbering}
 %        This frame is not numbered and is citing reference \cite{knuth74}.
 %    \end{frame}
-    
+
 %    \begin{frame}{Typesetting and Math}
 %        The packages \texttt{inputenc} and \texttt{FiraSans}\footnote{\url{https://fonts.google.com/specimen/Fira+Sans}}\textsuperscript{,}\footnote{\url{http://mozilla.github.io/Fira/}} are used to properly set the main fonts.
 %        \vfill
@@ -668,7 +676,7 @@ In RStudio, for either $.Rnw$ or $.Rmd$, quickly insert code chunks with the key
 %                    \item Item 2
 %                    \item Item 3
 %                \end{itemize}
-%            
+%
 %            \column{0.33\textwidth}
 %                Enumerations:
 %                \begin{enumerate}
@@ -680,7 +688,7 @@ In RStudio, for either $.Rnw$ or $.Rmd$, quickly insert code chunks with the key
 %                    \end{enumerate}
 %                    \item Third
 %                \end{enumerate}
-%            
+%
 %            \column{0.33\textwidth}
 %                Descriptions:
 %                \begin{description}
@@ -706,22 +714,23 @@ In RStudio, for either $.Rnw$ or $.Rmd$, quickly insert code chunks with the key
     \item \url{https://www.rstudio.com/resources/cheatsheets/}
     \item \url{https://support.rstudio.com/hc/en-us/articles/200552056-Using-Sweave-and-knitr}
     \item Documents source + output examples \url{https://yihui.name/knitr/demos/}
-    \item To Markdown, or LaTeX: that is the question\ldots \url{https://yihui.name/en/2013/10/markdown-or-latex/}
+    \item To Markdown, or LaTeX: that is the question... \url{https://yihui.name/en/2013/10/markdown-or-latex/}
 \end{itemize}
-%Also go back and check out all the links in these slides.
+% Also go back and check out all the links in these slides.
 \end{frame}
 
 \begin{frame}[focus]
     Thanks for coming!
-\end{frame}
 
+    % {\footnotesize LaTeX Beamer theme \href{https://github.com/elauksap/focustheme/releases}{``Focus''} released under the \href{https://www.gnu.org/licenses/gpl-3.0.en.html}{GNU GPL v3.0 License}.}
+\end{frame}
 %    \appendix
 %    \begin{frame}{References}
 %        \nocite{*}
 %        \bibliography{demo_bibliography}
 %        \bibliographystyle{plain}
 %    \end{frame}
-    
+
 %    \begin{frame}{Backup frame}
 %        \usebeamercolor[fg]{normal text}
 %        This is a backup frame, useful to include additional material for questions from the audience.
