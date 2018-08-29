@@ -9,7 +9,7 @@
 library(lubridate)
 
 # Set working Directory
-setwd("C:/Users/EBECK/OneDrive - Environmental Protection Agency (EPA)/Sync4OneDrive/ReproducibleResearch/Sept2018Class/DataFutz/USA-Air/EPAAirDataDigested/USApm25-Code88101")
+setwd("C:/Users/EBECK/OneDrive - Environmental Protection Agency (EPA)/Sync4OneDrive/ReproducibleResearch/Sept2018Class/R-MD-LaTeX/Data/AirQualityData/USA/PNW")
 
 # Read in the AIRS Data Set for PM2.5 (88101)
 usaPM1999 <-read.csv (file="daily_88101_1999.csv", header=TRUE, sep=",")
