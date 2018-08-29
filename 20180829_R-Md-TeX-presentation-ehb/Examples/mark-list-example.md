@@ -12,4 +12,4 @@ This is **bold**, and _italic_.
 You can write an ordered list:
 
 1. item 1
-1. item 2 # this line will render as "2."
+1. item 2 # this line will render with the right sequence anyway.
