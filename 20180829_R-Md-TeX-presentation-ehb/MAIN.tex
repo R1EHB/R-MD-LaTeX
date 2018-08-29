@@ -56,6 +56,7 @@ using the basics of LaTeX, Markdown, and the R package knitr.
 facilitate reproducible reports and research with R.
 \end{itemize}
 % This would be a really good place to check that everyone has R and RStudio installed.
+% Insert testing code here
 \end{frame}
 
 \begin{frame}{Steps/Agenda}
@@ -113,11 +114,13 @@ LaTeX is widely used in academia for the publication of scientific documents in 
 \begin{enumerate}
     \item \textbf{TeX engines have excellent quality output.} This especially holds for complex documents such as those with many tables, figures, equations, cross-references or hyperlinks---or just with many pages.
     \item \textbf{TeX is fast.}
+    \item \textbf{TeX is consistent.}
     \item \textbf{TeX is stable.} It will never eat your document. \emph{Ever.}
 \end{enumerate}
 \vfill
 --- \url{https://www.ctan.org/tex/}
 % I'd like to add that while LaTeX is most used for medium to long papers, there are also EXCELLENT templates for very good-looking short documents, like resumes.
+% Add an Erik Resume version here?
 \end{frame}
 
 \begin{frame}[fragile]{LaTeX: Minimal example}
@@ -229,9 +232,22 @@ Markdown was primarily designed to be simple. \\ For more complicated typesettin
 \vfill
 \end{frame}
 
+
+\begin{frame}{Uses for Markdown}
+% EHB
+  \begin{itemize}
+  \item Maximal focus on content, minimal focus on formatting while writing.
+  \item Quick layout of documents.
+  \item Can be converted to a variety of formats easily (Pandoc, others).
+  \item Format durability (records)
+  \end{itemize}
+\end{frame}
+
 \begin{frame}[fragile]{Intro to Markdown}
 \begin{exampleblock}{A short example of Markdown}
-\begin{lstlisting}
+  % Made changes so standalone pandoc will work.
+  % See mark-list-example.md in the same directory as this file
+  \begin{lstlisting}
 # First level header
 
 Sup universe!
@@ -239,10 +255,12 @@ Sup universe!
 ## Second level header
 
 This is **bold**, and _italic_.
+
 - list item
 - list item
 
 You can write an ordered list:
+
 1. item 1
 1. item 2 # this line will render as "2."
 \end{lstlisting}
