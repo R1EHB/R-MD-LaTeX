@@ -9,7 +9,9 @@
 library(lubridate)
 
 # Set working Directory
-setwd("C:/Users/EBECK/OneDrive - Environmental Protection Agency (EPA)/Sync4OneDrive/ReproducibleResearch/Sept2018Class/R-MD-LaTeX/Data/AirQualityData/USA/PNW")
+# setwd("C:/Users/EBECK/OneDrive - Environmental Protection Agency (EPA)/Sync4OneDrive/ReproducibleResearch/Sept2018Class/R-MD-LaTeX/Data/AirQualityData/USA/PNW")
+
+setwd("C:/Users/EBECK/OneDrive - Environmental Protection Agency (EPA)/Sync4OneDrive/ReproducibleResearch/Sept2018Class/DataFutz/PNW-Air/1999-2017USA")
 
 # Read in the AIRS Data Set for PM2.5 (88101)
 usaPM1999 <-read.csv (file="daily_88101_1999.csv", header=TRUE, sep=",")
@@ -33,7 +35,7 @@ usaPM2014 <-read.csv (file="daily_88101_2014.csv", header=TRUE, sep=",")
 usaPM2015 <-read.csv (file="daily_88101_2015.csv", header=TRUE, sep=",")
 usaPM2016 <-read.csv (file="daily_88101_2016.csv", header=TRUE, sep=",")
 usaPM2017 <-read.csv (file="daily_88101_2017.csv", header=TRUE, sep=",")
-usaPM2018 <-read.csv (file="daily_88101_2018.csv", header=TRUE, sep=",")
+# usaPM2018 <-read.csv (file="daily_88101_2018.csv", header=TRUE, sep=",")
 
 
 # Variable List
@@ -61,7 +63,7 @@ usaPMcombo <- rbind (usaPM1999,
 	   usaPM2000,usaPM2001,usaPM2002,usaPM2003,usaPM2004,usaPM2005,     
 	   usaPM2006,usaPM2007,usaPM2008,usaPM2009,
 	   usaPM2010,usaPM2011,usaPM2012,usaPM2013,usaPM2014,usaPM2015,
-	   usaPM2016,usaPM2017,usaPM2018) 
+	   usaPM2016,usaPM2017) 
 # Parse dates
 
 usaPMcombo$Date <- parse_date_time (usaPMcombo$Date.Local, tz="America/Chicago",orders="ymd")
