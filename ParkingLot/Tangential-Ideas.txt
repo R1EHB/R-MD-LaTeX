@@ -1,5 +1,22 @@
 # Off topic ideas #
 
+## LaTeX ##
 * Legal Discovery
+* Document agglomoration
+
+## Either LaTeX or Markdown ##
+
 * Data cleaning
 * Data for websites
+
+## Markdown ##
+
+* Grants documents
+
+* Letters (starting)
+
+* Anytime need to focus on writing and put formatting behind for
+  awhile, but yet mark out basic formatting. (Use Markdown).
+  
+
+
