@@ -8,3 +8,5 @@ require("tidyverse")
 require("knitr")
 require("installr")
 require("lubridate")
+require("ggplot2")
+
