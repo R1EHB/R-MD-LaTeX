@@ -1,14 +1,23 @@
 # System Checks for EPA R-Md-LaTeX Workshop
 
-This can be a handout or projection at the start of the workshop so attendees can check for themselves that everything they need is installed.
+This can be a handout or projection at the start of the workshop so attendees can troubleshoot for themselves if their compiler check didn't work.
 
 ## R packages (`knitr`)
 
-Open your preferred R console (*e.g.*, RStudio, Rgui, *etc.*) and enter: `find.package("knitr")`
+Run this R script to test for the installation of relevant packages.
 
-The console should return the filepath to the package.
+    # R Script to Test R Install and load packages relevant for the instruction session.
+    # Erik Beck, 8/31/2018
+    
+    Sys.getenv()
+    update.packages()
+    require("rmarkdown")
+    require("tidyverse")
+    require("knitr")
+    require("installr")
+    require("lubridate")
 
-Let Erik or Emily know if the console responds with `Error in find.package("knitr") : there is no package called ‘knitr’`, or some other error message.
+Alternatively, open your preferred R console (*e.g.*, RStudio, Rgui, *etc.*) and enter: `find.package("[package-name-here]")`. The console should return the filepath to the package. Let Erik or Emily know if the console responds with `Error in find.package("knitr") : there is no package called ‘knitr’`, or some other error message.
 
 ## MikTeX for `.tex` and `.Rnw` files
 
