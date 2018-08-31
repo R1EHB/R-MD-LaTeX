@@ -21,7 +21,6 @@ Script:
     Hello.
     
     <<>>=
-    set.seed(1213)
     x <- cumsum(rnorm(100))
     plot(x, type = "l")
     @
