@@ -1,7 +1,13 @@
 \documentclass{book}
+
 <<calltopandoc, echo=F,include=F, engine='sh'>>=
-pandoc Chapter1.Rmd --chapters -f markdown -t latex -o Chapter1.tex
+pandoc Chapter1.Rmd --top-level-division=chapter -f markdown -t latex -o Chapter1.tex
 @
+
 \begin{document}
+
 \include{Chapter1}
+
+At least this text should show in the PDF.
+
 \end{document}
