@@ -1,4 +1,4 @@
-# Create simple documents to make sure your Rnw and Rmd compilers work
+# Simple tests to make sure your Rnw and Rmd compilers work
 
 Follow these instructions to check that your computer has everything you need to compile LaTeX, Markdown, Rnw and Rmd files for the workshop.
 
