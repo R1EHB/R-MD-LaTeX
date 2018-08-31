@@ -12,6 +12,8 @@ This test will check for both the proper installation of MikTeX and the `knitr` 
 1. Replace the contents of the new file with the code below.
 1. Click "Compile PDF" and wait. A PDF document with "Hello.", a line plot, and "Goodbye." on it should appear within a minute or two.
 
+Script:
+
     \documentclass{article}
     
     \begin{document}
