@@ -12,7 +12,7 @@ install.packages("maps")
 ```
 
 ```
-## --- Please select a CRAN mirror for use in this session ---
+## Error in contrib.url(repos, type): trying to use CRAN without setting a mirror
 ```
 
 ```r

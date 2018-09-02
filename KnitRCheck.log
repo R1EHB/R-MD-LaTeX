@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.9.2)  2 SEP 2018 15:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.9.2)  2 SEP 2018 16:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -73,8 +73,7 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty
 Package: alltt 1997/06/16 v2.0g defines alltt environment
-)
-No file KnitRCheck.aux.
+) (./KnitRCheck.aux)
 \openout1 = `KnitRCheck.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
@@ -89,6 +88,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count88
@@ -171,8 +171,8 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 64--65
 {/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map} <./figure/un
 named-chunk-1-1.pdf>] (./KnitRCheck.aux) ) 
 Here is how much of TeX's memory you used:
- 1595 strings out of 494941
- 22908 string characters out of 6180919
+ 1597 strings out of 494941
+ 22938 string characters out of 6180919
  76992 words of memory out of 5000000
  4899 multiletter control sequences out of 15000+600000
  3808 words of font info for 15 fonts, out of 8000000 for 9000
@@ -181,7 +181,7 @@ Here is how much of TeX's memory you used:
 </usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmtt10.pfb>
-Output written on KnitRCheck.pdf (1 page, 28414 bytes).
+Output written on KnitRCheck.pdf (1 page, 28380 bytes).
 PDF statistics:
  22 PDF objects out of 1000 (max. 8388607)
  14 compressed objects within 1 object stream
