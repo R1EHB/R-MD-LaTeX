@@ -1,0 +1,9 @@
+# Testing out Knitr on a Markdown document. #
+
+
+```{r MapTest}
+install.packages("maps")
+library("maps")
+map('usa')
+```
+

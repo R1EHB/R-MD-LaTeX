@@ -1,0 +1,14 @@
+\documentclass{article}
+    
+    \begin{document}
+    
+    Hello.
+    
+    <<>>=
+    x <- cumsum(rnorm(100))
+    plot(x, type = "l")
+    @
+    
+    Goodbye.
+    
+    \end{document}
