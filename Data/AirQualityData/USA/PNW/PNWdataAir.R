@@ -15,10 +15,10 @@
 
 # Read 1999-2017 PNW Data Sets
 
-WashingtonPM25 <- readRDS (file = "WashingtonPM25.rds")
-OregonPM25 <- readRDS (file = "OregonPM25.rds")
-IdahoPM25 <- readRDS (file = "IdahoPM25.rds")
-MontanaPM25 <- (file = "MontanaPM25.rds")
+WashingtonPM25 	 <- readRDS (file = "WashingtonPM25.rds")
+OregonPM25 	 <- readRDS (file = "OregonPM25.rds")
+IdahoPM25 	 <- readRDS (file = "IdahoPM25.rds")
+MontanaPM25 	 <- readRDS (file = "MontanaPM25.rds")
 
 PNWpm25a <- readRDS (file = "PNW_PM25.rds")
 
@@ -27,6 +27,14 @@ PNWpm25a <- readRDS (file = "PNW_PM25.rds")
 # [1] "State.Code"      "Site.Num"        "Latitude"        "Longitude"      
 # [5] "Parameter.Name"  "Date.Local"      "Arithmetic.Mean" "State.Name"     
 # [9] "City.Name"      
+
+colnames(MontanaPM25)
+
+summary(PNWpm25a$Arithmetic.Mean)
+summary(WashingtonPM25$Arithmetic.Mean)
+summary(OregonPM25$Arithmetic.Mean)
+summary(IdahoPM25$Arithmetic.Mean)
+summary(MontanaPM25$Arithmetic.Mean)
 
 plot (PNWpm25a$Date.Local, PNWpm25a$Arithmetic.Mean)
 

@@ -1,0 +1,74 @@
+
+R version 3.5.0 (2018-04-23) -- "Joy in Playing"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-redhat-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> # An R Script
+> # Erik Beck
+> # September 3, 2018
+> # Read 1999-2017 Air Data (PM2.5) for the Pacific Northwest
+> # AQS Data Mart  PM2.5 (88101)
+> # Prep to analyze
+> 
+> 
+> 
+> # Set working Directory
+> # setwd("C:/Users/EBECK/OneDrive - Environmental Protection Agency (EPA)/Sync4OneDrive/ReproducibleResearch/Sept2018Class/R-MD-LaTeX/Data/AirQualityData/USA/PNW")
+> 
+> # setwd("C:/Users/EBECK/OneDrive - Environmental Protection Agency (EPA)/Sync4OneDrive/ReproducibleResearch/Sept2018Class/R-MD-LaTeX/AirQualityData/USA/PNW")
+> 
+> 
+> # Read 1999-2017 PNW Data Sets
+> 
+> WashingtonPM25 	 <- readRDS (file = "WashingtonPM25.rds")
+> OregonPM25 	 <- readRDS (file = "OregonPM25.rds")
+> IdahoPM25 	 <- readRDS (file = "IdahoPM25.rds")
+> MontanaPM25 	 <- readRDS (file = "MontanaPM25.rds")
+> 
+> PNWpm25a <- readRDS (file = "PNW_PM25.rds")
+> 
+> # colnames(WashingtonPM25)
+> 
+> # [1] "State.Code"      "Site.Num"        "Latitude"        "Longitude"      
+> # [5] "Parameter.Name"  "Date.Local"      "Arithmetic.Mean" "State.Name"     
+> # [9] "City.Name"      
+> 
+> colnames(MontanaPM25)
+[1] "State.Code"      "Site.Num"        "Latitude"        "Longitude"      
+[5] "Parameter.Name"  "Date.Local"      "Arithmetic.Mean" "State.Name"     
+[9] "City.Name"      
+> 
+> summary(PNWpm25a$Arithmetic.Mean)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ -4.900   3.875   6.200   8.816  10.300 330.000 
+> summary(WashingtonPM25$Arithmetic.Mean)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ -2.750   3.800   6.000   7.958   9.588 194.958 
+> summary(OregonPM25$Arithmetic.Mean)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ -0.075   4.000   6.300   8.958  10.500 330.000 
+> summary(IdahoPM25$Arithmetic.Mean)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ -4.171   4.300   6.900  10.192  12.200 233.200 
+> summary(MontanaPM25$Arithmetic.Mean)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ -4.900   3.688   6.071   9.034  10.400 314.875 
+> 
+> plot (PNWpm25a$Date.Local, PNWpm25a$Arithmetic.Mean)
+> 
+> 
+> 

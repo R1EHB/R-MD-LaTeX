@@ -1,0 +1,67 @@
+library(lubridate)
+
+#setwd("C:/Users/EBECK/OneDrive - Environmental Protection Agency (EPA)/Sync4OneDrive/ReproducibleResearch/Sept2018Class/Data/China-Air/Beijing")
+
+# MyData <- read.csv(file="c:/TheDataIWantToReadIn.csv", header=TRUE, sep=",")
+
+# Read in the Beijing historical data sets (US State Dept)
+BeijingPM08 <-read.csv (file="Beijing_2008_HourlyPM2.5_UTF8.csv", header=TRUE, sep=",",encoding="UTF-8")
+# BeijingPM09 <-read.csv (file="Beijing_2009_HourlyPM2.5_ModEHB.csv", header=TRUE, sep=",")
+# BeijingPM10 <-read.csv (file="Beijing_2010_HourlyPM2.5_ModEHB.csv", header=TRUE, sep=",")
+# BeijingPM11 <-read.csv (file="Beijing_2011_HourlyPM2.5_ModEHB.csv", header=TRUE, sep=",")
+# BeijingPM12 <-read.csv (file="Beijing_2012_HourlyPM2.5_ModEHB.csv", header=TRUE, sep=",")
+# BeijingPM13 <-read.csv (file="Beijing_2013_HourlyPM2.5_ModEHB.csv", header=TRUE, sep=",")
+# BeijingPM14 <-read.csv (file="Beijing_2014_HourlyPM2.5_ModEHB.csv", header=TRUE, sep=",")
+# BeijingPM15 <-read.csv (file="Beijing_2015_HourlyPM2.5_ModEHB.csv", header=TRUE, sep=",")
+# BeijingPM16 <-read.csv (file="Beijing_2016_HourlyPM2.5_ModEHB.csv", header=TRUE, sep=",")
+# BeijingPM17 <-read.csv (file="Beijing_2017_HourlyPM2.5_ModEHB.csv", header=TRUE, sep=",")
+
+# Variable List
+# Site	Parameter	Date_LST	Year	Month	Day	Hour	Value	Unit	Duration	QC_Name
+
+
+# Quick Check of the Data
+
+colnames(BeijingPM08)
+colnames(BeijingPM09)
+colnames(BeijingPM10)
+colnames(BeijingPM11)
+colnames(BeijingPM12)
+colnames(BeijingPM13)
+colnames(BeijingPM14)
+colnames(BeijingPM15)
+colnames(BeijingPM16)
+colnames(BeijingPM17)
+
+# Append data sets
+
+# Test
+
+BeijingTest <- rbind (BeijingPM08, BeijingPM09,BeijingPM10,BeijingPM11,BeijingPM12,BeijingPM13,BeijingPM14,BeijingPM15,BeijingPM16,BeijingPM17)
+
+# head (BeijingTest)
+
+
+
+# Next fix date values to sensible UTC
+
+# <- force_tz(datetime,"Europe/Paris"))
+
+BeijingTest$SampleLocalTime <- mdy_hms(BeijingTest$Date_LST, quiet = FALSE, tz = "Asia/Shanghai", truncated = 0)
+BeijingTest$SampleUTC <- with_tz (BeijingTest$SampleLocalTime, tzone = "UTC")
+
+
+# recode 99 to missing for variable v1
+# select rows where v1 is 99 and recode column v1 
+# mydata$v1[mydata$v1==99] <- NA
+
+
+# Recode -999 to missing for BeijingTest$Value
+BeijingTest$Value[BeijingTest$Value==-999] <-NA
+
+summary(BeijingTest$Value)
+
+plot(BeijingTest$SampleUTC,BeijingTest$Value)
+
+
+
