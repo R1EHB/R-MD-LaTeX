@@ -4,7 +4,8 @@ Follow these instructions to check that your computer has everything you need to
 
 ## R-LaTeX test
 
-This test will check for both the proper installation of MikTeX and the `knitr` R package. If you are comfortable using RStudio, follow the RStudio instructions.
+This test will check for both the proper installation of both MikTeX and the `knitr` R package. If you are comfortable using RStudio, follow the RStudio instructions.
+
 1. Make sure you have already installed the package `knitr` in R.
 1. Start up RStudio.
 1. Go to Tools > Options > Sweave and change the default option for weaving Rnw documents from Sweave to `knitr`. If this does not work, you may not have installed `knitr` in R.
@@ -21,6 +22,7 @@ Script:
     Hello.
     
     <<>>=
+    set.seed(1213)
     x <- cumsum(rnorm(100))
     plot(x, type = "l")
     @
@@ -33,3 +35,10 @@ If you are familiar with the R command line, you can create a plaintext file wit
 
 ## R-Markdown test
 
+This simple test will check that an R Markdown file will compile. It will also check for MikTeX if you choose PDF as the output format.
+
+1. Start up RStudio.
+1. Go to File > New File > `R Markdown`.
+1. Optional: To check for MikTeX too, choose `PDF` as the output format.
+1. Click OK.
+1. Click "Knit" and wait. An document should appear within a minute or two. 
