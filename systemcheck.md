@@ -16,6 +16,7 @@ Run this R script to test for the installation of relevant packages.
     require("knitr")
     require("installr")
     require("lubridate")
+    require("ggplot2")
 
 Alternatively, open your preferred R console (*e.g.*, RStudio, Rgui, *etc.*) and enter: `find.package("[package-name-here]")`. The console should return the filepath to the package. Let Erik or Emily know if the console responds with `Error in find.package("knitr") : there is no package called ‘knitr’`, or some other error message.
 
