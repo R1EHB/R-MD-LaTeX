@@ -1,0 +1,152 @@
+# An R Script
+# Erik Beck
+# August 30, 2018
+# Read and minimally process air quality data (PM2.5) from 2018 files through mid-August 2018
+# Montana, Washington, Oregon, and Idaho
+
+
+# Get needed libraries
+library(lubridate)
+
+# Set working Directory
+setwd("C:/Users/EBECK/OneDrive - Environmental Protection Agency (EPA)/Sync4OneDrive/ReproducibleResearch/Sept2018Class/DataFutz/PNW-Air/2018NorthWestUSA")
+
+# Read in the chunks for Washington, Oregon, and Idaho for 2018
+
+WaOrId1 <-read.csv (file="WaOrId-chunk1.csv", header=TRUE, sep=",")
+WaOrId2 <-read.csv (file="WaOrId-chunk2.csv", header=TRUE, sep=",")
+WaOrId3 <-read.csv (file="WaOrId-chunk3.csv", header=TRUE, sep=",")
+WaOrId4 <-read.csv (file="WaOrId-chunk4.csv", header=TRUE, sep=",")
+
+# Variable List
+colnames (WaOrId1)
+# [1] "Agency"        "Site"          "Site.AQS"      "Param"        
+# [5] "Param.AQS"     "POC"           "Method"        "Duration"     
+# [9] "Date..LST."    "Unit"          "Concentration"
+
+# Combine the four chunks
+
+WaOrId <- rbind (WaOrId1, WaOrId2, WaOrId3, WaOrId4)
+
+# Fix the dates
+
+WaOrId$Date <-  parse_date_time (WaOrId$Date..LST., tz="America/Los_Angeles",orders="mdy")
+
+# Create a state variable from the Agency variable
+
+# factor (WaOrId$Agency)
+WaOrId$State <- NA
+
+WaOrId$State[WaOrId$Agency=='WA1'] <- 'WA'
+WaOrId$State[WaOrId$Agency=='CR1'] <- 'WA'
+WaOrId$State[WaOrId$Agency=='ID1'] <- 'ID'
+WaOrId$State[WaOrId$Agency=='OR1'] <- 'OR'
+WaOrId$State[WaOrId$Agency=='OR2'] <- 'OR'
+
+# Read in the chunk for Montana for 2018
+
+Montana18 <- read.csv (file="montana2018PMfine.csv", header=TRUE, sep=",")
+
+
+
+# colnames (Montana18)
+#[1] "Site.Site.AQS.Param.POC" "Date.LST"               
+#[3] "ugPerMeter3"            
+
+# Parse out the first column of data in the Montana18 dataset
+# Looks like:
+
+# Site/Site AQS/Param/POC
+# Billlings Lockw/301110087/PM2.5-88101/3
+
+# Write out that column to CSV
+write.csv (Montana18$Site.Site.AQS.Param.POC, file="MontanaTmp.csv")
+
+# Do a search and replace with emacs on this file, saving to a new file
+
+MontanaTmp <- read.csv (file="MontanaTmp2.csv", header=TRUE, sep=",")
+
+colnames(MontanaTmp)
+# [1] "Site"     "Site.AQS" "Param"    "POC"  
+
+
+# Now combine Montana18 and MontanaTmp together to make MontanaClean18
+
+MontanaClean18<-MontanaTmp
+MontanaClean18$Concentration <- Montana18$ugPerMeter3
+MontanaClean18$State.Code <- c("MT")
+# MontanaClean18$Date.LST <- Montana18$Date.LST
+
+# Fix dates
+
+MontanaClean18$Date <- parse_date_time (Montana18$Date.LST, tz="America/Los_Angeles",orders="mdy")
+
+# Drop concentration =-999 (missing value)
+MontanaClean18$Concentration[MontanaClean18$Concentration==-999] <-NA
+
+# plot (MontanaClean18$Date, MontanaClean18$Concentration)
+
+# colnames(usaPM1999)
+# colnames(usaPM2000)
+
+# [1] "State.Code"          "County.Code"         "Site.Num"           
+# [4] "Parameter.Code"      "POC"                 "Latitude"           
+# [7] "Longitude"           "Datum"               "Parameter.Name"     
+# [10] "Sample.Duration"     "Pollutant.Standard"  "Date.Local"         
+# [13] "Units.of.Measure"    "Event.Type"          "Observation.Count"  
+# [16] "Observation.Percent" "Arithmetic.Mean"     "X1st.Max.Value"     
+# [19] "X1st.Max.Hour"       "AQI"                 "Method.Code"        
+# [22] "Method.Name"         "Local.Site.Name"     "Address"            
+# [25] "State.Name"          "County.Name"         "City.Name"          
+# [28] "CBSA.Name"           "Date.of.Last.Change"
+
+
+# Append data sets
+
+# Test
+
+# usaPMcombo <- rbind (usaPM1999,
+# 	   usaPM2000,usaPM2001,usaPM2002,usaPM2003,usaPM2004,usaPM2005,     
+# 	   usaPM2006,usaPM2007,usaPM2008,usaPM2009,
+# usaPM2010,usaPM2011,usaPM2012,usaPM2013,usaPM2014,usaPM2015,
+#	   usaPM2016,usaPM2017,usaPM2018) 
+
+# Parse dates
+
+# usaPMcombo$Date <- parse_date_time (usaPMcombo$Date.Local, tz="America/Chicago",orders="ymd")
+# saveRDS(usaPMcombo, file = "PM25_data-big.rds")
+
+# Now delete the variables we don't want
+
+# Variables to keep; create a vector
+
+# NiftyVars <- c("State.Code", "Site.Num", "Latitude", "Longitude","Parameter.Name","Date.Local","Arithmetic.Mean","State.Name","City.Name")
+
+# SlimUSApm <- usaPMcombo[NiftyVars]
+
+# Save the slim USA data set
+#  saveRDS (SlimUSApm, file = "PM25_data_USslim.rds")
+
+
+# Now separate out the Pacific Northwest States
+
+# newdata <- subset(mydata, age >= 20 | age < 10, select=c(ID, Weight))
+
+# WashingtonPM25 <- subset (SlimUSApm, State.Name == "Washington")
+# OregonPM25 <- subset (SlimUSApm, State.Name == "Oregon")
+# IdahoPM25 <- subset (SlimUSApm, State.Name == "Idaho")
+# MontanaPM25 <- subset (SlimUSApm, State.Name == "Montana")
+
+# PNWpm25 <- rbind (WashingtonPM25, OregonPM25, IdahoPM25, MontanaPM25)
+
+# plot(PNWpm25$Date.Local,PNWpm25$Arithmetic.Mean)
+
+
+# Save the PNW Data Sets
+
+# saveRDS (WashingtonPM25, file = "WashingtonPM25.rds")
+# saveRDS (OregonPM25, file = "OregonPM25.rds")
+# saveRDS (IdahoPM25, file = "IdahoPM25.rds")
+# saveRDS (MontanaPM25, file = "MontanaPM25.rds")
+
+# saveRDS (PNWpm25, file = "PNW_PM25.rds")
