@@ -9,7 +9,7 @@
 library(lubridate)
 
 # Set working Directory
-setwd("C:/Users/EBECK/OneDrive - Environmental Protection Agency (EPA)/Sync4OneDrive/ReproducibleResearch/Sept2018Class/DataFutz/PNW-Air/2018NorthWestUSA")
+setwd("C:/Users/EBECK/OneDrive - Environmental Protection Agency (EPA)/Sync4OneDrive/ReproducibleResearch/Sept2018Class/R-MD-LaTeX/Data/AirQualityData/USA/PNW/2018NorthWestUSA")
 
 # Read in the chunks for Washington, Oregon, and Idaho for 2018
 

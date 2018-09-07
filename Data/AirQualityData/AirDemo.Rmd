@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # A Practical Demonstration of reproducible research #
 ## Markdown, R, Knitr ##
 ### Using EPA and Department of State (DOS) air quality data ###
@@ -166,7 +171,7 @@ PNW17 	       <- readRDS (file = "USA/PNW/PNW_PM25.rds")
 
 colnames(PNW17)
 summary(PNW17$Arithmetic.Mean)
-plot(PNW17$Date, PNW17$ArithmeticMean)
+plot(PNW17$Date, PNW17$Arithmetic.Mean)
 ```
 
 # Joys of Reproducible Research and Batch/Scripting #
@@ -182,11 +187,12 @@ PM 2.5; Washington, Oregon, Idaho, Montana
 Note: this is preliminary and provisional data. 
 
 ``` {r PNW 2018 Year to Date}
-Montana18      <- readRDS (file = "USA/PNW/2018NorthWestUSA/Montana18.rds")
-WaOrId18       <- readRDS (file = "USA/PNW/2018NorthWestUSA/WaOrId18.rds")
-PNW18	       <- readRDS (file = "USA/PNW/2018NorthWestUSA/PNW18.rds")
-
-
+Montana18      <- readRDS (file = "USA/PNW/2018NorthWestUSA/Montana2018.rds")
+WaOrId18       <- readRDS (file = "USA/PNW/2018NorthWestUSA/WaOrId2018.rds")
+PNW18	         <- readRDS (file = "USA/PNW/2018NorthWestUSA/PNW18.rds")
+colnames (PNW18)
+summary(PNW18)
+plot (PNW18$Date, PNW18$PM25value)
 ```
 
 
