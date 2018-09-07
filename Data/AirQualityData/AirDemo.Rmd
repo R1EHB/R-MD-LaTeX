@@ -75,9 +75,9 @@ fireplaces and fuel-burning space heaters (e.g., kerosene heaters).
 
 {Insert photo here}
 
-![](http://example.com/logo.png)
 
-![optional caption text](figures/img.png)
+
+![Photo by Erik Beck](Photos/MedfordSunset.jpg)
 
 
 ## Erik and Air ##
