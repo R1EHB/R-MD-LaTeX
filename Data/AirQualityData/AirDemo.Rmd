@@ -92,7 +92,7 @@ It can help make sunsets more spectacular:
 
 # On with the show... #
 ```{r Preamble}
-library{lubridate}
+library(lubridate)
 setwd("C:/Users/EBECK/OneDrive - Environmental Protection Agency (EPA)/Sync4OneDrive/ReproducibleResearch/Sept2018Class/R-MD-LaTeX/Data/AirQualityData")
 ```
 
@@ -107,24 +107,67 @@ Here are some summary statistics for data obtained from the U.S. Embassies at a 
 
 ## Beijing ##
 Beijing Air Data, PM2.5; 2008-2017.
+
+### Variables:###
+*  [1] "Site"            "Parameter"       "Date_LST"       
+*  [4] "Year"            "Month"           "Day"            
+*  [7] "Hour"            "Value"           "Unit"           
+* [10] "Duration"        "QC_Name"         "SampleLocalTime"
+* [13] "SampleUTC"
+
 ```{r Beijing Summary}
 BeijingAir <- readRDS (file = "Beijing/BeijingPM08_17.rds")
 colnames (BeijingAir)
-```
-## ShenYang ##
 
+summary(BeijingAir$Value)
+plot (BeijingAir$SampleUTC, BeijingAir$Value)
+
+```
+
+## ShenYang ##
+ShenYang Air Data, PM2.5; 2013-2017.
+
+```{r ShenYang Summary}
+
+ShenYang <- readRDS (file = "ShenYang/ShenYang13_17_PM.rds")
+colnames (ShenYang)
+
+summary(ShenYang$Value)
+plot (ShenYang$SampleUTC, ShenYang$Value)
+
+```
 
 # India #
 
 ## Kolkata (Calcutta) ##
+Kolkata Air Data, PM2.5; 2015-2018.
+```{r Kolkata, India Summary}
 
+Kolkata <- readRDS (file = "Calcutta/Kolkata_15_18pm.rds")
+colnames (Kolkata)
+summary (Kolkata$RawConc)
+plot (Kolkata$SampleUTC, Kolkata$RawConc)
+
+```
 
 # USA #
 
 ## Pacific Northwest ##
 
 ### 1999-2017 ###
+PM 2.5; Washington, Oregon, Idaho, Montana
 
+```{r, Pacific Northwest (PNW)}
+Montana17      <- readRDS (file = "USA/PNW/MontanaPM25.rds")
+Washington17   <- readRDS (file = "USA/PNW/WashingtonPM25.rds")
+Oregon17       <- readRDS (file = "USA/PNW/OregonPM25.rds")
+Idaho17	       <- readRDS (file = "USA/PNW/IdahoPM25.rds")
+PNW17 	       <- readRDS (file = "USA/PNW/PNW_PM25.rds")
+
+colnames(PNW17)
+summary(PNW17$Arithmetic.Mean)
+plot(PNW17$Date.Local, PNW17$ArithmeticMean)
+```
 
 # Joys of Reproducible Research and Batch/Scripting #
 
@@ -136,15 +179,5 @@ colnames (BeijingAir)
 
 
 
-
-
-
-
-# Parking villa #
-
-```{r}
-summary(cars$dist)
-summary(cars$speed)
-```
-
-https://rmarkdown.rstudio.com/authoring_basics.html
+# Handy Reference for R's extentions to Markdown #
+* https://rmarkdown.rstudio.com/authoring_basics.html

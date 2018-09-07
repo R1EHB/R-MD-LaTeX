@@ -9,7 +9,7 @@
 library(lubridate)
 
 # Set working Directory
-setwd("C:/Users/EBECK/OneDrive - Environmental Protection Agency (EPA)/Sync4OneDrive/ReproducibleResearch/Sept2018Class/DataFutz/India-Air/Kolkata")
+setwd("C:/Users/EBECK/OneDrive - Environmental Protection Agency (EPA)/Sync4OneDrive/ReproducibleResearch/Sept2018Class/R-MD-LaTeX/Data/AirQualityData/Calcutta")
 
 # Read in the Kolkata historical data sets (US State Dept)
 KolkataPM15 <-read.csv (file="Kolkata_PM2.5_2015_ModEHB.csv", header=TRUE, sep=",")
@@ -51,7 +51,8 @@ KolkataTest$SampleUTC <- with_tz (KolkataTest$SampleLocalTime, tzone = "UTC")
 # Recode -999 to missing for KolkataTest$Value
 KolkataTest$RawConc[KolkataTest$RawConc==-999] <-NA
 
-plot(KolkataTest$SampleUTC,KolkataTest$RawConc)
+saveRDS (KolkataTest, file ="Kolkata_15_18pm.rds")
+# plot(KolkataTest$SampleUTC,KolkataTest$RawConc)
 
 
 

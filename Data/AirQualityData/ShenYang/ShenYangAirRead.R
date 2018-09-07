@@ -6,7 +6,7 @@
 library(lubridate)
 
 # Set working Directory
-setwd("C:/Users/EBECK/OneDrive - Environmental Protection Agency (EPA)/Sync4OneDrive/ReproducibleResearch/Sept2018Class/DataFutz/China-Air/Shenyang")
+setwd("C:/Users/EBECK/OneDrive - Environmental Protection Agency (EPA)/Sync4OneDrive/ReproducibleResearch/Sept2018Class/R-MD-LaTex/Data/AirQualityData/Shenyang")
 
 # Read in the Shenyang historical data sets (US State Dept)
 ShenyangPM13 <-read.csv (file="Shenyang_2013_HourlyPM25_ModEHB.csv", header=TRUE, sep=",")
@@ -45,7 +45,13 @@ ShenyangTest$SampleUTC <- with_tz (ShenyangTest$SampleLocalTime, tzone = "UTC")
 # Recode -999 to missing for ShenyangTest$Value
 ShenyangTest$Value[ShenyangTest$Value==-999] <-NA
 
-plot(ShenyangTest$SampleUTC,ShenyangTest$Value)
+
+# Write out ShenYang file
+
+saveRDS(ShenyangTest, file = "ShenYang13_17_PM.rds", ascii = FALSE,
+	version	= NULL, compress = TRUE, refhook = NULL)
+
+# plot(ShenyangTest$SampleUTC,ShenyangTest$Value)
 
 
 

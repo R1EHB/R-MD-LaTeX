@@ -1,12 +1,13 @@
 # An R Script
 # Erik Beck
 # September 3, 2018
+# Revised September 7, 2018
 # Read 1999-2017 Air Data (PM2.5) for the Pacific Northwest
 # AQS Data Mart  PM2.5 (88101)
 # Prep to analyze
 
 
-
+library(lubridate)
 # Set working Directory
 # setwd("C:/Users/EBECK/OneDrive - Environmental Protection Agency (EPA)/Sync4OneDrive/ReproducibleResearch/Sept2018Class/R-MD-LaTeX/Data/AirQualityData/USA/PNW")
 
