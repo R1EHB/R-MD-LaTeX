@@ -166,17 +166,28 @@ PNW17 	       <- readRDS (file = "USA/PNW/PNW_PM25.rds")
 
 colnames(PNW17)
 summary(PNW17$Arithmetic.Mean)
-plot(PNW17$Date.Local, PNW17$ArithmeticMean)
+plot(PNW17$Date, PNW17$ArithmeticMean)
 ```
 
 # Joys of Reproducible Research and Batch/Scripting #
 
+If we need to update the report with new data (or fix errors like I
+did in preparing this document), it is easy to merely re-run the
+script with the needed changes.
+
 ## Pacific Northwest (redux)
+PM 2.5; Washington, Oregon, Idaho, Montana
 
 ### 2018 ###
+Note: this is preliminary and provisional data. 
+
+``` {r PNW 2018 Year to Date}
+Montana18      <- readRDS (file = "USA/PNW/2018NorthWestUSA/Montana18.rds")
+WaOrId18       <- readRDS (file = "USA/PNW/2018NorthWestUSA/WaOrId18.rds")
+PNW18	       <- readRDS (file = "USA/PNW/2018NorthWestUSA/PNW18.rds")
 
 
-
+```
 
 
 # Handy Reference for R's extentions to Markdown #

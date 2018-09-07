@@ -94,8 +94,11 @@ MontanaPM25 <- subset (SlimUSApm, State.Name == "Montana")
 
 PNWpm25 <- rbind (WashingtonPM25, OregonPM25, IdahoPM25, MontanaPM25)
 
-plot(PNWpm25$Date.Local,PNWpm25$Arithmetic.Mean)
+plot(PNWpm25$Date,PNWpm25$Arithmetic.Mean)
 
+
+# Set path to write out the data
+setwd ("C:/Users/EBECK/OneDrive - Environmental Protection Agency (EPA)/Sync4OneDrive/ReproducibleResearch/Sept2018Class/R-MD-LaTeX/Data/AirQualityData/USA/PNW")
 
 # Save the PNW Data Sets
 

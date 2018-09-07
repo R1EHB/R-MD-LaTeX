@@ -103,11 +103,11 @@ MontanaClean18$Concentration[MontanaClean18$Concentration==-999] <-NA
 
 # Equalize the variable names, reduce variable numbers, and join the Montana data with the WA-OR-ID data.
 
-# W <- nrow (WaOrId)
-# M <- nrow (MontanaClean18)
+W <- nrow (WaOrId)
+M <- nrow (MontanaClean18)
 
-# WaOrId_Temp <- data.frame (dummy = rnorm(W))
-# MontanaNew  <- data.frame (dummy = rnorm(M))
+WaOrId_Temp <- data.frame (dummy = rnorm(W))
+MontanaNew  <- data.frame (dummy = rnorm(M))
 
 WaOrId_Temp$State <- WaOrId$State
 MontanaNew$State <- MontanaClean18$State.Code
@@ -129,4 +129,10 @@ PNW18pm25 <- rbind (WaOrId_Temp, MontanaNew)
 PNW18pm25$PM25value[PNW18pm25$PM25value==-999] <-NA
 
 plot (PNW18pm25$Date, PNW18pm25$PM25value)
+
+# Write out these 2018 state and combo files
+
+saveRDS (WaOrId_Temp, file = "WaOrId2018.rds")
+saveRDS (MontanaNew,  file = "Montana2018.rds")
+saveRDS (PNW18pm25,   file = "PNW18.rds")
 
