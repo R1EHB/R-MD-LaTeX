@@ -73,11 +73,10 @@ fireplaces and fuel-burning space heaters (e.g., kerosene heaters).
 * (Abridged info from NYSDoH)
 * https://www.health.ny.gov/environmental/indoors/air/pmq_a.htm
 
-{Insert photo here}
+### Positive impact of PM2.5 ###
+It can help make sunsets more spectacular:
 
-
-
-![Photo by Erik Beck](Photos/MedfordSunset.jpg)
+![Photo by Erik H. Beck, Copyright 2018, All Rights Reserved](Photos/MedfordSunset.jpg)
 
 
 ## Erik and Air ##
@@ -92,7 +91,56 @@ fireplaces and fuel-burning space heaters (e.g., kerosene heaters).
 * DOS/EPA: (All) https://airnow.gov/index.cfm?action=airnow.global_summary
 
 # On with the show... #
+```{r Preamble}
+library{lubridate}
+setwd("C:/Users/EBECK/OneDrive - Environmental Protection Agency (EPA)/Sync4OneDrive/ReproducibleResearch/Sept2018Class/R-MD-LaTeX/Data/AirQualityData")
+```
 
+
+## Air Quality Around the World ##
+Air quality issues are not limited to the United States.  Other countries have issues with poor air quality at times.
+
+Here are some summary statistics for data obtained from the U.S. Embassies at a few overseas locations:
+
+# China #
+
+
+## Beijing ##
+Beijing Air Data, PM2.5; 2008-2017.
+```{r Beijing Summary}
+BeijingAir <- readRDS (file = "Beijing/BeijingPM08_17.rds")
+colnames (BeijingAir)
+```
+## ShenYang ##
+
+
+# India #
+
+## Kolkata (Calcutta) ##
+
+
+# USA #
+
+## Pacific Northwest ##
+
+### 1999-2017 ###
+
+
+# Joys of Reproducible Research and Batch/Scripting #
+
+## Pacific Northwest (redux)
+
+### 2018 ###
+
+
+
+
+
+
+
+
+
+# Parking villa #
 
 ```{r}
 summary(cars$dist)

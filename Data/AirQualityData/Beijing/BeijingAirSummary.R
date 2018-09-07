@@ -34,9 +34,15 @@ BeijingTest$SampleUTC <- with_tz (BeijingTest$SampleLocalTime, tzone = "UTC")
 # Recode -999 to missing for BeijingTest$Value
 BeijingTest$Value[BeijingTest$Value==-999] <-NA
 
-summary(BeijingTest$Value)
+# Write out Beijing File
 
-plot(BeijingTest$SampleUTC,BeijingTest$Value)
+saveRDS (BeijingTest, file ="BeijingPM08_17.rds", ascii = FALSE,
+	version	= NULL, compress = TRUE, refhook = NULL)
+
+
+# summary(BeijingTest$Value)
+
+# plot(BeijingTest$SampleUTC,BeijingTest$Value)
 
 
 
