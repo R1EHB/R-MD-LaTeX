@@ -121,6 +121,7 @@ LaTeX is widely used in academia for the publication of scientific documents in 
 --- \url{https://www.ctan.org/tex/}
 % I'd like to add that while LaTeX is most used for medium to long papers, there are also EXCELLENT templates for very good-looking short documents, like resumes.
 % Add an Erik Resume version here?
+% Branch off to an Erik Resume, or to Emily's instrument SOP here?
 \end{frame}
 
 \begin{frame}[fragile]{LaTeX: Minimal example}
@@ -288,6 +289,14 @@ Helpful link: \\ \url{https://rmarkdown.rstudio.com/lesson-2.html}
     examples \& demos
 \end{frame}
 
+\begin{frame}{A Modest Markdown Example}
+  Let's try a little Markdown markup:
+  \begin{description}
+  \item [One] Use Markdown to write an html file with your name and favorite hobby.
+  \item [Two] Use LaTeX to write a PDF file with the name of your first school.
+  \end{description}
+\end{frame}
+
 \section{Reproducible Research}
 \begin{frame}[noframenumbering]{Reproducible Research}
 \begin{center}
@@ -358,14 +367,21 @@ Then what if we want to change the random seed in \verb|set.seed()|, or the y-ax
 \begin{itemize}
     \item Instead of separating the results from the computation, we can put everything in one document.
     \item When we compile this document, the computation will be executed, giving us the results directly.
-    \item Integrating code with narratives is not only easier, but also provides details needed for reproducibility. % It does not guarantee RR, but it is an important step towards RR. RR is one possible by-product of dynamic documents.
-    \vfill
+    \item Integrating code with narratives is not only easier, but also provides details needed for reproducibility.
+      % It does not guarantee RR, but it is an important step towards
+      % RR. RR is one possible by-product of dynamic documents.
+      \vfill
     \begin{exampleblock}{Dynamic documents are easier than cut-and-paste}
-    It is fairly common to see student homework and exercises among the countless user contributions on \href{https://rpubs.com/}{RPubs}. Once students are trained, we may expect more reproducible scientific research in the future. % Easy tools promote RR very quickly.
+      It is fairly common to see student homework and exercises among the countless user contributions on \href{https://rpubs.com/}{RPubs}. Once students are trained, we may expect more reproducible scientific research in the future.
+      % Easy tools promote RR very quickly.
     \end{exampleblock}
     \vfill
 \end{itemize}
-% We should not expect all reports in the world to be publicly available, but it is better to share even mediocre or flawed code or problematic datasets than to not share anything at all.
+
+% We should not expect all reports in the world to be publicly
+% available, but it is better to share even mediocre or flawed code or
+% problematic datasets than to not share anything at all.
+
 \end{frame}
 
 \begin{frame}{Dynamic documents---a short example}
@@ -775,6 +791,7 @@ Let's try some examples together...
     \item \url{https://support.rstudio.com/hc/en-us/articles/200552056-Using-Sweave-and-knitr}
     \item Documents source + output examples \url{https://yihui.name/knitr/demos/}
     \item To Markdown, or LaTeX: that is the question... \url{https://yihui.name/en/2013/10/markdown-or-latex/}
+    \item \url{https://rmarkdown.rstudio.com/authoring_basics.html}
 \end{itemize}
 % Also go back and check out all the links in these slides.
 \end{frame}
