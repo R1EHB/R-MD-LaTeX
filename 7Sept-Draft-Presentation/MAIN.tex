@@ -239,7 +239,7 @@ Markdown was primarily designed to be simple. \\ For more complicated typesettin
   \begin{itemize}
   \item Maximal focus on content, minimal focus on formatting while writing.
   \item Quick layout of documents.
-  \item Can be converted to a variety of formats easily (Pandoc, others).
+  \item Can be converted to a variety of formats easily (using pandoc, etc).
   \item Format durability (records)
   \end{itemize}
 \end{frame}
@@ -622,6 +622,49 @@ In RStudio, for either $.Rnw$ or $.Rmd$, quickly insert code chunks with the key
     \end{itemize}
     {\small See \verb|?stitch| for details.}
 \end{frame}
+
+\begin{frame}[fragile]{Longer Example of Markdown and R}
+  
+  Markdown (or LaTeX) can be combined with R using knitr to make
+  longer reports, but which can be easily updated with a tidbit of new
+  code.  Here we will show an example using data from USEPA and US
+  Dept. of State on PM\textsubscript{2.5} air pollution.
+  
+  \begin{itemize}
+  \item Particulate pollution is often in the news
+  \item Especially lately with the West Coast forest fires
+  \item CAA Primary air pollutant (NAAQS)
+  \end{itemize}
+  Switch over to Rstudio....
+\end{frame}
+
+\begin{frame} {Hands-on Exercises}
+Let's try some examples together...  
+\end{frame}
+
+\begin{frame}{Air Example One}
+  % put in an index for the example?
+  \begin{itemize}
+  \item Use Markdown to create an R script that will perform summary
+  statistics on a different variable than the concentration value
+  presented.
+  \end{itemize}    
+\end{frame}
+
+\begin{frame} {Air Example Two}
+\begin{itemize}
+\item Use LaTeX to create an R script that will perform summary
+  statistics on a different variable than the concentration value
+  presented.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Air Example Three}
+  \begin{itemize}
+  \item Use Markdown to create a plot of your choice from the air data.
+  \end{itemize}
+\end{frame}
+
 
 \begin{frame}{R in Markdown \& LaTeX}
     \vfill
