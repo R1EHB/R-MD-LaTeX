@@ -1,0 +1,13 @@
+\frametitle{Longer Example of Markdown and R}
+
+  Markdown (or LaTeX) can be combined with R using knitr to make
+  longer reports, but which can be easily updated with a tidbit of new
+  code.  Here we will show an example using data from USEPA and US
+  Dept. of State on PM\textsubscript{2.5} air pollution.
+
+  \begin{itemize}
+  \item Particulate pollution is often in the news
+  \item Especially lately with the West Coast forest fires
+  \item CAA Primary air pollutant (NAAQS)
+  \end{itemize}
+  Switch over to Rstudio....
