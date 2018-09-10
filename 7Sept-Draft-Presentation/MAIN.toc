@@ -1,8 +1,0 @@
-\beamer@sectionintoc {1}{Agenda}{3}{0}{1}
-\beamer@sectionintoc {2}{Introduction to LaTeX}{6}{0}{2}
-\beamer@sectionintoc {3}{Introduction to Markdown}{14}{0}{3}
-\beamer@sectionintoc {4}{Markdown \& LaTeX examples}{20}{0}{4}
-\beamer@sectionintoc {5}{Reproducible Research}{23}{0}{5}
-\beamer@sectionintoc {6}{Dynamic documents with Sweave and knitr}{35}{0}{6}
-\beamer@sectionintoc {7}{Markdown \& LaTeX with R}{40}{0}{7}
-\beamer@sectionintoc {8}{Additional Resources}{53}{0}{8}

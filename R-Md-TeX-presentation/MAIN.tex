@@ -44,7 +44,7 @@
 \begin{center}
     \begin{tabular}{c c c}
     Day & Time & Room \\
-    \textbf{Tues, Sept 11} & \textbf{8:30-11:30am} & \textbf{C111C}
+    \textbf{Tues, Sept 11} & \textbf{8:00-11:30am} & \textbf{C112}
 \end{tabular}
 \end{center}
 \end{exampleblock}
@@ -78,11 +78,11 @@ We will try to use our three hours as effectively as possible.
 \begin{center}
 \begin{tabular}{r|r|l}
     \textbf{\#} & \textbf{Time} & \textbf{Topic} \\
-    1 & 8:30 & System checks \& agenda \\
-    2 & 8:45 & Intro to LaTeX \\
-    3 & 9:00 & Intro to Markdown \\
-    4 & 9:15 & Markdown \& LaTeX examples \\
-    5 & 9:40 & Reproducible Research \\
+    1 & 8:00 & System checks \& agenda \\
+    2 & 8:20 & Intro to LaTeX \\
+    3 & 8:40 & Intro to Markdown \\
+    4 & 9:00 & Markdown \& LaTeX examples \\
+    5 & 9:30 & Reproducible Research \\
     \hline
      & 9:50 & \emph{BREAK} \\
     \hline
@@ -236,12 +236,12 @@ Markdown was primarily designed to be simple. \\ For more complicated typesettin
 
 \begin{frame}{Uses for Markdown}
 % EHB
-  \begin{itemize}
+\begin{itemize}
   \item Maximal focus on content, minimal focus on formatting while writing.
-  \item Quick layout of documents.
-  \item Can be converted to a variety of formats easily (Pandoc, others).
+  \item Quick layout of documents
+  \item Can be converted to a variety of formats easily
   \item Format durability (records)
-  \end{itemize}
+\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Markdown --- a short example}
@@ -288,7 +288,16 @@ Helpful link: \\ \url{https://rmarkdown.rstudio.com/lesson-2.html}
     examples \& demos
 \end{frame}
 
+%\begin{frame}{A modest example}
+%Let's try a little markup:
+%\begin{description}
+%\item[One] One Use Markdown to write a .html file with your name and favorite hobby.
+%\item[Two] Two Use LaTeX to write a .pdf file with the name of your first school.
+%\end{description}
+%\end{frame}
+
 \section{Reproducible Research}
+
 \begin{frame}[noframenumbering]{Reproducible Research}
 \begin{center}
 \includegraphics[width=.82\textwidth]{nature-reproducibility-graphic.jpeg}
@@ -623,6 +632,48 @@ In RStudio, for either $.Rnw$ or $.Rmd$, quickly insert code chunks with the key
     {\small See \verb|?stitch| for details.}
 \end{frame}
 
+\begin{frame}[fragile]{Longer Example of Markdown and R}
+  
+  Markdown (or LaTeX) can be combined with R using knitr to make
+  longer reports that can be easily updated with a tidbit of new
+  code.  Here we will show an example using data from US EPA and US
+  Dept. of State on PM\textsubscript{2.5} air pollution.
+  
+\begin{itemize}
+  \item Particulate pollution is often in the news
+  \item Especially lately with the West Coast forest fires
+  \item CAA primary air pollutant (NAAQS)
+  \end{itemize}
+  Switch over to Rstudio\ldots \ldots 
+\end{frame}
+
+\begin{frame}[focus]
+    Let's try some examples together\ldots
+\end{frame}
+
+\begin{frame}{Hands-on exercises}
+  % put in an index for the example?
+\begin{exampleblock}{Air Example One}
+Use Markdown to create an R script that will perform summary
+statistics on a different variable than the concentration value
+presented.
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Hands-on exercises}
+\begin{exampleblock}{Air Example Two}
+Use \textbf{LaTeX} to create an R script that will perform summary
+statistics on a different variable than the concentration value
+presented.
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Hands-on exercises}
+\begin{exampleblock}{Air Example Three}
+Use Markdown to create a plot of your choice from the air data.
+\end{exampleblock}
+\end{frame}
+
 \begin{frame}{R in Markdown \& LaTeX}
     \vfill
     \begin{center}
@@ -634,7 +685,7 @@ In RStudio, for either $.Rnw$ or $.Rmd$, quickly insert code chunks with the key
     \item[LaTeX] has more commands to learn, but always looks better---even with minimal coding.
     \end{description}
     \vfill
-    Each serves a different purpose. If you're writing a journal article, thesis, textbook, or r\'esum\'e, you may want the extra precision.
+    Each serves a different purpose. If you're writing a journal article, thesis, textbook, or resume, you may want the extra precision.
     %\vfill
     %Also, \textbf{you can use them both at the same time}. Theoretically. I haven't tried this. Might be an advanced technique.
 
@@ -732,6 +783,7 @@ In RStudio, for either $.Rnw$ or $.Rmd$, quickly insert code chunks with the key
     \item \url{https://support.rstudio.com/hc/en-us/articles/200552056-Using-Sweave-and-knitr}
     \item Documents source + output examples \url{https://yihui.name/knitr/demos/}
     \item To Markdown, or LaTeX: that is the question... \url{https://yihui.name/en/2013/10/markdown-or-latex/}
+    \item \url{https://rmarkdown.rstudio.com/authoring_basics.html}
 \end{itemize}
 % Also go back and check out all the links in these slides.
 \end{frame}
