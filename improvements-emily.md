@@ -3,7 +3,7 @@
 Emily's notes on the 9/11 workshop to improve it for the rescheduled R User Group Workshop.
 
 ## Slides and presentation
-+ A few participants expressed that the slides were very helpful
++ Participants expressed that the slides were very helpful
 - The pace should be a little faster, with no skipping around. Skipping around confused some people (my bad!). I need to print the slides out for myself so I can keep better track of where we are.
 
 ## Problems that might be mitigated with both presenters in the same room
