@@ -6,7 +6,7 @@ Emily's notes on the 9/11 workshop to improve it for the rescheduled R User Grou
 + Participants expressed that the slides were very helpful
 - The pace should be a little faster, with no skipping around. Skipping around confused some people (my bad!). I need to print the slides out for myself so I can keep better track of where we are.
 
-## Problems that might be mitigated with both presenters in the same room
+Some problems might be mitigated with both presenters in the same room.
 - Presenting from one screen for everyone
 - One person able to dedicate some more attention to remote attendees
 
@@ -28,7 +28,8 @@ Another participant expressed a similar request for more examples.
 - Instructions for MikTeX installations
   1. Should clarify that MikTeX is NOT an R package and is a standalone installation.
   1. Should include instructions to install MacTeX for Mac OS users and TeX Live for Linus users.
-- Consolidate installation instructions with compiler instructions
+- Consolidate installation instructions with compiler instructions. 
+- Maybe state that we will not be able to spend much time troubleshooting attendees' technical problems at the workshop, so attendees are responsible for troubleshooting before coming to the session (we can maybe help a little if Google doesn't, if you give us enough time).
 
 ## Technical problems
 - Loaner laptops --- R & RStudio were installed but not MikTeX and the `knitr` R package
