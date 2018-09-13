@@ -36,3 +36,8 @@ Another participant expressed a similar request for more examples.
   1. People that said they were bringing personal laptops had not been given instructions on how to get on the wifi
   1. Need to bring USB sticks with data and slides on them
 - Time: "Never start before 8:30am eastern time for us west coasters : ) "
+
+## Feedback on the workshop in general
+
+- Several of those registered from RTP expressed to me that there were too many emails going out relating to the workshop, even before the hurricane decisions.
+- It was especially confusing that the whole event was called a workshop but individual workshops were also each called a workshop.
