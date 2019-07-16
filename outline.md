@@ -1,5 +1,5 @@
 # "Using LaTeX and Markdown for Reproducible Research" #
-* Class in 2018 at RTP
+* Class in 2019 at RTP
 * Emily Li
 * Erik Beck
 
@@ -29,14 +29,14 @@ and research with R.
 
 # Key Elements #
 
-* Hands-on
-* More Hands-on
+* Lecture, with examples.
+* Limited hands-on during session, but with ample examples to try at home.
 
 # Prerequisites #
 
 It is expected that you have some familiarity with R and RStudio, can install packages from CRAN, and understand basic R syntax.
 
-We will be using R and RStudio for this workshop. This must be installed prior to September 11. Simply email EZTech and request that R and RStudio be installed on your machine. They will push that out usually in a day or so.
+We will be using R and RStudio for this workshop. This must be installed prior to XXX. Simply email ??? and request that R and RStudio be installed on your machine. They will push that out usually in a day or so.
 
 * R and RStudio
 * MikTeX (required for knitr)
@@ -44,8 +44,7 @@ We will be using R and RStudio for this workshop. This must be installed prior t
   + knitr
   + ggplot2 (or all of tidyverse)
   + Pandoc (stand alone or in knitr?)
-* Editor?
-* USGS dataRetrieval, etc?
+
 
 # Data Examples and Datasets #
 * dslabs
