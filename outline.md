@@ -1,15 +1,20 @@
-# "Using LaTeX and Markdown for Reproducible Research" #
+% "Using Tools (R, Markdown, etc) for Reproducible Research" #
+% Erik and Emily
+% 23 July 2019 draft
+
+
+# "Using Tools (R, Markdown, etc) for Reproducible Research" #
 * Class in 2019 at RTP
 * Emily Li
 * Erik Beck
 
 # Mini-Abstract #
 
-**Using LaTeX and Markdown for Reproducible Research**
+**Using Tools for Reproducible Research**
 
 Taking a modular approach and a stepwise fashion, Erik and Emily will
-teach participants the basics of LaTeX, Markdown, and the R package
-knitr. These modules will then lead to using these tools to facilitate
+teach participants the basics of  Markdown and the R package
+knitr. They will also briefly mention LaTeX. These modules will then lead to using these tools to facilitate
 reproducible reports and research with R. Participants will then get
 to use these modules synchronously to facilitate reproducible reports
 and research with R.
