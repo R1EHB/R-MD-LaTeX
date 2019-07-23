@@ -12,17 +12,33 @@ Some problems might be mitigated with both presenters in the same room.
 
 Feedback relating to presenters:
 
-"I felt that the workshop was a bit disorganized - there were times when Emily and Erik were shuffling to get things set up or figuring out where to go next."
+"I felt that the workshop was a bit disorganized - there were times
+when Emily and Erik were shuffling to get things set up or figuring
+out where to go next."
 
 ## Challenges with hands-on examples
 
-One person gave really good feedback on how difficult it can be to get participants to work with hands-on examples when everyone has different technical issues.
+One person gave really good feedback on how difficult it can be to get
+participants to work with hands-on examples when everyone has
+different technical issues.
 
-"The description of the workshop says, “Participants will then get to use these modules synchronously to facilitate reproducible reports and research with R.”  There was not time for us to do a practice problem.  With all the different operating systems, package installations, and difficulty troubleshooting remote participants errors, I think it makes sense not to do practice problems.  But, to my point above, I would have liked to see more examples of each code and more comparisons."
+"The description of the workshop says, “Participants will then get to
+use these modules synchronously to facilitate reproducible reports and
+research with R.”  There was not time for us to do a practice problem.
+With all the different operating systems, package installations, and
+difficulty troubleshooting remote participants errors, I think it
+makes sense not to do practice problems.  But, to my point above, I
+would have liked to see more examples of each code and more
+comparisons."
 
 Another participant expressed a similar request for more examples.
 
-"I think one thing that would be really helpful when starting this session would be to share examples of completed projects, one using markdown and one using LaTeX to better illustrate (1) what the final product looks like, (2) the advantages of each over no code documentation (i.e. what do they allow you to document, what do they make easier, etc.), and (3) when to use one instead of the other."
+"I think one thing that would be really helpful when starting this
+session would be to share examples of completed projects, one using
+markdown and one using LaTeX to better illustrate (1) what the final
+product looks like, (2) the advantages of each over no code
+documentation (i.e. what do they allow you to document, what do they
+make easier, etc.), and (3) when to use one instead of the other."
 
 ## Pre-workshop emailed instructions
 - Instructions for MikTeX installations
