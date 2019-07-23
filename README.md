@@ -1,4 +1,16 @@
 # R-MD-LaTeX
-R, Markdown, and LaTeX class presentations and such.
+Files for EPA R Conference
+August 13, 2019, RTP
+Emily Li
+Erik Beck
 
-See `R_Md_TeX_presentation (1).pdf` for the slides.
+Reproducible Research with R
+
+This repository contains various files (presentation, R, data, etc)
+for a presentation to be given on August 13, 2019 at EPA's R
+conference in RTP.
+
+
+
+
+
