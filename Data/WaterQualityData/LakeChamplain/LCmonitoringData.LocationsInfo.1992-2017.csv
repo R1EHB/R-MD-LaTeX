@@ -1,0 +1,77 @@
+﻿LocationID,LocationName,StoretLocationType,Latitude,Longitude,Town,StateCode,LCM_StationID,LCM_StationName
+500447,Southern Section - Lake Champlain,Lake,43.5922,-73.43,Bridport,VT,1,
+500448,Southern Section - Lake Champlain,Lake,44.0681,-73.4331,Bridport,VT,6,
+500449,Port Henry Section - Lake Champlain,Lake,44.1261,-73.4128,Panton,VT,7,Port Henry Segment
+500450,Port Henry Section - Lake Champlain,Lake,44.1842,-73.3903,Ferrisburgh,VT,8,
+500451,Otter Creek Section - Lake Champlain,Lake,44.2422,-73.3292,Ferrisburgh,VT,9,Otter Creek Segment
+500452,Main Section - Lake Champlain,Lake,44.3,-73.3194,Charlotte,VT,10,
+500453,Main Section - Lake Champlain,Lake,44.3569,-73.3003,Shelburne,VT,11,
+500454,Main Section - Lake Champlain,Lake,44.3569,-73.3297,,NY,12,
+500455,Main Section - Lake Champlain,Lake,44.4139,-73.2922,Shelburne,VT,13,
+500456,Main Section - Lake Champlain,Lake,44.4139,-73.3286,,NY,14,
+500457,Main Section - Lake Champlain,Lake,44.4206,-73.4025,,NY,15,
+500458,Main Section - Lake Champlain,Lake,44.4711,-73.2992,,NY,19,Main Lake
+500459,Burlington Bay - Lake Champlain,Lake,44.4747,-73.2317,Burlington,VT,21,Burlington Bay
+500460,Main Section - Lake Champlain,Lake,44.4711,-73.2514,Burlington,VT,20,
+500461,Main Section - Lake Champlain,Lake,44.5281,-73.3189,Colchester,VT,22,
+500462,Main Section - Lake Champlain,Lake,44.5281,-73.3628,,NY,23,
+500463,Main Section - Lake Champlain,Lake,44.5853,-73.3567,South Hero,VT,26,
+500464,Main Section - Lake Champlain,Lake,44.5853,-73.3983,,NY,27,
+500465,Main Section - Lake Champlain,Lake,44.6422,-73.3822,South Hero,VT,28,
+500466,Main Section - Lake Champlain,Lake,44.6719,-73.2678,South Hero,VT,30,
+500467,Main Section - Lake Champlain,Lake,44.7081,-73.2719,Grand Isle,VT,35,
+500468,Main Section - Lake Champlain,Lake,44.7011,-73.4181,,NY,33,Cumberland Bay
+500469,Main Section - Lake Champlain,Lake,44.6992,-73.3667,,NY,32,
+500470,Isle La Motte - Lake Champlain,Lake,44.7561,-73.355,Isle La Motte,VT,36,Isle LaMotte (off Grand Isle)
+500471,Isle La Motte - Lake Champlain,Lake,44.8203,-73.3525,Isle La Motte,VT,42,
+500472,Isle La Motte - Lake Champlain,Lake,44.8844,-73.3642,Isle La Motte,VT,44,
+500473,Isle La Motte - Lake Champlain,Lake,45.0108,-73.3453,,NY,49,
+500474,Northeast Arm - Lake Champlain,Lake,44.7853,-73.2211,St. Albans Town,VT,38,
+500475,Northeast Arm - Lake Champlain,Lake,44.7853,-73.2531,St. Albans Town,VT,39,
+500476,Missisquoi Bay - Lake Champlain,Lake,45.0369,-73.1164,,QC,51,Missisquoi Bay Central
+500477,Missisquoi Bay - Lake Champlain,Lake,45.0447,-73.1433,,QC,52,
+500490,Little Chazy River,River/Stream,44.902,-73.4151,,NY,LCHA01,Little Chazy River
+500491,Saranac River,River/Stream,44.6994,-73.4499,,NY,SARA01,Saranac River
+500492,Great Chazy River,River/Stream,44.9425,-73.4088,,NY,GCHA01,Great Chazy River
+500495,Putnam Creek,River/Stream,43.9506,-73.4325,,NY,PUTN01,Putnam Creek
+500498,Bouquet River,River/Stream,44.3638,-73.3908,,NY,BOUQ01,Bouquet River
+500500,Ausable River,River/Stream,44.5588,-73.4486,,NY,AUSA01,Ausable River
+500501,Little Ausable River,River/Stream,44.5942,-73.4962,,NY,LAUS01,Little Ausable River
+500502,Salmon River,River/Stream,44.6401,-73.4949,,NY,SALM01,Salmon River
+500503,Lewis Creek,River/Stream,44.2467,-73.2461,Ferrisburgh,VT,LEWI01,Lewis Creek
+500505,Missisquoi River,River/Stream,44.9169,-73.1283,Swanton,VT,MISS01,Missisquoi River
+500508,Mettawee River,River/Stream,43.5552,-73.4016,,NY,METT01,Mettawee River - Barge Canal
+500509,Otter Creek,River/Stream,44.1656,-73.2566,Panton,VT,OTTE01,Otter Creek
+500512,Pike River,River/Stream,44.1175,-73.0683,,QC,PIKE01,Pike River
+500513,Rock River,River/Stream,45.0333,-73.0583,,QC,ROCK01,Rock River
+500578,Poultney River,River/Stream,43.5702,-73.3918,West Haven,VT,POUL01,Poultney River
+500652,Rock River,River/Stream,44.99692,-73.07263,Highgate,VT,ROCK02,Rock River
+500665,Jewett Brook,River/Stream,44.85632,-73.15102,St. Albans Town,VT,JEWE02,Jewett Brook
+500879,Jewett Brook,River/Stream,44.83632,-73.14952,St. Albans Town,VT,JEWE01,Jewett Brook
+501371,Little Otter Creek,River/Stream,44.2042,-73.2519,Ferrisburgh,VT,LOTT01,Little Otter Creek
+501563,Mill River,River/Stream,44.78,-73.1447,Georgia,VT,MILL01,Mill River (St. Albans Town)
+501575,Stevens Brook,River/Stream,44.8494,-73.1197,St. Albans Town,VT,STEV01,Stevens Brook
+501594,Laplatte River,River/Stream,44.3703,-73.2169,Shelburne,VT,LAPL01,LaPlatte River
+501605,Northeast Arm - Lake Champlain,Lake,44.9178,-73.1864,Swanton,VT,45,
+501794,Lamoille River,River/Stream,44.6328,-73.1731,Milton,VT,LAMO01,Lamoille River
+501903,Winooski River,River/Stream,44.5253,-73.2567,Colchester,VT,WINO01,Winooski River
+503280,Southern Section - Lake Champlain,Lake,44.0097,-73.4064,Bridport,VT,5,
+503288,Southern Section - Lake Champlain,Lake,43.9517,-73.4078,Bridport,VT,4,South Lake A
+503310,Southern Section - Lake Champlain,Lake,43.8558,-73.3828,Bridport,VT,3,
+503387,Southern Section - Lake Champlain,Lake,43.7314,-73.3831,,NY,2,South Lake B
+503410,Burlington Bay - Lake Champlain,Lake,44.4664,-73.2772,Burlington,VT,17,
+503485,Northeast Arm - Lake Champlain,Lake,44.7081,-73.2269,Swanton,VT,34,Northeast Arm
+503488,St. Albans Bay - Lake Champlain,Lake,44.7853,-73.1622,St. Albans Town,VT,40,St. Albans Bay
+503489,St. Albans Bay - Lake Champlain,Lake,44.7967,-73.1522,St. Albans Town,VT,41,
+503498,Malletts Bay - Lake Champlain,Lake,44.565,-73.2083,Colchester,VT,24,
+503506,Shelburne Bay - Lake Champlain,Lake,44.4258,-73.2319,Shelburne,VT,16,Shelburne Bay
+503515,Missisquoi Bay - Lake Champlain,Lake,45.0133,-73.1739,Swanton,VT,50,Missisquoi Bay
+503519,Malletts Bay - Lake Champlain,Lake,44.5819,-73.2811,Colchester,VT,25,Malletts Bay
+503520,St. Albans Bay - Lake Champlain,Lake,44.7661,-73.1867,St. Albans Town,VT,37,
+503529,Main Section - Lake Champlain,Lake,44.4694,-73.3761,,NY,18,
+503530,Northeast Arm - Lake Champlain,Lake,44.6719,-73.2336,Swanton,VT,29,
+503534,Northeast Arm - Lake Champlain,Lake,44.8622,-73.2153,Swanton,VT,43,
+503535,Isle La Motte - Lake Champlain,Lake,44.9483,-73.34,Isle La Motte,VT,46,Isle LaMotte (off Rouses Pt)
+503538,Main Section - Lake Champlain,Lake,44.68,-73.4167,,NY,31,
+503540,Missisquoi Bay - Lake Champlain,Lake,45.0003,-73.1258,Highgate,VT,48,
+503547,Missisquoi Bay - Lake Champlain,Lake,44.9758,-73.215,Swanton,VT,47,
