@@ -7,9 +7,8 @@
 # Adapted from R code to read Mystic River Buoy Data from CSV Files
 
 
-
 # Get needed libraries
-library(lubridate)
+# library(lubridate)
 
 # Set working Directory
 
@@ -19,10 +18,12 @@ setwd("A:/Sync4OneDrive/ReproducibleResearch/Github2019/R-MD-LaTeX/Data/WaterQua
 
 LCdata <-read.csv (file="LCmonitoringData.1992-2017.csv", header=TRUE, sep=",")
 
-head (LCdata)
-
-
 # Variable List
+
+# LocationID VisitDate VisitNumber ActivityCategory StartTime +
+# CollectionMethodID CharacteristicID AnalyticalMethodID Symbol Result +
+# RemarkCode DepthStratumCode LabCode
+
 
 # Deal with Date and Time Strings
 
