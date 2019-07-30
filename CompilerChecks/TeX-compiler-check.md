@@ -1,10 +1,10 @@
 # Simple tests to make sure your Rnw and Rmd compilers work
 
-Follow these instructions to check that your computer has everything you need to compile LaTeX, Markdown, Rnw and Rmd files for the workshop.
+Follow these instructions to check that your computer has everything you need to compile LaTeX, Markdown, Rnw and Rmd files on your own.
 
 ## R-LaTeX test
 
-This test will check for both the proper installation of both MikTeX and the `knitr` R package. If you are comfortable using RStudio, follow the RStudio instructions.
+This test will check for both the proper installation of both your TeX distribution (MikTeX if Windows OS, MacTeX if Mac OS X, TeX Live if Linux/UNIX) and the `knitr` R package. If you are comfortable using RStudio, follow the RStudio instructions.
 
 1. Make sure you have already installed the package `knitr` in R.
 1. Start up RStudio.
@@ -31,11 +31,11 @@ Script:
     
     \end{document}
 
-If you are familiar with the R command line, you can create a plaintext file with the same code as above and save it with the file extension `.Rnw`, and then use `knit()` from R to compile to PDF.
+If you are familiar with the R command line, you can create a plaintext file with the same code as above, save it with the extension `.Rnw`, and then use `knit()` from R to compile to PDF.
 
 ## R-Markdown test
 
-This simple test will check that an R Markdown file will compile. It will also check for MikTeX if you choose PDF as the output format.
+This simple test will check that an R Markdown file will compile. It will also check for your TeX distribution (MikTeX if Windows OS, MacTeX if Mac OS X, TeX Live if Linux/UNIX) if you choose PDF as the output format.
 
 1. Start up RStudio.
 1. Go to File > New File > `R Markdown`.
