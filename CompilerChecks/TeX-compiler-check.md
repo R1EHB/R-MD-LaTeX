@@ -2,9 +2,19 @@
 
 Follow these instructions to check that your computer has everything you need to compile LaTeX, Markdown, Rnw and Rmd files on your own.
 
+## R-Markdown test
+
+This simple test will check that an R Markdown file will compile. It will also check for your TeX distribution (MikTeX if Windows OS, MacTeX if Mac OS X, TeX Live if Linux/UNIX) if you choose PDF as the output format.
+
+1. Start up RStudio.
+1. Go to File > New File > `R Markdown`.
+1. Optional: To check for MikTeX too, choose `PDF` as the output format.
+1. Click OK.
+1. Click "Knit" and wait. A document should appear within a minute or two. 
+
 ## R-LaTeX test
 
-This test will check for both the proper installation of both your TeX distribution (MikTeX if Windows OS, MacTeX if Mac OS X, TeX Live if Linux/UNIX) and the `knitr` R package. If you are comfortable using RStudio, follow the RStudio instructions.
+This test will check for both the proper installation of both your TeX distribution (MikTeX if Windows OS, MacTeX if Mac OS X, TeX Live if Linux/UNIX) and the `knitr` R package. If you are comfortable using RStudio, follow the RStudio instructions below. If you are familiar with the R command line, you can create a plaintext file with the same script as below, save it with the extension `.Rnw`, and then use `knit()` from R to compile to PDF.
 
 1. Make sure you have already installed the package `knitr` in R.
 1. Start up RStudio.
@@ -30,18 +40,6 @@ Script:
     Goodbye.
     
     \end{document}
-
-If you are familiar with the R command line, you can create a plaintext file with the same code as above, save it with the extension `.Rnw`, and then use `knit()` from R to compile to PDF.
-
-## R-Markdown test
-
-This simple test will check that an R Markdown file will compile. It will also check for your TeX distribution (MikTeX if Windows OS, MacTeX if Mac OS X, TeX Live if Linux/UNIX) if you choose PDF as the output format.
-
-1. Start up RStudio.
-1. Go to File > New File > `R Markdown`.
-1. Optional: To check for MikTeX too, choose `PDF` as the output format.
-1. Click OK.
-1. Click "Knit" and wait. An document should appear within a minute or two. 
 
 ## Windows OS only --- Check for MikTeX for `.tex` and `.Rnw` files
 
