@@ -24,8 +24,8 @@
 \subtitle{}
 \author{Erik Beck \\ Emily Y. Li}
 \titlegraphic{\includegraphics[width = 4.75cm]{Rlogotree.png}}
-\institute{2018 US EPA \\ R User Group Workshop}
-\date{11 Sept 2018}
+\institute{US EPA \\ R User Group Workshop}
+\date{13 August 2019}
 
 \begin{document}
     \begin{frame}
@@ -93,6 +93,88 @@ We will try to use our three hours as effectively as possible.
 \end{center}
 \end{exampleblock}
 % We definitely want to go over these times before the workshop!
+\end{frame}
+
+\section{Introduction to Markdown}
+\begin{frame}{Intro to Markdown}
+\begin{columns}[t, onlytextwidth]
+
+\column{0.5\textwidth}
+\vfill
+\includegraphics[width=\textwidth]{markdown-examples.png}
+\vfill
+{\footnotesize \url{https://rmarkdown.rstudio.com/}}
+
+\column{0.5\textwidth}
+    \begin{itemize}
+        \item An \textbf{.Rmd file} is an R Markdown file
+        \item Contains the code that a scientist needs to reproduce your work, along with the narration that a reader needs to understand it.
+        \item Choose to export the finished report in a variety of formats, including HTML, PDF, or MS Word.
+    \end{itemize}
+
+\end{columns}
+\end{frame}
+
+\begin{frame}{Intro to Markdown}
+%\vfill
+\begin{itemize}
+    \item Markdown allows us to write using an easy-to-read, easy-to-write plain text format.
+    \item As long as you know how to write emails, you can learn it in a few minutes.
+    \item \url{https://en.wikipedia.org/wiki/Markdown\#Example}
+\end{itemize}
+%\vfill
+\begin{alertblock}{Limitations of Markdown}
+Markdown was primarily designed to be simple. \\ For more complicated typesetting, LaTeX may be preferred.
+\end{alertblock}
+%\vfill
+\end{frame}
+
+\begin{frame}{Uses for Markdown}
+% EHB
+\begin{itemize}
+  \item Maximal focus on content, minimal focus on formatting while writing.
+  \item Quick layout of documents
+  \item Can be converted to a variety of formats easily
+  \item Format durability (records)
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Markdown --- a short example}
+\begin{exampleblock}{}
+% Made changes so standalone pandoc will work.
+% See mark-list-example.md in the same directory as this file
+\begin{lstlisting}
+# First level header
+
+Sup universe!
+
+## Second level header
+
+This is **bold**, and _italic_.
+
+- list item
+- list item
+
+You can write an ordered list:
+
+1. item 1
+1. item 2 # this line will render as "2."
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Workflow in Markdown}
+Using RStudio:
+\begin{description}
+\item[Open] a new .Rmd file, which pre-populates with a template
+\item[Write] a document by editing the template
+\item[Knit] the document to create a report; use the knitr button or render() to knit
+\item[Preview] output in IDE window
+\item[Publish] to web server (optional)
+\item[Use] output file that is saved alongside .Rmd
+\end{description}
+\vfill
+Helpful link: \\ \url{https://rmarkdown.rstudio.com/lesson-2.html}
 \end{frame}
 
 \section{Introduction to LaTeX}
@@ -200,101 +282,38 @@ Yer a wizard, Harry.
 \end{exampleblock}
 \end{frame}
 
-\section{Introduction to Markdown}
-\begin{frame}{Intro to Markdown}
-\begin{columns}[t, onlytextwidth]
-
-\column{0.5\textwidth}
-\vfill
-\includegraphics[width=\textwidth]{markdown-examples.png}
-\vfill
-{\footnotesize \url{https://rmarkdown.rstudio.com/}}
-
-\column{0.5\textwidth}
-    \begin{itemize}
-        \item An \textbf{.Rmd file} is an R Markdown file
-        \item Contains the code that a scientist needs to reproduce your work, along with the narration that a reader needs to understand it.
-        \item Choose to export the finished report in a variety of formats, including HTML, PDF, or MS Word.
-    \end{itemize}
-
-\end{columns}
-\end{frame}
-
-\begin{frame}{Intro to Markdown}
-%\vfill
-\begin{itemize}
-    \item Markdown allows us to write using an easy-to-read, easy-to-write plain text format.
-    \item As long as you know how to write emails, you can learn it in a few minutes.
-    \item \url{https://en.wikipedia.org/wiki/Markdown\#Example}
-\end{itemize}
-%\vfill
-\begin{alertblock}{Limitations of Markdown}
-Markdown was primarily designed to be simple. \\ For more complicated typesetting, LaTeX may be preferred.
-\end{alertblock}
-%\vfill
-\end{frame}
-
-\begin{frame}{Uses for Markdown}
-% EHB
-\begin{itemize}
-  \item Maximal focus on content, minimal focus on formatting while writing.
-  \item Quick layout of documents
-  \item Can be converted to a variety of formats easily
-  \item Format durability (records)
-\end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]{Markdown --- a short example}
-\begin{exampleblock}{}
-% Made changes so standalone pandoc will work.
-% See mark-list-example.md in the same directory as this file
-\begin{lstlisting}
-# First level header
-
-Sup universe!
-
-## Second level header
-
-This is **bold**, and _italic_.
-
-- list item
-- list item
-
-You can write an ordered list:
-
-1. item 1
-1. item 2 # this line will render as "2."
-\end{lstlisting}
-\end{exampleblock}
-\end{frame}
-
-\begin{frame}{Workflow in Markdown}
-Using RStudio:
-\begin{description}
-\item[Open] a new .Rmd file, which pre-populates with a template
-\item[Write] a document by editing the template
-\item[Knit] the document to create a report; use the knitr button or render() to knit
-\item[Preview] output in IDE window
-\item[Publish] to web server (optional)
-\item[Use] output file that is saved alongside .Rmd
-\end{description}
-\vfill
-Helpful link: \\ \url{https://rmarkdown.rstudio.com/lesson-2.html}
-\end{frame}
-
 \section{Markdown \& LaTeX examples}
 
 \begin{frame}[focus]
     examples \& demos
 \end{frame}
 
-%\begin{frame}{A modest example}
-%Let's try a little markup:
-%\begin{description}
-%\item[One] One Use Markdown to write a .html file with your name and favorite hobby.
-%\item[Two] Two Use LaTeX to write a .pdf file with the name of your first school.
-%\end{description}
-%\end{frame}
+\begin{frame}{A modest exercise}
+Let's try a little markup:
+\begin{description}
+\item[One] Use Markdown to write a .html file with your name and favorite hobby.
+\item[Two] Use LaTeX to write a .pdf file with the name of your first school.
+\end{description}
+\end{frame}
+
+\begin{frame}{R in Markdown \& LaTeX}
+    \vfill
+    \begin{center}
+        Thoughts?
+    \end{center}
+    \vfill
+    \begin{description}
+    \item[Markdown] is super easy to learn (\textit{i.e.} there's nothing TO learn), but is very limited in typesetting controls.
+    \item[LaTeX] has more commands to learn, but always looks better---even with minimal coding.
+    \end{description}
+    \vfill
+    Each serves a different purpose. If you're writing a journal article, thesis, textbook, or resume, you may want the extra precision.
+    %\vfill
+    %Also, \textbf{you can use them both at the same time}. Theoretically. I haven't tried this. Might be an advanced technique.
+
+    % This would be a good slide to leave up while working through demos.
+    \vfill
+\end{frame}
 
 \section{Reproducible Research}
 
@@ -434,8 +453,8 @@ If you ever update the \verb|mtcars| dataframe, the table will update in the doc
 
     \vfill
     \includegraphics[trim=100 0 100 0, clip, width=\textwidth]{stretching-work.png}
-    \vspace{-0.7cm}
-    {\tiny Image source \url{https://getcubefit.com/}. Not an endorsement of the company.}
+    %\vspace{-0.7cm}
+    %{\tiny Image source \url{https://getcubefit.com/}. Not an endorsement of the company.}
 \end{frame}
 
 \begin{frame}[focus]
@@ -559,24 +578,6 @@ Go to the menu $Tools~>~Options~>~Sweave$ and switch the default option for weav
 %\end{lstlisting}
 %\end{frame}
 
-\begin{frame}[focus]
-    Demo $Rnw-input.Rnw$
-    % The chunk options in this example specify the plot size to be 4 by 3 inches, and plots should be aligned in the center.
-\end{frame}
-
-\begin{frame}{R in LaTeX}
-\vfill
-    \begin{itemize}
-        \item Files that mix R code and LaTeX have file extension \textbf{.Rnw}
-        \item When embedding R code in an Rnw document, start a code chunk with $<<>>=$ and terminate it with $@$.
-        \item Write chunk options in between $<<$ and $>>=$
-    \end{itemize}
-\vfill
-\begin{block}{Oh, so now the file isn't ``.TeX'' anymore?}
-``Rnw'' stands for ``R no web''. \href{https://www.cs.tufts.edu/~nr/noweb/}{NoWeb} is an old but still active simple system for mixing code and narratives.
-\end{block}
-\end{frame}
-
 %\begin{frame}[fragile]{Example Markdown with analysis}
 %\begin{lstlisting}
 %---
@@ -607,7 +608,7 @@ Go to the menu $Tools~>~Options~>~Sweave$ and switch the default option for weav
     \item $```\{r\}$ opens a code chunk and $```$ terminates a code chunk
     \item Inline R code is written in backticks $`~`$
     \item Chunk options are written before the closing brace $\}$ in the chunk header
-    \item By comparison, Markdown has simpler commands.
+    %\item By comparison, Markdown has simpler commands.
 \end{itemize}
 \vfill
 \begin{exampleblock}{You had me at ``keyboard shortcut''}
@@ -615,6 +616,24 @@ In RStudio, for either $.Rnw$ or $.Rmd$, quickly insert code chunks with the key
 % For OS X, use $Command + Option + I$.
 \end{exampleblock}
 \vfill
+\end{frame}
+
+%\begin{frame}[focus]
+%    Demo $Rnw-input.Rnw$
+    % The chunk options in this example specify the plot size to be 4 by 3 inches, and plots should be aligned in the center.
+%\end{frame}
+
+\begin{frame}{R in LaTeX}
+\vfill
+    \begin{itemize}
+        \item Files that mix R code and LaTeX have file extension \textbf{.Rnw}
+        \item When embedding R code in an Rnw document, start a code chunk with $<<>>=$ and terminate it with $@$.
+        \item Write chunk options in between $<<$ and $>>=$
+    \end{itemize}
+\vfill
+\begin{block}{Oh, so now the file isn't ``.TeX'' anymore?}
+``Rnw'' stands for ``R no web''. \href{https://www.cs.tufts.edu/~nr/noweb/}{NoWeb} is an old but still active simple system for mixing code and narratives.
+\end{block}
 \end{frame}
 
 \begin{frame}[fragile]{Quick reporting in Markdown}
@@ -672,25 +691,6 @@ presented.
 \begin{exampleblock}{Air Example Three}
 Use Markdown to create a plot of your choice from the air data.
 \end{exampleblock}
-\end{frame}
-
-\begin{frame}{R in Markdown \& LaTeX}
-    \vfill
-    \begin{center}
-        Thoughts?
-    \end{center}
-    \vfill
-    \begin{description}
-    \item[Markdown] is super easy to learn (\textit{i.e.} there's nothing TO learn), but is very limited in typesetting controls.
-    \item[LaTeX] has more commands to learn, but always looks better---even with minimal coding.
-    \end{description}
-    \vfill
-    Each serves a different purpose. If you're writing a journal article, thesis, textbook, or resume, you may want the extra precision.
-    %\vfill
-    %Also, \textbf{you can use them both at the same time}. Theoretically. I haven't tried this. Might be an advanced technique.
-
-    % This would be a good slide to leave up while working through demos.
-    \vfill
 \end{frame}
 
 %\begin{frame}{Yer a wizard, Harry}
