@@ -12,11 +12,11 @@
 
 **Using Tools for Reproducible Research**
 
-Erik and Emily will teach participants the basics of Markdown and the
-R package knitr. They will also briefly mention LaTeX. They will then
+Erik and Emily will teach participants the basics of Markdown, LaTeX and the
+R package knitr. They will then
 proceed to use these tools to facilitate reproducible research (and
-reports) with R. Participants will be given optional homework to try
-later to reinforce the topics discussed.
+reports) with R. Participants will be given resources to try
+later as a reinforcement to the topics discussed.
 
 
 # Key Components #
