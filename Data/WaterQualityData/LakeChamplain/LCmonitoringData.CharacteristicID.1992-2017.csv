@@ -1,0 +1,33 @@
+﻿ProjectID,CharacteristicID,CharacteristicName,UnitCode
+ChampMon,Chla,Chlorophyll-a,ug/l
+ChampMon,Cond,Conductivity,umho/cm
+ChampMon,DCl,Dissolved Chloride,mg/l
+ChampMon,DIC,Dissolved Inorganic Carbon,mg/l
+ChampMon,DO,Dissolved Oxygen,mg/l
+ChampMon,DO%,Dissolved Oxygen Saturation,%
+ChampMon,DOC,Dissolved Organic Carbon,mg/l
+ChampMon,DOP,Dissolved Ortho Phosphorus,ug/l
+ChampMon,DP,Dissolved Phosphorus,ug/l
+ChampMon,DSi,Dissolved Silica,mg/l
+ChampMon,ORP,Oxidation Reduction Potential,mV
+ChampMon,pH,pH,None
+ChampMon,RegAlk,Alkalinity,mg/l
+ChampMon,Secchi,Secchi transparency,m
+ChampMon,TAl,Total Aluminum,ug/l
+ChampMon,TCa,Total Calcium,mg/l
+ChampMon,TCl,Total Chloride,mg/l
+ChampMon,TempC,Temperature,deg C
+ChampMon,TFe,Total Iron,ug/l
+ChampMon,TK,Total Potassium,mg/l
+ChampMon,TKN,Total Kjeldahl Nitrogen,mg/l
+ChampMon,TMg,Total Magnesium,mg/l
+ChampMon,TMn,Total Manganese,ug/l
+ChampMon,TN,Total Nitrogen,mg/l
+ChampMon,TNa,Total Sodium,mg/l
+ChampMon,TNH3,Total Ammonia Nitrogen,mg/l
+ChampMon,TNOX,Total Nitrate/Nitrite Nitrogen,mg/l
+ChampMon,TOC,Total Organic Carbon,mg/l
+ChampMon,TP,Total Phosphorus,ug/l
+ChampMon,TPb,Total Lead,ug/l
+ChampMon,TSS,Total Suspended Solids,mg/l
+ChampMon,TurbNTU,Turbidity,NTU

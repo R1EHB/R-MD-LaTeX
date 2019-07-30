@@ -1,5 +1,11 @@
-# R-MD-LaTeX
+Reproducible Research with R
+Erik Beck and Emily Li
+August 13, 2019, RTP
 
-R, Markdown, and LaTeX class presentation, examples, and related documents.
+# R-MD-LaTeX #
+
+This repository contains various files (presentation, R, data, etc)
+for a presentation to be given on August 13, 2019 at EPA's R
+conference in RTP.
 
 See `R_Md_TeX_presentation.pdf` for the slides.

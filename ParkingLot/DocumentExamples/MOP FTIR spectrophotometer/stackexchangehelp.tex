@@ -1,0 +1,49 @@
+I am using the `tabular` environment to arrange some lines for signatures on the bottom of my title page. It would look nicer if the signature lines filled up the horizontal space properly, so I have a rather crude solution below I'd like to improve. I know there must be a more elegant way to tell your table to fit snugly horizontally between the margins of the page.
+
+Right now my very inelegant solution is to put about 40 `~`'s to force horizontal space into a cell inside the table, forcing the left column to stretch out. 
+
+    \documentclass[12pt]{article}
+    \usepackage[utf8]{inputenc}
+    \usepackage[margin=1in,top=1.5in,headsep=.5in]{geometry}
+    \usepackage{graphicx}
+    \usepackage{float}
+    \usepackage{microtype}
+    
+    \begin{document}
+    \begin{titlepage}
+    
+        \begin{center}
+            \textbf{Measurement of lots of things using a fancy other thing \\
+            \vspace{0.25in}
+            Standard Operating Procedure \#xxxx  \\ Division}
+        \end{center}
+        
+        \vfill %automatically add in the amount of vertical space needed for the content to fill the page
+        \begin{table}[H]
+        \centering
+        %\caption{My caption}
+        %\label{my-label}
+        \begin{tabular}{ l c }
+        AUTHOR: &  \\ 
+        \vspace{1.5cm} &  \\ 
+        \hline
+        Jane Doe & Date \\
+        &  \\
+        APPROVED BY: &  \\
+        \vspace{1.5cm} &  \\
+        \hline
+        John Smith, DSBB Chief & Date \\
+        \vspace{1.5cm} &  \\
+        \hline
+        Hermione Granger, Quality Assurance Manager~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ & Date
+        \end{tabular}
+        \end{table}
+    
+    \end{titlepage}
+    \end{document}
+
+I have already tried using the `array` package to define a width to my first column to stretch it out, but it overrode my `\vspace` that I would like to keep.
+
+I have also tried `\hfill` inside this cell, as well, but it did nothing.
+
+Thanks very much for your help. 

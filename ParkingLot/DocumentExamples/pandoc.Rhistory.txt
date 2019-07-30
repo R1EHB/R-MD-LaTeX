@@ -1,0 +1,8 @@
+# R code to install and test packages for session
+
+install.packages("tidyverse")
+
+install.packages("installr")
+require(installr)
+install.pandoc()
+require(knitr)
