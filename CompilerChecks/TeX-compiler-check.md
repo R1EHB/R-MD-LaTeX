@@ -42,3 +42,26 @@ This simple test will check that an R Markdown file will compile. It will also c
 1. Optional: To check for MikTeX too, choose `PDF` as the output format.
 1. Click OK.
 1. Click "Knit" and wait. An document should appear within a minute or two. 
+
+## Windows OS only --- Check for MikTeX for `.tex` and `.Rnw` files
+
+If you are using Windows OS, this is how you can check for MikTeX so that you can knit `.Rnw` files.
+
+### Using the terminal
+
+Open the terminal (`cmd` or `Powershell` on Windows OS) and use any of the following commands to check for MikTeX. They should all check for some version of `MikTeX`. 
+
+- `pdflatex --version`
+- `xetex --version`
+- `lualatex --version`
+
+### Using TeXworks
+
+Alternatively, if you are using a Windows OS, MikTeX probably was installed with TeXworks. You can look for `TeXworks` from your start menu, see if that opens, and compile a basic document.
+
+    \documentclass{article}
+    \begin{document}
+    This here be text.
+    \end{document}
+
+Click the green circle in the task ribbon to typeset the document. If this successfully compiles a PDF, then MikTeX is working.
