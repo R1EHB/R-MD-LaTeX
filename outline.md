@@ -14,9 +14,9 @@
 
 Erik and Emily will teach participants the basics of Markdown and the
 R package knitr. They will also briefly mention LaTeX. They will then
-proceed to use these tools to facilitate reproducible reports and
-research with R. Participants will then get to use these modules
-synchronously to facilitate reproducible reports and research with R.
+proceed to use these tools to facilitate reproducible research (and
+reports) with R. Participants will be given optional homework to try
+later to reinforce the topics discussed.
 
 
 # Key Components #
