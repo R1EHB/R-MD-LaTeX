@@ -55,6 +55,8 @@ Open the terminal (`cmd` or `Powershell` on Windows OS) and use any of the follo
 - `xetex --version`
 - `lualatex --version`
 
+If the terminal responds that the term is not recognized as the name of an operable program, then your system does not have, or cannot find MikTeX.
+
 ### Using TeXworks
 
 Alternatively, if you are using a Windows OS, MikTeX probably was installed with TeXworks. You can look for `TeXworks` from your start menu, see if that opens, and compile a basic document.
