@@ -1,4 +1,5 @@
 # R-MD-LaTeX
-R, Markdown, and LaTeX class presentations and such.
 
-See `R_Md_TeX_presentation (1).pdf` for the slides.
+R, Markdown, and LaTeX class presentation, examples, and related documents.
+
+See `R_Md_TeX_presentation.pdf` for the slides.
