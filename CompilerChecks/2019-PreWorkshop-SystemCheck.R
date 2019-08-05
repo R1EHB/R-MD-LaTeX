@@ -1,8 +1,9 @@
 ﻿    Sys.getenv()
     update.packages()
-    require("rmarkdown")
-    require("tidyverse")
-    require("knitr")
-    require("lubridate")
-    require("ggplot2")
+    install.packages ("rmarkdown")
+    install.packages ("tidyverse")
+    install.packages ("knitr")
+    install.packages ("lubridate")
+    install.packages ("ggplot2")
+    
 
