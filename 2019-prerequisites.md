@@ -12,19 +12,14 @@ facilitate reproducible research (and reports) with R. Participants
 will be given resources to try later as a reinforcement to the topics
 discussed.
 
-## Pre-requisite knowledge and installations ##
+## Conference Join Information ##
 
-### Conference Join Information ###
 * Dial-In Number: 202-991-0477 (Washington, DC)
 * Backup Dial-In Number (if Primary is busy): 857-702-8290 (Boston, MA)
-* Secondary Backup Dial-In Number: 206-800-4483 (Seattle, WA)
-* Tertiary Backup Dial-In Number: 509-495-1057 (Spokane, WA)
+* Conference Code: 
+* Skype URL: 
 
-* Conference Code: 3409912
-
-* Skype URL: https://meet.lync.com/usepa/beck.erik/9SPV58DC
-
-### Knowledge Assumed ###
+## Pre-requisite knowledge and installations ##
 
 This workshop assumes that participants have some experience with R
 (*e.g.*, writing and running code, package installations, working in
