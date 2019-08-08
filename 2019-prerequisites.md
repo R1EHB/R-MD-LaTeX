@@ -1,4 +1,4 @@
-# Using LaTeX and Markdown for Reproducible Research #
+# Using R, Markdown, and Other Tools for Reproducible Research #
 
 When: **Tuesday**, August 13th, 2019 at **8:30 AM - 12:00 PM**
 
@@ -17,12 +17,10 @@ discussed.
 ### Conference Join Information ###
 * Dial-In Number: 202-991-0477 (Washington, DC)
 * Backup Dial-In Number (if Primary is busy): 857-702-8290 (Boston, MA)
-* Secondary Backup Dial-In Number: 206-800-4483 (Seattle, WA)
-* Tertiary Backup Dial-In Number: 509-495-1057 (Spokane, WA)
 
-* Conference Code: 3409912
+* Conference Code: TBD
 
-* Skype URL: https://meet.lync.com/usepa/beck.erik/9SPV58DC
+* Skype URL: TBD
 
 ### Knowledge Assumed ###
 
@@ -49,4 +47,6 @@ Please feel free to check out workshop materials (slides, demos and examples) at
 
 ## Questions? ##
 * Contact Erik Beck (beck.erik@epa.gov, 617-918-1606);
-* Emily Li (li.emily@epa.gov, 919-541-????);
+* Emily Li (li.emily@epa.gov, 919-541-5520);
+
+
