@@ -43,5 +43,5 @@ For your convenience, you can run this line of R.
 Please feel free to check out workshop materials (slides, demos and examples) at [GitHub.com/R1EHB/R-MD-LaTeX](https://github.com/R1EHB/R-MD-LaTeX).
 
 ## Questions? ##
-* Contact Erik Beck (beck.erik@epa.gov, 617-918-1606);
-* Emily Li (li.emily@epa.gov, 919-541-????);
+* Contact Erik Beck (beck.erik@epa.gov, 617-918-1606)
+* Emily Li (li.emily@epa.gov, 919-541-5520)
