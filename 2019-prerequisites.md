@@ -1,5 +1,4 @@
-# Using LaTeX and Markdown for Reproducible Research #
-
+# Using R, Markdown, and Other Tools for Reproducible Research #
 When: **Tuesday**, August 13th, 2019 at **8:30 AM - 12:00 PM**
 
 Where: **Room C111C** for on-site attendees. **Skype or phone (see below)** for remote attendees.
