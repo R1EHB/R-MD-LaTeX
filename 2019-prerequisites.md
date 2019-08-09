@@ -16,8 +16,8 @@ discussed.
 
 * Dial-In Number: 202-991-0477 (Washington, DC)
 * Backup Dial-In Number (if Primary is busy): 857-702-8290 (Boston, MA)
-* Conference Code: 
-* Skype URL: 
+* Conference Code: 1525850
+* Skype URL: https://meet.lync.com/usepa/brookes.allen/BF9SMWPD
 
 ## Pre-requisite knowledge and installations ##
 
