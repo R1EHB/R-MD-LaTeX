@@ -1,0 +1,13 @@
+---
+title: "Hobby"
+author: "Erik Beck"
+date: "8/11/2019"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Hobby File #
+## Name: Erik Beck ##
+My favorite hobby is fly fishing.
