@@ -20,7 +20,7 @@
   \end{frame}
 }
 
-\title{Using LaTeX and Markdown for Reproducible Research}
+\title{Using R, Markdown, and Other Tools for Reproducible Research}
 \subtitle{}
 \author{Erik Beck \\ Emily Y. Li}
 \titlegraphic{\includegraphics[width = 4.75cm]{Rlogotree.png}}
@@ -40,20 +40,19 @@
 \section{Agenda}
 
 \begin{frame}{Time Frame \& Objectives}
-\begin{exampleblock}{Using LaTeX and Markdown for Reproducible Research}
+\begin{exampleblock}{Using R, Markdown, and Other Tools for Reproducible Research}
 \begin{center}
     \begin{tabular}{c c c}
     Day & Time & Room \\
-    \textbf{Tues, Sept 11} & \textbf{8:00-11:30am} & \textbf{C112}
+    \textbf{Tues, Aug 13} & \textbf{8:30--12:00pm} & \textbf{C111C}
 \end{tabular}
 \end{center}
 \end{exampleblock}
 
 \begin{itemize}
     \item This 1/2-day workshop will provide attendees with hands-on experience
-using the basics of LaTeX, Markdown, and the R package knitr.
-    \item After attending this workshop, you will be able to use these tools to
-facilitate reproducible reports and research with R.
+using the basics of Markdown and knitr.
+    \item After attending this workshop, you will be able to use these tools to facilitate reproducible reports and research with R.
 \end{itemize}
 % This would be a really good place to check that everyone has R and RStudio installed.
 % Insert testing code here
@@ -61,7 +60,7 @@ facilitate reproducible reports and research with R.
 
 \begin{frame}{Steps/Agenda}
 \vfill
-We will try to use our three hours as effectively as possible.
+We will try to use our half day as effectively as possible.
 \begin{exampleblock}{Rough Agenda}
 %\begin{description}
 %\item[8:30] System checks
@@ -78,241 +77,21 @@ We will try to use our three hours as effectively as possible.
 \begin{center}
 \begin{tabular}{r|r|l}
     \textbf{\#} & \textbf{Time} & \textbf{Topic} \\
-    1 & 8:00 & System checks \& agenda \\
-    2 & 8:20 & Intro to LaTeX \\
-    3 & 8:40 & Intro to Markdown \\
-    4 & 9:00 & Markdown \& LaTeX examples \\
-    5 & 9:30 & Reproducible Research \\
+    1 & 8:30 & System checks \& agenda \\
+    2 & 8:50 & Reproducible Research \\
+    3 & 9:10 & Intro to Markdown \\
+    4 & 9:30 & Intro to LaTeX \\
+    5 & 9:40 & Markdown \& LaTeX examples \\
     \hline
-     & 9:50 & \emph{BREAK} \\
+     & 10:10 & \emph{BREAK} \\
     \hline
-    6 & 10:00 & Dynamic documents with Sweave and knitr \\
-    7 & 10:30 & Markdown \& LaTeX with R \\
-    8 & 11:20 & Wrap-up \& additional resources
+    6 & 10:20 & Dynamic documents with knitr \\
+    7 & 10:40 & Markdown \& LaTeX with R \\
+    8 & 11:40 & Wrap-up \& additional resources
 \end{tabular}
 \end{center}
 \end{exampleblock}
 % We definitely want to go over these times before the workshop!
-\end{frame}
-
-\section{Introduction to Markdown}
-\begin{frame}{Intro to Markdown}
-\begin{columns}[t, onlytextwidth]
-
-\column{0.5\textwidth}
-\vfill
-\includegraphics[width=\textwidth]{markdown-examples.png}
-\vfill
-{\footnotesize \url{https://rmarkdown.rstudio.com/}}
-
-\column{0.5\textwidth}
-    \begin{itemize}
-        \item An \textbf{.Rmd file} is an R Markdown file
-        \item Contains the code that a scientist needs to reproduce your work, along with the narration that a reader needs to understand it.
-        \item Choose to export the finished report in a variety of formats, including HTML, PDF, or MS Word.
-    \end{itemize}
-
-\end{columns}
-\end{frame}
-
-\begin{frame}{Intro to Markdown}
-%\vfill
-\begin{itemize}
-    \item Markdown allows us to write using an easy-to-read, easy-to-write plain text format.
-    \item As long as you know how to write emails, you can learn it in a few minutes.
-    \item \url{https://en.wikipedia.org/wiki/Markdown\#Example}
-\end{itemize}
-%\vfill
-\begin{alertblock}{Limitations of Markdown}
-Markdown was primarily designed to be simple. \\ For more complicated typesetting, LaTeX may be preferred.
-\end{alertblock}
-%\vfill
-\end{frame}
-
-\begin{frame}{Uses for Markdown}
-% EHB
-\begin{itemize}
-  \item Maximal focus on content, minimal focus on formatting while writing.
-  \item Quick layout of documents
-  \item Can be converted to a variety of formats easily
-  \item Format durability (records)
-\end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]{Markdown --- a short example}
-\begin{exampleblock}{}
-% Made changes so standalone pandoc will work.
-% See mark-list-example.md in the same directory as this file
-\begin{lstlisting}
-# First level header
-
-Sup universe!
-
-## Second level header
-
-This is **bold**, and _italic_.
-
-- list item
-- list item
-
-You can write an ordered list:
-
-1. item 1
-1. item 2 # this line will render as "2."
-\end{lstlisting}
-\end{exampleblock}
-\end{frame}
-
-\begin{frame}{Workflow in Markdown}
-Using RStudio:
-\begin{description}
-\item[Open] a new .Rmd file, which pre-populates with a template
-\item[Write] a document by editing the template
-\item[Knit] the document to create a report; use the knitr button or render() to knit
-\item[Preview] output in IDE window
-\item[Publish] to web server (optional)
-\item[Use] output file that is saved alongside .Rmd
-\end{description}
-\vfill
-Helpful link: \\ \url{https://rmarkdown.rstudio.com/lesson-2.html}
-\end{frame}
-
-\section{Introduction to LaTeX}
-\begin{frame}{Intro to LaTeX}
-\vfill
-LaTeX is a tool for high-quality typesetting, designed for the production of technical and scientific documentation.
-\vfill
-\begin{block}{How do you pronounce ``LaTeX''?}
-    \begin{quote}
-        TeX is usually pronounced tech, making \emph{'lah}-teck, lah-\emph{'teck}, and \emph{'lay}-teck the logical choices; but language is not always logical, so \emph{'lay}-\emph{'tecks} is also possible.
-    \end{quote}
-    --- Leslie B. Lamport, original developer of \LaTeX{}
-\end{block}
-\end{frame}
-
-\begin{frame}{Intro to LaTeX}
-LaTeX is widely used in academia for the publication of scientific documents in many fields, including mathematics, statistics, computer science, engineering, chemistry, physics, economics, and political science.
-
-\begin{enumerate}
-    \item \textbf{TeX engines have excellent quality output.} This especially holds for complex documents such as those with many tables, figures, equations, cross-references or hyperlinks---or just with many pages.
-    \item \textbf{TeX is fast.}
-    \item \textbf{TeX is consistent.}
-    \item \textbf{TeX is stable.} It will never eat your document. \emph{Ever.}
-\end{enumerate}
-\vfill
---- \url{https://www.ctan.org/tex/}
-% I'd like to add that while LaTeX is most used for medium to long papers, there are also EXCELLENT templates for very good-looking short documents, like resumes.
-% Add an Erik Resume version here?
-\end{frame}
-
-\begin{frame}[fragile]{LaTeX: Minimal example}
-Here is a minimal example of a full document written in LaTeX.
-\begin{exampleblock}{}
-\begin{lstlisting}
-\documentclass{article}
-\title{A Minimal LaTeX Example}
-\author{Emily Li}
-
-\begin{document}
-\maketitle
-
-Yer a wizard, Harry.
-
-\end{document}
-\end{lstlisting}
-\end{exampleblock}
-% We will revisit this code later to make sure everyone compiled it.
-\end{frame}
-
-\begin{frame}{Levels of TeX: A disambiguation}
-\begin{alertblock}{Help! There are too many words with ``TeX'' in them!}
-If you are wondering, \alert{\emph{``Should I use LaTeX or MiKTeX?''}}, allow us to clear that up. These two slides will cover four types of TeX-related terms: distributions, editors, engines, and formats.
-\end{alertblock}
-\begin{enumerate}
-    \item \textbf{Distributions:} \textit{MiKTeX, TeX Live, etc.} This is TeX-related software to be downloaded and installed. When someone says, ``I need to install TeX on my machine,'' they're usually looking for a distribution.
-    \item \textbf{Editors:} \textit{Emacs, TeXworks, TeXShop, TeXStudio, etc.} These editors are what you use to create a document file. Some (e.g., TeXShop) are devoted specifically to TeX, while others (e.g., Emacs) can be used to edit any sort of file.
-\end{enumerate}
-\vfill
---- \url{http://www.tug.org/levels.html}
-\end{frame}
-\begin{frame}{Levels of TeX: A disambiguation}
-\begin{exampleblock}{A quick note on editors}
-You can also use Notepad to edit plaintext, including LaTeX code.
-\end{exampleblock}
-\begin{enumerate}
-\setcounter{enumi}{2}
-    \item \textbf{Engines:} \textit{TeX, pdfTeX, XeTeX, LuaTeX, etc.} These are the executable binaries which implement different TeX variants. When someone says, ``TeX can't find my fonts,'' they usually mean an engine.
-    \item \textbf{Formats:} \textit{LaTeX, plain TeX, etc.} These are the TeX-based languages in which one actually writes documents. When someone says, ``TeX is giving me a mysterious error,'' they usually mean a format. (Incidentally, ``LaTeX'' has meant ``LaTeX2e'' for many years now.)
-\end{enumerate}
-\vfill
---- \url{http://www.tug.org/levels.html}
-\end{frame}
-
-\begin{frame}{TeX Distributions}
-To compile LaTeX, your computer needs one of these TeX distributions installed:
-\begin{block}{TeX Distributions}
-\begin{center}
-    \begin{tabular}{c l}
-    Distribution & Operating System \\
-    \hline
-    MiKTeX & Windows OS \\
-    TeX Live & Linux and other UNIX-like systems \\
-    MacTeX & Mac OS X
-\end{tabular}
-\end{center}
-\end{block}
-You can also use an online ready-to-use option like \href{https://v2.overleaf.com/}{Overleaf.com}.
-% In July 2017, Overleaf and ShareLaTeX joined forces and Overleaf v2 will launch to everyone Sept. 4th, 2018. You can try out the beta version of Overleaf v2 at v2.overleaf.com.
-\end{frame}
-
-\begin{frame}[fragile]{LaTeX: Revisiting the minimal example}
-\begin{exampleblock}{Try compiling this LaTeX}
-\begin{lstlisting}
-\documentclass{article}
-\title{A Minimal LaTeX Example}
-\author{Emily Li}
-
-\begin{document}
-\maketitle
-
-Yer a wizard, Harry.
-
-\end{document}
-\end{lstlisting}
-\end{exampleblock}
-\end{frame}
-
-\section{Markdown \& LaTeX examples}
-
-\begin{frame}[focus]
-    examples \& demos
-\end{frame}
-
-\begin{frame}{A modest exercise}
-Let's try a little markup:
-\begin{description}
-\item[One] Use Markdown to write a .html file with your name and favorite hobby.
-\item[Two] Use LaTeX to write a .pdf file with the name of your first school.
-\end{description}
-\end{frame}
-
-\begin{frame}{R in Markdown \& LaTeX}
-    \vfill
-    \begin{center}
-        Thoughts?
-    \end{center}
-    \vfill
-    \begin{description}
-    \item[Markdown] is super easy to learn (\textit{i.e.} there's nothing TO learn), but is very limited in typesetting controls.
-    \item[LaTeX] has more commands to learn, but always looks better---even with minimal coding.
-    \end{description}
-    \vfill
-    Each serves a different purpose. If you're writing a journal article, thesis, textbook, or resume, you may want the extra precision.
-    %\vfill
-    %Also, \textbf{you can use them both at the same time}. Theoretically. I haven't tried this. Might be an advanced technique.
-
-    % This would be a good slide to leave up while working through demos.
-    \vfill
 \end{frame}
 
 \section{Reproducible Research}
@@ -449,6 +228,184 @@ If you ever update the \verb|mtcars| dataframe, the table will update in the doc
 \end{frame}
 
 \begin{frame}[focus]
+\href{http://rpubs.com/RexGalilae/weather-events}{RPubs student example}
+\end{frame}
+
+\section{Introduction to Markdown}
+
+\begin{frame}[fragile]{Markdown --- a short example}
+\begin{exampleblock}{}
+% Made changes so standalone pandoc will work.
+% See mark-list-example.md in the same directory as this file
+\begin{lstlisting}
+# Header
+
+## Subheader 
+
+### Subsubheader
+
+You can **bold** and *italicize*.
+
+- List items
+    - Tab for level 2 lists
+
+You can write an ordered list:
+
+1. It tracks the order for you
+93. This line will end up being "2."
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[focus]
+\includegraphics[height=\textheight]{Md-minimal-screenshot.PNG}
+\end{frame}
+
+\begin{frame}{Intro to Markdown}
+\vfill
+Markdown is an \textbf{easy-to-read, easy-to-write plain text format}.
+\begin{description}
+    \item[Quickly] lay out documents
+    \item[Maximize] focus on content
+    \item[Minimize] focus on formatting
+    \item[Convert] easily to a variety of formats
+    \item[Durable] plain text format good for records
+\end{description}
+%\vfill
+\begin{block}{Limitations of Markdown}
+Markdown was primarily designed to be simple. \\ For more complicated typesetting, LaTeX may be preferred.
+\end{block}
+%\vfill
+\end{frame}
+
+\begin{frame}{R and Markdown}
+\begin{columns}[t, onlytextwidth]
+
+\column{0.5\textwidth}
+\vfill
+\includegraphics[width=\textwidth]{markdown-examples.png}
+\vfill
+{\footnotesize \url{https://rmarkdown.rstudio.com/}}
+
+\column{0.5\textwidth}
+    \begin{itemize}
+        \item An \textbf{.Rmd file} is a Markdown file with R code chunks in it.
+        \item Contains the \textbf{code} that a scientist needs to reproduce your work, \\ along with the \textbf{narration} that a reader needs to understand it.
+        \item Can export the finished report in a variety of formats, including HTML, PDF, or MS Word.
+    \end{itemize}
+
+\end{columns}
+\end{frame}
+
+\begin{frame}{Workflow in Markdown}
+
+Using \textbf{RStudio}:
+
+\begin{description}
+\item[Open] a new .Rmd file, which pre-populates with a template
+\item[Write] a document by editing the template
+\item[Knit] the document to create a report; use the knitr button or render() to knit
+\item[Preview] output in IDE window
+\item[Publish] to web server (optional)
+\item[Use] the output file that is saved alongside the .Rmd file
+\end{description}
+\vfill
+Helpful link: \\ \url{https://rmarkdown.rstudio.com/lesson-2.html}
+\end{frame}
+
+\section{Introduction to LaTeX}
+\begin{frame}{Intro to LaTeX}
+\vfill
+Like Markdown, \textbf{LaTeX} is also a way to write in plain text to\ldots
+\begin{description}
+    \item[Quickly] lay out documents
+    \item[Maximize] focus on content
+    \item[Minimize] focus on formatting
+\end{description}
+\vfill
+\begin{block}{How do you pronounce ``LaTeX''?}
+    \begin{quote}
+        TeX is usually pronounced tech, making \emph{'lah}-teck, lah-\emph{'teck}, and \emph{'lay}-teck the logical choices; but language is not always logical, so \emph{'lay}-\emph{'tecks} is also possible.
+    \end{quote}
+    --- Leslie B. Lamport, original developer of \LaTeX{}
+\end{block}
+\end{frame}
+
+\begin{frame}{Intro to LaTeX}
+\vfill
+LaTeX is:
+\begin{itemize}
+    \item Designed for \textbf{high-quality typesetting} of technical and scientific documentation
+    \item Widely used in academia for the publication of scientific documents in many fields
+    % including mathematics, statistics, computer science, chemistry, physics, economics, and political science.
+    \item Best used if you
+    \begin{itemize}
+        \item Have many tables, figures, or equations to reference.
+        \item Have lots of cross-references, citations, or hyperlinks.
+        \item Want your final product to look exceptionally professional (like a resume).
+    \end{itemize}
+\end{itemize}
+\vfill
+--- \url{https://www.ctan.org/tex/}
+\end{frame}
+
+\begin{frame}[fragile]{LaTeX: Minimal example}
+Here is a minimal example of a full document written in LaTeX.
+\begin{exampleblock}{}
+\begin{lstlisting}
+\documentclass{article}
+\title{A Minimal LaTeX Example}
+\author{Emily Li}
+
+\begin{document}
+\maketitle
+
+Yer a wizard, Harry.
+
+\end{document}
+\end{lstlisting}
+\end{exampleblock}
+% We will revisit this code later to make sure everyone compiled it.
+\end{frame}
+
+\begin{frame}[focus]
+\includegraphics[height=\textheight]{TeX-minimal-screenshot.PNG}
+\end{frame}
+
+\section{Markdown \& LaTeX examples}
+
+\begin{frame}[focus]
+    examples \& demos
+\end{frame}
+
+\begin{frame}{A modest Markdown exercise}
+Let's try a little Markdown:
+\begin{description}
+\item[One] Use Markdown to write a \textbf{.html} file with your name and favorite hobby.
+\item[Two] Output the same file as a \textbf{Word} document.
+\end{description}
+\end{frame}
+
+%\begin{frame}{Markdown vs LaTeX}
+%    \vfill
+%    \begin{center}
+%        Thoughts?
+%    \end{center}
+%    \vfill
+%    \begin{description}
+%    \item[Markdown] is super easy to learn (\textit{i.e.} there's nothing TO learn), but is very limited in typesetting controls.
+%    \item[LaTeX] has more commands to learn, but usually looks better---even with minimal coding.
+%    \end{description}
+%    \vfill
+%    Each serves a different purpose. If you're writing a journal article, thesis, textbook, or resume, you may want the extra precision.
+    %\vfill
+    %Also, \textbf{you can use them both at the same time}. Theoretically. I haven't tried this. Might be an advanced technique.
+
+    % This would be a good slide to leave up while working through demos.
+%    \vfill
+%\end{frame}
+
+\begin{frame}[focus]
     Break for 10 minutes
 
     \vfill
@@ -464,14 +421,14 @@ If you ever update the \verb|mtcars| dataframe, the table will update in the doc
     \includegraphics[width=.33\textwidth]{Rlogo}
 \end{frame}
 
-\section{Dynamic documents with Sweave and knitr}
+\section{Dynamic documents with knitr}
 
 \begin{frame}{Sweave and knitr}
     \textbf{Sweave} and \textbf{knitr} can compile narrative documents with R code.
     \vspace{0.5cm}
     \begin{description}
     \item[Sweave] is included in base R, and specifically compiles R code integrated into LaTeX or LyX documents.
-    \item[knitr] compiles any input language (R, Python, SAS\ldots) inside any markup language (LaTeX, Markdown, HTML\ldots)
+    \item[knitr] compiles \textbf{any input language} (R, Python, SAS\ldots) inside \textbf{any markup language} (LaTeX, Markdown, HTML\ldots)
     \end{description}
 \end{frame}
 
@@ -497,7 +454,7 @@ If you ever update the \verb|mtcars| dataframe, the table will update in the doc
     \vfill
 \end{frame}
 
-\begin{frame}{knitr}
+\begin{frame}{knitr stands on the shoulders of Sweave}
 \vfill
 
 \textbf{knitr} was largely motivated by Sweave, and designed to be easier to maintain and extend.
@@ -598,43 +555,54 @@ Go to the menu $Tools~>~Options~>~Sweave$ and switch the default option for weav
 %\end{lstlisting}
 %\end{frame}
 
-\begin{frame}[focus]
-    Demo $Rmd-input.Rmd$
+\begin{frame}{Making dynamic documents in RStudio}
+\vfill
+    You can create either R-Markdown or R-LaTeX documents in RStudio.
+\begin{itemize}
+    \item Files that mix R code and Markdown are \textbf{.Rmd} files
+    \item Files that mix R code and LaTeX are \textbf{.Rnw} files
+\end{itemize}
+
+\begin{block}{Why is the R-LaTeX file extension ".Rnw"?}
+``Rnw'' stands for ``R no web''. \href{https://www.cs.tufts.edu/~nr/noweb/}{NoWeb} is an old but active simple system for mixing code and narratives.
+\end{block}
+
 \end{frame}
 
-\begin{frame}{R in Markdown}
-\vfill
+\begin{frame}{Markdown and LateX side-by-side}
+\begin{columns}[t, onlytextwidth]
+
+\column{0.5\textwidth}
+R code and Markdown = \textbf{.Rmd}
 \begin{itemize}
-    \item $```\{r\}$ opens a code chunk and $```$ terminates a code chunk
+    \item $```\{r\}$ opens a code chunk and $```$ terminates it
     \item Inline R code is written in backticks $`~`$
     \item Chunk options are written before the closing brace $\}$ in the chunk header
     %\item By comparison, Markdown has simpler commands.
 \end{itemize}
-\vfill
+
+\column{0.5\textwidth}
+R code and LaTeX = \textbf{.Rnw}
+    \begin{itemize}
+        \item $<<>>=$ opens a code chunk and and $@$ terminates it
+        \item Write chunk options in between $<<$ and $>>=$
+    \end{itemize}
+
+\end{columns}
 \begin{exampleblock}{You had me at ``keyboard shortcut''}
 In RStudio, for either $.Rnw$ or $.Rmd$, quickly insert code chunks with the keyboard shortcut $Ctrl + Alt + I$.
 % For OS X, use $Command + Option + I$.
 \end{exampleblock}
-\vfill
+\end{frame}
+
+\begin{frame}[focus]
+    Demo $Rmd-input.Rmd$
 \end{frame}
 
 %\begin{frame}[focus]
 %    Demo $Rnw-input.Rnw$
     % The chunk options in this example specify the plot size to be 4 by 3 inches, and plots should be aligned in the center.
 %\end{frame}
-
-\begin{frame}{R in LaTeX}
-\vfill
-    \begin{itemize}
-        \item Files that mix R code and LaTeX have file extension \textbf{.Rnw}
-        \item When embedding R code in an Rnw document, start a code chunk with $<<>>=$ and terminate it with $@$.
-        \item Write chunk options in between $<<$ and $>>=$
-    \end{itemize}
-\vfill
-\begin{block}{Oh, so now the file isn't ``.TeX'' anymore?}
-``Rnw'' stands for ``R no web''. \href{https://www.cs.tufts.edu/~nr/noweb/}{NoWeb} is an old but still active simple system for mixing code and narratives.
-\end{block}
-\end{frame}
 
 \begin{frame}[fragile]{Quick reporting in Markdown}
     It is also possible to generate a quick report from R script using \textbf{knitr}'s \verb|stitch()| function.
@@ -654,16 +622,18 @@ In RStudio, for either $.Rnw$ or $.Rmd$, quickly insert code chunks with the key
 \begin{frame}[fragile]{Longer Example of Markdown and R}
   
   Markdown (or LaTeX) can be combined with R using knitr to make
-  longer reports that can be easily updated with a tidbit of new
-  code.  Here we will show an example using data from US EPA and US
+  longer reports that can be easily updated with new
+  code tidbits.
+  
+  Here we will show an example using data from US EPA and US
   Dept. of State on PM\textsubscript{2.5} air pollution.
   
 \begin{itemize}
   \item Particulate pollution is often in the news
-  \item Especially lately with the West Coast forest fires
+  \item Especially lately with West Coast forest fires
   \item CAA primary air pollutant (NAAQS)
   \end{itemize}
-  Switch over to Rstudio\ldots \ldots 
+  Switch over to Rstudio\ldots
 \end{frame}
 
 \begin{frame}[focus]
@@ -673,7 +643,7 @@ In RStudio, for either $.Rnw$ or $.Rmd$, quickly insert code chunks with the key
 \begin{frame}{Hands-on exercises}
   % put in an index for the example?
 \begin{exampleblock}{Air Example One}
-Use Markdown to create an R script that will perform summary
+Use Markdown to create a report that performs summary
 statistics on a different variable than the concentration value
 presented.
 \end{exampleblock}
@@ -681,15 +651,7 @@ presented.
 
 \begin{frame}{Hands-on exercises}
 \begin{exampleblock}{Air Example Two}
-Use \textbf{LaTeX} to create an R script that will perform summary
-statistics on a different variable than the concentration value
-presented.
-\end{exampleblock}
-\end{frame}
-
-\begin{frame}{Hands-on exercises}
-\begin{exampleblock}{Air Example Three}
-Use Markdown to create a plot of your choice from the air data.
+Use Markdown to display a plot of your choice from the air data.
 \end{exampleblock}
 \end{frame}
 
@@ -782,7 +744,7 @@ Use Markdown to create a plot of your choice from the air data.
     \item \url{https://www.rstudio.com/resources/cheatsheets/}
     \item \url{https://support.rstudio.com/hc/en-us/articles/200552056-Using-Sweave-and-knitr}
     \item Documents source + output examples \url{https://yihui.name/knitr/demos/}
-    \item To Markdown, or LaTeX: that is the question... \url{https://yihui.name/en/2013/10/markdown-or-latex/}
+    \item Recently published student examples at Rpubs \url{http://rpubs.com}
     \item \url{https://rmarkdown.rstudio.com/authoring_basics.html}
 \end{itemize}
 % Also go back and check out all the links in these slides.
