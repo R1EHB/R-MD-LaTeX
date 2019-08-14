@@ -1,15 +1,16 @@
 ---
 output:
+  html_document:
+    df_print: paged
   pdf_document: default
-  html_document: default
 ---
 # A Practical Demonstration of reproducible research #
 ## Markdown, R, Knitr ##
 ### Using EPA and Department of State (DOS) air quality data ###
-* September 7, 2018
+* August 11, 2019
 * Erik Beck and Emily Li
 * For presentation at R Workshop
-* EPA, RTP, September 11, 2018
+* EPA, RTP, August 13, 2019
 
 # Disclaimers #
 
@@ -72,7 +73,7 @@ from the event.
 
 * PM2.5 is also produced by common indoor activities. Some indoor
 sources of fine particles are tobacco smoke, cooking (e.g., frying,
-sautéing, and broiling), burning candles or oil lamps, and operating
+sautÃ©ing, and broiling), burning candles or oil lamps, and operating
 fireplaces and fuel-burning space heaters (e.g., kerosene heaters).
 
 * (Abridged info from NYSDoH)
@@ -98,7 +99,7 @@ It can help make sunsets more spectacular:
 # On with the show... #
 ```{r Preamble}
 library(lubridate)
-setwd("C:/Users/EBECK/OneDrive - Environmental Protection Agency (EPA)/Sync4OneDrive/ReproducibleResearch/Sept2018Class/R-MD-LaTeX/Data/AirQualityData")
+setwd("A:/Sync4OneDrive/ReproducibleResearch/Github2019/R-MD-LaTeX/Data/AirQualityData")
 ```
 
 
