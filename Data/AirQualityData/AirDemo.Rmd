@@ -1,7 +1,5 @@
 ---
 output:
-  html_document:
-    df_print: paged
   pdf_document: default
 ---
 # A Practical Demonstration of reproducible research #
@@ -99,7 +97,7 @@ It can help make sunsets more spectacular:
 # On with the show... #
 ```{r Preamble}
 library(lubridate)
-setwd("A:/Sync4OneDrive/ReproducibleResearch/Github2019/R-MD-LaTeX/Data/AirQualityData")
+setwd("A:/ReproducibleResearch/Github2019/R-MD-LaTeX/Data/AirQualityData")
 ```
 
 

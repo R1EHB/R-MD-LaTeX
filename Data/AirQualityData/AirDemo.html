@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>AirDemo</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="a-practical-demonstration-of-reproducible-research">A Practical Demonstration of reproducible research</h1>
+<h2 id="markdown-r-knitr">Markdown, R, Knitr</h2>
+<h3 id="using-epa-and-department-of-state-dos-air-quality-data">Using EPA and Department of State (DOS) air quality data</h3>
+<ul class="incremental">
+<li>August 11, 2019</li>
+<li>Erik Beck and Emily Li</li>
+<li>For presentation at R Workshop</li>
+<li>EPA, RTP, August 13, 2019</li>
+</ul>
+<h1 id="disclaimers">Disclaimers</h1>
+<h2 id="data-disclaimer">Data Disclaimer</h2>
+<p>Much of the data used for this demonstration, and in particular the US Embassy air data and the 2018 domestic data, is provisional and should not be used for any final policy discussions or decisions.</p>
+<h2 id="opinion-disclaimer">Opinion Disclaimer</h2>
+<p>Any opinions expressed herein are those of the author(s), and are not reflective of EPA, Department of State, foreign governments, state governments or anyone else’s position; implied, expressed, explicit, implicit, or otherwise.</p>
+<h2 id="error-disclaimer">Error Disclaimer</h2>
+<p>All errors are Erik’s fault.</p>
+<h1 id="a-little-background">A little background…</h1>
+<h2 id="policy-background">Policy Background</h2>
+<h3 id="according-to-nys-department-of-health">According to NYS Department of Health:</h3>
+<h4 id="fine-particles-pm-2.5-questions-and-answers">Fine Particles (PM 2.5) Questions and Answers</h4>
+<ul class="incremental">
+<li><p>Fine particulate matter (PM2.5) is an air pollutant that is a concern for people’s health when levels in air are high.</p></li>
+<li><p>PM2.5 are tiny particles in the air that reduce visibility and cause the air to appear hazy when levels are elevated.</p></li>
+<li><p>Outdoor PM2.5 levels are most likely to be elevated on days with little or no wind or air mixing.</p></li>
+</ul>
+<h3 id="how-can-pm2.5-affect-my-health">How can PM2.5 affect my health?</h3>
+<ul class="incremental">
+<li>Particles in the PM2.5 size range are able to travel deeply into the respiratory tract, reaching the lungs. Exposure to fine particles can cause short-term health effects such as eye, nose, throat and lung irritation, coughing, sneezing, runny nose and shortness of breath. Exposure to fine particles can also affect lung function and worsen medical conditions such as asthma and heart disease.</li>
+</ul>
+<h3 id="where-does-pm2.5-come-from">Where does PM2.5 come from?</h3>
+<ul class="incremental">
+<li><p>There are outdoor and indoor sources of fine particles. Outside, fine particles primarily come from car, truck, bus and off-road vehicle (e.g., construction equipment, snowmobile, locomotive) exhausts, other operations that involve the burning of fuels such as wood, heating oil or coal and natural sources such as forest and grass fires. Fine particles also form from the reaction of gases or droplets in the atmosphere from sources such as power plants. These chemical reactions can occur miles from the original source of the emissions. In New York State, some of the fine particles measured in the air are carried by wind from out-of-state sources. Because fine particles can be carried long distances from their source, events such as wildfires or volcanic eruptions can raise fine particle concentrations hundreds of miles from the event.</p></li>
+<li><p>PM2.5 is also produced by common indoor activities. Some indoor sources of fine particles are tobacco smoke, cooking (e.g., frying, sautéing, and broiling), burning candles or oil lamps, and operating fireplaces and fuel-burning space heaters (e.g., kerosene heaters).</p></li>
+<li>(Abridged info from NYSDoH)</li>
+<li><p>https://www.health.ny.gov/environmental/indoors/air/pmq_a.htm</p></li>
+</ul>
+<h3 id="positive-impact-of-pm2.5">Positive impact of PM2.5</h3>
+<p>It can help make sunsets more spectacular:</p>
+<figure>
+<img src="Photos/MedfordSunset.jpg" alt="Photo by Erik H. Beck, Copyright 2018, All Rights Reserved" /><figcaption>Photo by Erik H. Beck, Copyright 2018, All Rights Reserved</figcaption>
+</figure>
+<h2 id="erik-and-air">Erik and Air</h2>
+<ul class="incremental">
+<li>Erik has some (ancient) background in air policy, but in ozone, NOx, and SOx in Region 9. In the 1990’s. In other words, he isn’t an expert.</li>
+</ul>
+<h2 id="data-background-and-sources">Data Background and sources</h2>
+<ul class="incremental">
+<li>EPA: (Most USA Data) https://aqs.epa.gov/aqsweb/airdata/download_files.html</li>
+<li>EPA: (2018 USA Data) https://www.airnowtech.org/</li>
+<li>Dept. of State (DOS): (China) http://www.stateair.net/web/historical/1/1.html</li>
+<li>DOS/EPA: (All) https://airnow.gov/index.cfm?action=airnow.global_summary</li>
+</ul>
+<h1 id="on-with-the-show">On with the show…</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(lubridate)</a></code></pre></div>
+<pre><code>## Warning: package &#39;lubridate&#39; was built under R version 3.4.4</code></pre>
+<pre><code>## 
+## Attaching package: &#39;lubridate&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:base&#39;:
+## 
+##     date</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">setwd</span>(<span class="st">&quot;A:/ReproducibleResearch/Github2019/R-MD-LaTeX/Data/AirQualityData&quot;</span>)</a></code></pre></div>
+<h2 id="air-quality-around-the-world">Air Quality Around the World</h2>
+<p>Air quality issues are not limited to the United States. Other countries have issues with poor air quality at times.</p>
+<p>Here are some summary statistics for data obtained from the U.S. Embassies at a few overseas locations:</p>
+<h1 id="china">China</h1>
+<h2 id="beijing">Beijing</h2>
+<p>Beijing Air Data, PM2.5; 2008-2017.</p>
+<h3 id="variables">Variables:</h3>
+<ul class="incremental">
+<li>[1] “Site” “Parameter” “Date_LST”<br />
+</li>
+<li>[4] “Year” “Month” “Day”<br />
+</li>
+<li>[7] “Hour” “Value” “Unit”<br />
+</li>
+<li>[10] “Duration” “QC_Name” “SampleLocalTime”</li>
+<li>[13] “SampleUTC”</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">BeijingAir &lt;-<span class="st"> </span><span class="kw">readRDS</span> (<span class="dt">file =</span> <span class="st">&quot;Beijing/BeijingPM08_17.rds&quot;</span>)</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="kw">colnames</span> (BeijingAir)</a></code></pre></div>
+<pre><code>##  [1] &quot;Site&quot;            &quot;Parameter&quot;       &quot;Date_LST&quot;       
+##  [4] &quot;Year&quot;            &quot;Month&quot;           &quot;Day&quot;            
+##  [7] &quot;Hour&quot;            &quot;Value&quot;           &quot;Unit&quot;           
+## [10] &quot;Duration&quot;        &quot;QC_Name&quot;         &quot;SampleLocalTime&quot;
+## [13] &quot;SampleUTC&quot;</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">summary</span>(BeijingAir<span class="op">$</span>Value)</a></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##  -15.00   27.00   66.00   91.53  126.00  994.00    4459</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">plot</span> (BeijingAir<span class="op">$</span>SampleUTC, BeijingAir<span class="op">$</span>Value)</a></code></pre></div>
+<figure>
+<img src="figure/Beijing%20Summary-1.png" alt="plot of chunk Beijing Summary" /><figcaption>plot of chunk Beijing Summary</figcaption>
+</figure>
+<h2 id="shenyang">ShenYang</h2>
+<p>ShenYang Air Data, PM2.5; 2013-2017.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">ShenYang &lt;-<span class="st"> </span><span class="kw">readRDS</span> (<span class="dt">file =</span> <span class="st">&quot;ShenYang/ShenYang13_17_PM.rds&quot;</span>)</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw">colnames</span> (ShenYang)</a></code></pre></div>
+<pre><code>##  [1] &quot;Site&quot;            &quot;Parameter&quot;       &quot;Date_LST&quot;       
+##  [4] &quot;Year&quot;            &quot;Month&quot;           &quot;Day&quot;            
+##  [7] &quot;Hour&quot;            &quot;Value&quot;           &quot;Unit&quot;           
+## [10] &quot;Duration&quot;        &quot;QC_Name&quot;         &quot;SampleLocalTime&quot;
+## [13] &quot;SampleUTC&quot;</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">summary</span>(ShenYang<span class="op">$</span>Value)</a></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##  -15.00   29.00   51.00   69.01   89.00  932.00    5897</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="kw">plot</span> (ShenYang<span class="op">$</span>SampleUTC, ShenYang<span class="op">$</span>Value)</a></code></pre></div>
+<figure>
+<img src="figure/ShenYang%20Summary-1.png" alt="plot of chunk ShenYang Summary" /><figcaption>plot of chunk ShenYang Summary</figcaption>
+</figure>
+<h1 id="india">India</h1>
+<h2 id="kolkata-calcutta">Kolkata (Calcutta)</h2>
+<p>Kolkata Air Data, PM2.5; 2015-2018.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">Kolkata &lt;-<span class="st"> </span><span class="kw">readRDS</span> (<span class="dt">file =</span> <span class="st">&quot;Calcutta/Kolkata_15_18pm.rds&quot;</span>)</a>
+<a class="sourceLine" id="cb16-2" data-line-number="2"><span class="kw">colnames</span> (Kolkata)</a></code></pre></div>
+<pre><code>##  [1] &quot;Site&quot;            &quot;Parameter&quot;       &quot;Date_LT&quot;        
+##  [4] &quot;Year&quot;            &quot;Month&quot;           &quot;Day&quot;            
+##  [7] &quot;Hour&quot;            &quot;NowCast&quot;         &quot;AQI&quot;            
+## [10] &quot;AQI_Category&quot;    &quot;RawConc&quot;         &quot;ConcUnit&quot;       
+## [13] &quot;Duration&quot;        &quot;QC_Name&quot;         &quot;SampleLocalTime&quot;
+## [16] &quot;SampleUTC&quot;</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">summary</span> (Kolkata<span class="op">$</span>RawConc)</a></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##  -15.00   27.00   47.00   77.01  101.00  997.00    3059</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw">plot</span> (Kolkata<span class="op">$</span>SampleUTC, Kolkata<span class="op">$</span>RawConc)</a></code></pre></div>
+<figure>
+<img src="figure/Kolkata,%20India%20Summary-1.png" alt="plot of chunk Kolkata, India Summary" /><figcaption>plot of chunk Kolkata, India Summary</figcaption>
+</figure>
+<h1 id="usa">USA</h1>
+<h2 id="pacific-northwest">Pacific Northwest</h2>
+<h3 id="section">1999-2017</h3>
+<p>PM 2.5; Washington, Oregon, Idaho, Montana</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">Montana17      &lt;-<span class="st"> </span><span class="kw">readRDS</span> (<span class="dt">file =</span> <span class="st">&quot;USA/PNW/MontanaPM25.rds&quot;</span>)</a>
+<a class="sourceLine" id="cb21-2" data-line-number="2">Washington17   &lt;-<span class="st"> </span><span class="kw">readRDS</span> (<span class="dt">file =</span> <span class="st">&quot;USA/PNW/WashingtonPM25.rds&quot;</span>)</a>
+<a class="sourceLine" id="cb21-3" data-line-number="3">Oregon17       &lt;-<span class="st"> </span><span class="kw">readRDS</span> (<span class="dt">file =</span> <span class="st">&quot;USA/PNW/OregonPM25.rds&quot;</span>)</a>
+<a class="sourceLine" id="cb21-4" data-line-number="4">Idaho17        &lt;-<span class="st"> </span><span class="kw">readRDS</span> (<span class="dt">file =</span> <span class="st">&quot;USA/PNW/IdahoPM25.rds&quot;</span>)</a>
+<a class="sourceLine" id="cb21-5" data-line-number="5">PNW17          &lt;-<span class="st"> </span><span class="kw">readRDS</span> (<span class="dt">file =</span> <span class="st">&quot;USA/PNW/PNW_PM25.rds&quot;</span>)</a>
+<a class="sourceLine" id="cb21-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb21-7" data-line-number="7"><span class="kw">colnames</span>(PNW17)</a></code></pre></div>
+<pre><code>## [1] &quot;State.Code&quot;      &quot;Site.Num&quot;        &quot;Latitude&quot;        &quot;Longitude&quot;      
+## [5] &quot;Parameter.Name&quot;  &quot;Date&quot;            &quot;Arithmetic.Mean&quot; &quot;State.Name&quot;     
+## [9] &quot;City.Name&quot;</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="kw">summary</span>(PNW17<span class="op">$</span>Arithmetic.Mean)</a></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  -4.900   3.875   6.200   8.816  10.300 330.000</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">plot</span>(PNW17<span class="op">$</span>Date, PNW17<span class="op">$</span>Arithmetic.Mean)</a></code></pre></div>
+<figure>
+<img src="figure/Pacific%20Northwest%20(PNW)-1.png" alt="plot of chunk Pacific Northwest (PNW)" /><figcaption>plot of chunk Pacific Northwest (PNW)</figcaption>
+</figure>
+<h1 id="joys-of-reproducible-research-and-batchscripting">Joys of Reproducible Research and Batch/Scripting</h1>
+<p>If we need to update the report with new data (or fix errors like I did in preparing this document), it is easy to merely re-run the script with the needed changes.</p>
+<h2 id="pacific-northwest-redux">Pacific Northwest (redux)</h2>
+<p>PM 2.5; Washington, Oregon, Idaho, Montana</p>
+<h3 id="section-1">2018</h3>
+<p>Note: this is preliminary and provisional data.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">Montana18      &lt;-<span class="st"> </span><span class="kw">readRDS</span> (<span class="dt">file =</span> <span class="st">&quot;USA/PNW/2018NorthWestUSA/Montana2018.rds&quot;</span>)</a>
+<a class="sourceLine" id="cb26-2" data-line-number="2">WaOrId18       &lt;-<span class="st"> </span><span class="kw">readRDS</span> (<span class="dt">file =</span> <span class="st">&quot;USA/PNW/2018NorthWestUSA/WaOrId2018.rds&quot;</span>)</a>
+<a class="sourceLine" id="cb26-3" data-line-number="3">PNW18            &lt;-<span class="st"> </span><span class="kw">readRDS</span> (<span class="dt">file =</span> <span class="st">&quot;USA/PNW/2018NorthWestUSA/PNW18.rds&quot;</span>)</a>
+<a class="sourceLine" id="cb26-4" data-line-number="4"><span class="kw">colnames</span> (PNW18)</a></code></pre></div>
+<pre><code>## [1] &quot;dummy&quot;     &quot;State&quot;     &quot;Date&quot;      &quot;PM25value&quot; &quot;SiteName&quot;</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">summary</span>(PNW18)</a></code></pre></div>
+<pre><code>##      dummy              State                Date                    
+##  Min.   :-4.155487   Length:43941       Min.   :2018-01-01 00:00:00  
+##  1st Qu.:-0.680843   Class :character   1st Qu.:2018-03-29 00:00:00  
+##  Median : 0.002940   Mode  :character   Median :2018-06-11 00:00:00  
+##  Mean   : 0.000476                      Mean   :2018-05-24 11:39:54  
+##  3rd Qu.: 0.670331                      3rd Qu.:2018-07-22 00:00:00  
+##  Max.   : 4.318832                      Max.   :2018-08-28 00:00:00  
+##                                                                      
+##    PM25value                             SiteName    
+##  Min.   : -4.900   Anacortes-202 Ave (SO-AQS):  331  
+##  1st Qu.:  2.900   Bellevue-SE 12th          :  331  
+##  Median :  4.900   Boundary County           :  331  
+##  Mean   :  9.855   Cheeka Peak               :  331  
+##  3rd Qu.:  8.600   Chehalis-Market Blvd      :  331  
+##  Max.   :663.300   Colville-E 1st St         :  331  
+##  NA&#39;s   :155       (Other)                   :41955</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">plot</span> (PNW18<span class="op">$</span>Date, PNW18<span class="op">$</span>PM25value)</a></code></pre></div>
+<figure>
+<img src="figure/PNW%202018%20Year%20to%20Date-1.png" alt="plot of chunk PNW 2018 Year to Date" /><figcaption>plot of chunk PNW 2018 Year to Date</figcaption>
+</figure>
+<h1 id="handy-reference-for-rs-extentions-to-markdown">Handy Reference for R’s extentions to Markdown</h1>
+<ul class="incremental">
+<li>https://rmarkdown.rstudio.com/authoring_basics.html</li>
+</ul>
+</body>
+</html>
